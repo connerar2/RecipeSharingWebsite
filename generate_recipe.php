@@ -73,6 +73,7 @@
 	}
 	
 	if (isset($_POST['rname'])) {
+		if (isset($_POST['rname'])) {
 		$recipe_name = validate($_POST['rname']);
 		$recipe_description = validate($_POST['description']);
 		$prep_time = $_POST['prep'];
@@ -82,12 +83,16 @@
 		
 		$image = $_FILES['meal_image']['name'];
 		
-			$recipefile = fopen('Recipes/'.$recipe_name.'.html', "w");
-			
+	    $recipefile = fopen('Recipes/'.$recipe_name.'.html', "w");
+	
 		$targetdir = "Images/";
+		
 		$targetfile = $targetdir.basename($image);
+		
+		$path = pathinfo($targetfile);
+		fwrite($recipefile, "".$path['dirname']." ".$path['basename']."<br>");
 			
-		if (move_uploaded_file($image, $targetfile)) {
+		if (move_uploaded_file($_FILES['meal_image']['tmp_name'], $targetfile)) {
 			fwrite($recipefile, "File uploaded");
 		}
 		else {
