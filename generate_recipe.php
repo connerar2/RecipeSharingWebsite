@@ -87,15 +87,12 @@
 		$targetdir = "Images/";
 		
 		$targetfile = $targetdir.basename($image);
-		
-		$path = pathinfo($targetfile);
-		fwrite($recipefile, "".$path['dirname']." ".$path['basename']."<br>");
 			
 		if (move_uploaded_file($_FILES['meal_image']['tmp_name'], $targetfile)) {
-			fwrite($recipefile, "File uploaded");
+			//File uploaded
 		}
 		else {
-			fwrite($recipefile, "File not uploaded");
+			//File no uploaded
 		}
 		
 		writeHeader($recipefile, $recipe_name);

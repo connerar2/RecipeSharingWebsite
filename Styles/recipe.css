@@ -39,18 +39,19 @@ body {
 }
 
 #instruction_list {
-	height: 120%;
+	height: 90%;
 	width: 70%;
 	overflow-y: auto;
 	overflow-x: hidden;
 }
 
 #instruction_position {
-		position: absolute;
-		left: 52%;
-		top: 15%;
-		width: 32%;
-		font-size: 18px;
+	position: absolute;
+	height: 80%;
+	left: 52%;
+	top: 15%;
+	width: 32%;
+	font-size: 18px;
 }
 
 #image {
