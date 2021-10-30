@@ -38,6 +38,13 @@ body {
 	top: 35%;
 }
 
+#instruction_list {
+	height: 120%;
+	width: 70%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
 #instruction_position {
 		position: absolute;
 		left: 52%;

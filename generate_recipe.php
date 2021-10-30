@@ -44,7 +44,7 @@
 	function writeInstructions($file, $instructions) {
 		fwrite($file, "\t\t<div id=\"instruction_position\">\n");
 		fwrite($file, "\t\t\t<h3>Instructions</h3>\n");
-		fwrite($file, "\t\t\t<ol>\n");
+		fwrite($file, "\t\t\t<ol id=\"instruction_list\">\n");
 		
 		for ($i = 0; $i < count($instructions); $i++) {
 			fwrite($file, "\t\t\t\t<li>".$instructions["$i"]."</li>\n");
