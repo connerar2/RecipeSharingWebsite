@@ -81,14 +81,13 @@
 		$instruction_list = $_POST['instruction_list'];
 		
 		$image = $_FILES['meal_image']['name'];
-		move_uploaded_file(basename($image), "Images/".basename($image));
-		
-		$uploaddir = "var/www/htdocs/Images/";
-		$uploadfile = $uploaddir.basename($image);
 		
 			$recipefile = fopen('Recipes/'.$recipe_name.'.html', "w");
 			
-		if (move_uploaded_file($image, $uploadfile)) {
+		$targetdir = "Images/";
+		$targetfile = $targetdir.basename($image);
+			
+		if (move_uploaded_file($image, $targetfile)) {
 			fwrite($recipefile, "File uploaded");
 		}
 		else {
