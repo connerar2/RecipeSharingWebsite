@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<h1 id="header">Add Recipe</h1>
+		<link href='Styles/add_recipe.css' rel='stylesheet'>
+	</head>
+	
+	<body>
+		<form action="generate_recipe.php" onsubmit= "return validateForm();" enctype="multipart/form-data" method="post">
+		  
+		  
+		  <div class="name">
+		    <div id="recipe_name">
+			  <label for="rname">Recipe Name:</label><br>
+			  <input type="text" id="rname" name="rname" placeholder="Enter Recipe Name" onblur="validateName();" required><br>
+			  <super id="name_invalid"></super><br>
+		    </div>
+		  
+		  
+			<div id="meal_description">
+			  <label for="description">Meal Description</label><br>
+			  <textarea id="description" rows="8" cols="35" name="description" placeholder="Enter Meal Description" required></textarea><br>
+			</div>
+		  
+		    <div id="prep_cook">
+			  <label for="prep">Prep Time:</label>
+			  <input type="number" id="prep" name="prep" placeholder="Enter Prep Time" required>
+			  Minutes<br>
+			
+			  <label for="cook">Cook Time:</label>
+			  <input type="number" id="cook" name="cook" placeholder="Enter Cook Time" required>
+			  Minutes<br>
+			</div>
+		  
+		    <div id="ingre">
+			  <label for="ingredients">Ingredients</label><br>
+			  
+			  <input type="number" list="list" id = "ingredient_amount" placeholder="Enter Quantity">&
+			  <datalist id="list">
+				<option value="0"></option>
+				<option value="1"></option>
+				<option value="2"></option>
+				<option value="3"></option>
+				<option value="4"></option>
+				<option value="5"></option>
+				<option value="6"></option>	
+			  </datalist>
+			  
+			  <select id="fraction">
+				<option value="0">0</option>
+				<option value="1/8">1/8</option>
+				<option value="1/4">1/4</option>
+				<option value="1/3">1/3</option>
+				<option value="1/2">1/2</option>
+				<option value="2/3">2/3</option>
+				<option value="3/4">3/4</option>
+			  </select>
+			
+			  <select id="units" name="units">
+			    <option value="tsp">tsp</option>
+			    <option value="tbsp">tbsp</option>
+			    <option value="oz">oz</option>
+			    <option value="lb">lb</option>
+			    <option value="cup">cup</option>
+			    <option value="pinch">pinch</option>
+			    <option value="small">small</option>
+			    <option value="medium">medium</option>
+			    <option value="large">large</option>
+				<option value="gallon">gallon</option>
+				<option value="quart">quart</option>
+				<option value="pint">pint</option>
+				
+			  </select>
+			  
+			  <input type="text" id="ingredient" placeholder="Enter Ingredient">
+			  <input class="add_button" type="button" value="Add ingredient" id="add_ingredient"><br>
+			
+			  <ul id="ingredient_list" name="ingredient_list[]" style="list-style-type:none;">
+			
+			  </ul>
+			</div>
+		  
+		    <div id="instruct">
+			  <label for="instructions">Instructions</label><br>
+			  
+			  <input type="text" id="instruction" placeholder="Enter Instruction">
+			  <input class="add_button" type="button" value="Add Instruction" id="add_instruction"><br>
+			
+			  <ol id="instruction_list" name="instruction_list[]">
+			
+			  </ol>
+			  
+			  <label for="private">Private Recipe</label>
+			  <input type="checkbox" id="private" name="private" title="This will make you the only person able to view the contents of this recipe">
+			  
+			  <input type="submit" value="Write Recipe">
+			</div>
+		  
+		    <div id="upload">
+			  <label for="img">Upload Meal Image</label><br>
+			  <input type="file" id="meal_image" name="meal_image" accept="image/*">
+		    </div>
+		  </div>
+		  
+		</form>
+		
+		<script type="text/javascript">
+			
+			function validateForm() {
+				formValid = true;
+				
+				if(!validateName()) {
+					formValid = false;
+					alert("Form Bad");
+				}
+					alert("Form Good");
+				
+				return formValid;
+			};
+		
+			function validateName(){
+				var name = document.getElementById("rname").value;
+				var validCharacters = /^[a-zA-Z\s]*$/;
+				
+				if (!name.trim().length) {
+					displayHiddenText("name_invalid", "Recipe name cannot be blank");
+					return false;
+				}
+				if (validCharacters.test(name)) {
+					document.getElementById("name_invalid").style.display = "none";
+					return true;
+				}
+				displayHiddenText("name_invalid", "Recipe names only have letters and spaces");
+				return false;
+			};
+			
+			function validateIngredient() {
+				
+				var amountAndIngredient = "";
+				var whole = document.getElementById("ingredient_amount");
+				var fraction = document.getElementById("fraction");
+				var units = document.getElementById("units");
+				var ingredient = document.getElementById("ingredient");
+				
+				if (ingredient.value == "") {
+					alert("You must have an ingredient");
+					exit();
+				}
+				if (fraction.value == 0 && whole.value == 0) {
+					alert("An ingredient must have a amount greater than 0");
+					exit();
+				}
+				else if (fraction.value != 0 & whole.value == 0) {
+					amountAndIngredient += fraction.value;
+				}
+				else if (fraction.value == 0 && whole.value != 0){
+					amountAndIngredient += whole.value;
+				}
+				else {
+					amountAndIngredient += whole.value + " and " + fraction.value;
+				}
+				amountAndIngredient += " " + units.value + " " + ingredient.value;
+				
+				return amountAndIngredient;
+				
+				
+			};
+			
+			function displayHiddenText(id, sentence) {
+				document.getElementById(id).style.display = "inline";
+				document.getElementById(id).innerHTML = sentence;
+			};
+			
+		    document.getElementById("add_ingredient").onclick = function() {
+			  
+		      var list = document.getElementById("ingredient_list");
+			  var list_item = document.createElement("li");
+			  
+			  var ingredient = validateIngredient();
+			  list_item.appendChild(document.createTextNode(ingredient));
+			  list.appendChild(list_item);
+			  
+			  var input = document.createElement("input");
+			  input.type = "hidden";
+			  input.name = "ingredient_list[]";
+			  input.value = ingredient;
+			  list.appendChild(input);
+			  
+			  document.getElementById("ingredient").value = "";
+			};
+			
+			document.getElementById("add_instruction").onclick = function() {
+			  var list = document.getElementById("instruction_list");
+			  var list_item = document.createElement("li");
+			  var instruction = document.getElementById("instruction").value;
+			  
+			  var input = document.createElement("input");
+			  input.type = "hidden";
+			  input.name = "instruction_list[]";
+			  input.value = instruction;
+			  
+			  list_item.appendChild(document.createTextNode(instruction));
+			  list.appendChild(list_item);
+			  list.appendChild(input);
+			  
+			  document.getElementById("instruction").value = "";
+			};
+		</script>
+	
+	</body>
+			
+	

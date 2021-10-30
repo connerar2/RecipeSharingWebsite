@@ -1,0 +1,38 @@
+
+body {
+	background-image: url(../Images/Project_Index.jpg);
+	background-size: cover;
+}
+
+#login {
+ 	height: 200px;
+	width: 300px;
+	background-color: green;
+	font-size: 60px;
+	color: white;
+}
+
+#view_recipes {
+ 	height: 200px;
+	width: 300px;
+	background-color: green;
+	font-size: 60px;
+	color: white;
+}
+
+#add_recipe {
+ 	height: 200px;
+	width: 300px;
+	background-color: green;
+	font-size: 60px;
+	color: white;
+}
+
+#about {
+ 	height: 200px;
+	width: 300px;
+	background-color: green;
+	font-size: 60px;
+	color: white;
+}
+

@@ -1,0 +1,91 @@
+body {
+		background-image:url(../Images/add_recipe_background1.jpg);
+		background-size: 100% 110%;
+		background-repeat: no-repeat;
+		overflow-x: hidden;
+		
+}
+
+.name {
+	position: relative;
+	height: 850px;
+}
+
+#name_invalid {
+	font-size: 12px;
+	color: red;
+	/*display: none;*/
+}
+
+
+#recipe_name {
+	position: absolute;
+	font-size: 26px;
+	left: 17%;
+	top: 8%;
+}
+
+#meal_description {
+		position: absolute;
+		left: 17%;
+		top: 20%;
+}
+
+#prep_cook {
+		position: relative;
+		left: 17%;
+		top: 38%;
+}
+
+#ingre {
+	position: absolute;
+	left: 17%;
+	top: 45%;
+}	
+
+ul {
+		columns: 2;
+		max-width: 20rem;
+}
+
+#ingredient_amount{
+		width: 50px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+#instruct {
+	font-size: 24px;
+	position: absolute;
+	left: 53%;
+	top: 10%;
+	height: 60%;
+	width: 40%;
+}
+
+#instruction_list {
+	height: 120%;
+	width: 70%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#ingredient{
+	width: 100px;
+}
+
+#upload {
+	position: absolute;
+	left: 37%;
+	top: 10%;
+}
+

@@ -1,0 +1,58 @@
+
+body {
+		background-image:url(../Images/add_recipe_background1.jpg);
+		background-size: 100% 110%;
+		background-repeat: no-repeat;
+		overflow-x: hidden;
+		
+}
+
+.name {
+	position: relative;
+	height: 920px;;
+}
+
+#name_position {
+	position: absolute;
+	left: 16%;
+	top: 12%
+}
+
+#description_position {
+	position: absolute;
+	left: 16%;
+	top: 18%;
+	width: 15%;
+}
+
+#time_position {
+	position: absolute;
+	left: 16%;
+	top: 32%;
+}
+
+#ingredient_position {
+	position: absolute;
+	font-style: italic;
+	left: 16%;
+	top: 35%;
+}
+
+#instruction_position {
+		position: absolute;
+		left: 52%;
+		top: 15%;
+		width: 32%;
+		font-size: 18px;
+}
+
+#image {
+	height: 300px;
+	width: 300px;
+}
+
+#image_position {
+	position: absolute;
+	left: 32%;
+	top:20%;
+}
