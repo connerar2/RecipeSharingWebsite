@@ -73,7 +73,6 @@
 	}
 	
 	if (isset($_POST['rname'])) {
-		if (isset($_POST['rname'])) {
 		$recipe_name = validate($_POST['rname']);
 		$recipe_description = validate($_POST['description']);
 		$prep_time = $_POST['prep'];
@@ -98,7 +97,6 @@
 		else {
 			fwrite($recipefile, "File not uploaded");
 		}
-		
 		
 		writeHeader($recipefile, $recipe_name);
 		writeRecipeName($recipefile, $recipe_name);
