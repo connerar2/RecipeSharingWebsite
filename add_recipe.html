@@ -84,7 +84,7 @@
 			  <input type="text" id="ingredient" placeholder="Enter Ingredient">
 			  <input class="add_button" type="button" value="Add ingredient" id="add_ingredient"><br>
 			
-			  <ul id="ingredient_list" name="ingredient_list[]" style="list-style-type:none;">
+			  <ul id="ingredient_list" name="ingredient_list[]">
 			
 			  </ul>
 			</div>
@@ -99,10 +99,12 @@
 			
 			  </ol>
 			  
+			  <!--
 			  <label for="private">Private Recipe</label>
 			  <input type="checkbox" id="private" name="private" title="This will make you the only person able to view the contents of this recipe">
+			  -->
 			  
-			  <input type="submit" value="Write Recipe">
+			  <input type="submit" value="Upload Recipe">
 			</div>
 		  
 		    <div id="upload">
@@ -120,9 +122,13 @@
 				
 				if(!validateName()) {
 					formValid = false;
+					<!--
 					alert("Form Bad");
+					-->
 				}
+					<!--
 					alert("Form Good");
+					-->
 				
 				return formValid;
 			};
@@ -152,11 +158,15 @@
 				var ingredient = document.getElementById("ingredient");
 				
 				if (ingredient.value == "") {
+				/*
 					alert("You must have an ingredient");
+				*/
 					exit();
 				}
 				if (fraction.value == 0 && whole.value == 0) {
+					/*
 					alert("An ingredient must have a amount greater than 0");
+					*/
 					exit();
 				}
 				else if (fraction.value != 0 & whole.value == 0) {
