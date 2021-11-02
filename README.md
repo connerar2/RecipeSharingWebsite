@@ -11,6 +11,6 @@ browse other's recipes.  If time permits there will also be a calendar that func
 The web application is being hosted on an AWS server.  If you wish to view it there please go to http://54.146.217.8/.  CUrrently, only the add recipe function is working.  
 
 #Built With
--HTML
--CSS
--PHP
+- HTML
+- CSS
+- PHP
