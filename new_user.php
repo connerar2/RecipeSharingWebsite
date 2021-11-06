@@ -14,7 +14,7 @@
 		die();
 	}
 	
-	$stmt = $cxn->prepare("INSERT INFO Users (username, password) VALUES (?, ?)");
+	$stmt = $cxn->prepare("INSERT INFO users (username, password) VALUES (?, ?)");
 	$stmt->bind_param("ss", $username, $password);
 	$stmt->execute();
 ?>
