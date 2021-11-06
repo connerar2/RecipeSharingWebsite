@@ -25,8 +25,6 @@
 		
 		$user = $stmt->fetch();
 		
-		$cxn->close();
-		
 		echo "Hashed Password";
 		echo $user['password'];
 		
@@ -36,7 +34,7 @@
 		else {
 			echo "Sorry wrong username or password";
 		}	
-		
+		$cxn->close();
 	}
 
 	echo "Test";
