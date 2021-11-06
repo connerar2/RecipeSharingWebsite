@@ -14,11 +14,12 @@
 			echo "Failed to connect to database: ".mysqli_connect_errno();
 			die();
 		}
-	
+		
 		$stmt = $cxn->prepare("SELECT * from users WHERE username = ?");
 		$stmt->bind_param("s", $username);
 		$stmt->execute();
 		
+		/*
 		$user = $stmt->fetch();
 		
 		$cxn->close();
@@ -29,5 +30,6 @@
 		else {
 			echo "Sorry wrong username or password";
 		}
+		*/
 	}
 ?>
