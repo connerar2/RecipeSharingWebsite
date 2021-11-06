@@ -16,6 +16,9 @@
 			echo "Failed to connect to database: ".mysqli_connect_errno();
 			die();
 		}
+		else {
+			echo "<h1>Connect Success</h1>";
+		}
 	?>
 	<body>
 		<form method="post" action="test2.php">
