@@ -3,6 +3,11 @@
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 		
+		$host = "localhost";
+		$user = "root";
+		$db_password = "Happy124face1!";
+		$database = "tutorial";
+		
 		$cxn = mysqli_connect($host, $user, $db_password, $database);
 		
 		if (mysqli_connect_errno()) {
