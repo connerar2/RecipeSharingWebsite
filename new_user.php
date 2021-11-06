@@ -2,8 +2,6 @@
 	$username = $_POST['username'];
 	$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 	
-	echo "My Hashed Password: ".$password."";
-	
 	$host = "localhost";
 	$user = "root";
 	$db_password = "Happy124face1!";
@@ -15,12 +13,14 @@
 		echo "Failed to connect to database: ".mysqli_connect_errno();
 		die();
 	}
-	else {
-		echo "<h1>Connected Successfully</h1>";
-	}
 	
 	$stmt = $cxn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
 	$stmt->bind_param("ss", $username, $password);
 	$stmt->execute();
+	
+	$cxn->close();
+	
+	header("Location: login.php");
+	exit();
 	
 ?>
