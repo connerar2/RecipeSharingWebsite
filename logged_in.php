@@ -23,7 +23,8 @@
 		$stmt->execute();
 		
 		
-		$user = $stmt->fetch();
+		$result = $stmt->get_result();
+		$user = $result->fetch_assoc();
 		
 		if ($user->num_rows > 0) {
 			echo "Got Results<br>";
