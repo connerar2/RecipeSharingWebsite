@@ -39,7 +39,7 @@
 	}
 	
 	function validateForm() {
-		samePasswords();
+		var t = samePasswords();
 		return false;
 	}
 	
