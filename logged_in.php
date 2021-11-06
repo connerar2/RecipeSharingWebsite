@@ -1,10 +1,12 @@
 <?php
 
-	if(isset($_POST['username']) {
-		/*
+	//if(isset($_POST['username']) {
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 		
+		echo "Username: ".$username"";
+		
+		/*
 		$host = "localhost";
 		$user = "root";
 		$db_password = "Happy124face1!";
@@ -33,7 +35,7 @@
 			echo "Sorry wrong username or password";
 		}
 	*/	
-	}
+	//}
 
 	echo "Test";
 ?>
