@@ -18,8 +18,8 @@
 		}
 		
 		
-		$stmt = $cxn->prepare("SELECT * FROM users WHERE username = ?");
-		$stmt->bind_param(1, $username);
+		$stmt = $cxn->prepare("SELECT * FROM users WHERE username = (?) ");
+		$stmt->bind_param("s", $username);
 		$stmt->execute();
 		
 		
