@@ -16,7 +16,7 @@
 		}
 		
 		$stmt = $cxn->prepare("SELECT * from users WHERE username = ?");
-		$stmt->bind_param("s", $username);
+		$stmt->bind_param(1, $username);
 		$stmt->execute();
 		
 		/*
