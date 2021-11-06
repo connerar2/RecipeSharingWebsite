@@ -25,6 +25,13 @@
 		
 		$user = $stmt->fetch();
 		
+		if ($user->rowCount() > 0) {
+			echo "Got Results<br>";
+		}
+		else {
+			echo "Fetch Failed<br>";
+		}
+		
 		echo "Hashed Password".$user['password']." Hashed Password<br>";
 		
 		if(password_verify($password, $user['password'])) {
