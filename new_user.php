@@ -13,10 +13,13 @@
 		echo "Failed to connect to database: ".mysqli_connect_errno();
 		die();
 	}
+	else {
+		echo "<h1>Connected Successfully</h1>";
+	}
 	
-	/*
+	
 	$stmt = $cxn->prepare("INSERT INFO users (username, password) VALUES (?, ?)");
-	$stmt->bind_param("ss", $username, $password);
-	$stmt->execute();
-	*/
+	//$stmt->bind_param("ss", $username, $password);
+	//$stmt->execute();
+	
 ?>
