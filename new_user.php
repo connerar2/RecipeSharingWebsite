@@ -17,7 +17,7 @@
 		echo "<h1>Connected Successfully</h1>";
 	}
 	
-	
+	$password = "ooooo";
 	$stmt = $cxn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
 	$stmt->bind_param("ss", $username, $password);
 	$stmt->execute();
