@@ -1,4 +1,6 @@
 <?php
+
+if (isset($_POST['username'])) {
 	$username = $_POST['username'];
 	$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 	
@@ -22,5 +24,5 @@
 	
 	header("Location: login.php");
 	exit();
-	
+}
 ?>
