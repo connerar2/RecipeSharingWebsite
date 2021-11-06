@@ -25,7 +25,7 @@
 		
 		$user = $stmt->fetch();
 		
-		if ($user->rowCount() > 0) {
+		if ($user->num_rows > 0) {
 			echo "Got Results<br>";
 		}
 		else {
