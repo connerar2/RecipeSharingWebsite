@@ -25,15 +25,13 @@
 	<script type="text/javascript">
 	
 	function samePasswords() {
-		var p1 = document.getElementByID("password");
-		var p2 = document.getElementByID("check_password");
 		
-		if (p1.value != p2.value) {
-			document.getElementByID("hidden").style.display("inline");
-			return false;
+		if (document.getElementById("password").value == document.getElementById("check_password").value) {
+			document.getElementByID("hidden").style.display("none");
+			return true;
 		}
-		document.getElementByID("hidden").style.display("none");
-		return true;
+		document.getElementByID("hidden").style.display("inline");
+		return false;	
 	}
 	
 	function validateForm() {
