@@ -37,8 +37,7 @@
 	}
 	
 	function validateForm() {
-		//var t = samePasswords();
-		return false;
+		return samePasswords();
 	}
 	
 	</script>

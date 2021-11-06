@@ -175,10 +175,8 @@
 				}
 				amountAndIngredient += " " + units.value + " " + ingredient.value;
 				
-				whole.value="";
-				faction.value=0;
-				
-				
+				whole.value = "";
+				fraction.value = 0;
 				return amountAndIngredient;
 				
 				
@@ -205,6 +203,7 @@
 			  list.appendChild(input);
 			  
 			  document.getElementById("ingredient").value = "";
+			  
 			};
 			
 			document.getElementById("add_instruction").onclick = function() {
