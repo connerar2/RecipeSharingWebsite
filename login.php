@@ -18,7 +18,7 @@
 		}
 	?>
 	<body>
-		<form method="post" action="login.php">
+		<form method="post" action="logged_in.php">
 			Username:
 			<input type="text" name="username" placeholder="Enter Username" required>
 			<br/>
