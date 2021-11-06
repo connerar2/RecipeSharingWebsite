@@ -27,15 +27,23 @@
 	function samePasswords() {
 		
 		if (document.getElementById("password").value === document.getElementById("check_password").value) {
+			<?php
+				echo "These passwords are the same";
+			?>
 			document.getElementByID("hidden").style.display("none");
-			return true;
 		}
-		document.getElementByID("hidden").style.display("inline");
-		return false;	
+		else {
+			<?php
+				echo "These passwords are different";
+			?>
+			document.getElementByID("hidden").style.display("inline");
+			return false;	
+		}
 	}
 	
 	function validateForm() {
-		return samePasswords();
+		samePasswords();
+		return false;
 	}
 	
 	</script>
