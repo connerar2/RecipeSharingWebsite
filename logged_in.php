@@ -27,10 +27,11 @@
 		
 		$cxn->close();
 		
-		/*
+		
 		if(password_verify($password, $user['password']) {
 			echo "You have logged in";
 		}
+		/*
 		else {
 			echo "Sorry wrong username or password";
 		}	
