@@ -1,13 +1,13 @@
 <?php
 	$username = $_POST['username'];
-	$password = "password";
+	$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 	
 	$host = "localhost";
 	$user = "root";
-	$password = "Happy124face1!";
+	$db_password = "Happy124face1!";
 	$database = "tutorial";
 		
-	$cxn = mysqli_connect($host, $user, $password, $database);
+	$cxn = mysqli_connect($host, $user, $db_password, $database);
 		
 	if (mysqli_connect_errno()) {
 		echo "Failed to connect to database: ".mysqli_connect_errno();
