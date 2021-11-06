@@ -26,17 +26,15 @@
 		$result = $stmt->get_result();
 		$user = $result->fetch_assoc();
 		
-		if ($user->num_rows > 0) {
+		if ($result->num_rows > 0) {
 			echo "Got Results<br>";
 		}
 		else {
 			echo "Fetch Failed<br>";
 		}
 		
-		echo "Hashed Password".$user['password']." Hashed Password<br>";
-		
 		if(password_verify($password, $user['password'])) {
-			echo "You have logged in";
+			echo "You have logged in with ".$result->num_rows." rows";
 		}
 		else {
 			echo "Sorry wrong username or password";
@@ -44,6 +42,4 @@
 		
 		$cxn->close();
 	}
-
-	echo "Test";
 ?>
