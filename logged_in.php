@@ -2,7 +2,7 @@
 
 	//if(isset($_POST['username']) {
 		$username = $_POST['username'];
-		//$password = $_POST['password'];
+		$password = $_POST['password'];
 		
 		//echo "Username: ".$username"";
 		
