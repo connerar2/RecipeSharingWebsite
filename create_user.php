@@ -26,7 +26,7 @@
 	
 	function samePasswords() {
 		
-		if (document.getElementById("password").value == document.getElementById("check_password").value) {
+		if (document.getElementById("password").value === document.getElementById("check_password").value) {
 			document.getElementByID("hidden").style.display("none");
 			return true;
 		}
