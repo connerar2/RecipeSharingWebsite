@@ -27,7 +27,9 @@
 		
 		$cxn->close();
 		
+		echo "Hashed Password";
 		echo $user['password'];
+		
 		if(password_verify($password, $user['password'])) {
 			echo "You have logged in";
 		}
