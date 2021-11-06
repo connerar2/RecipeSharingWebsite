@@ -17,7 +17,8 @@
 			<input type="password" id="check_password" name="re_enter_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter Password" required>
 			<br>
 			<p id="hidden" style="display: none">Passwords don't match</p>
-			<input type="submit" value="Create Account"><br>
+			<input type="submit" value="Create Account">
+			<br>
 		</form>
 	</body>
 	
@@ -29,9 +30,6 @@
 		
 		if (p1.value != p2.value) {
 			document.getElementByID("hidden").style.display("inline");
-			<?php
-			echo "Passwords don't match<br>";
-			?>
 			return false;
 		}
 		document.getElementByID("hidden").style.display("none");
