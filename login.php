@@ -16,19 +16,18 @@
 			echo "Failed to connect to database: ".mysqli_connect_errno();
 			die();
 		}
-		else {
-			echo "<h1>Connect Success</h1>";
-		}
 	?>
 	<body>
-		<form method="post" action="test2.php">
+		<form method="post" action="login.php">
 			Username:
 			<input type="text" name="username" placeholder="Enter Username" required>
 			<br/>
 			Password:
 			<input type="password" name="password" placeholder="Enter Password" required>
 			<br/>
-			<input type="submit" value="Login">
+			<input type="submit" value="Login"><br>
+			<a href="create_user.php">Create a new account</a>
+		</form>
 			
 	</body>
 </html>
