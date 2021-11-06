@@ -29,6 +29,9 @@
 		
 		if (p1.value != p2.value) {
 			document.getElementByID("hidden").style.display("inline");
+			<?php
+			echo "Passwords don't match<br>";
+			?>
 			return false;
 		}
 		document.getElementByID("hidden").style.display("none");
@@ -37,6 +40,7 @@
 	
 	function validateForm() {
 		samePasswords();
+		return false;
 	}
 	
 	</script>
