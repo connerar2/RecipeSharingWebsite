@@ -6,7 +6,7 @@
 	</head>
 	
 	<body>
-		<form method="post" onsubmit="return validateForm()" action="new_user.php">
+		<form method="post" onsubmit="return validateForm();" action="new_user.php">
 			Enter Username:
 			<input type="text" name="username" placeholder="Enter Username" required>
 			<br>
