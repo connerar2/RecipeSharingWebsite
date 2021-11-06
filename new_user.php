@@ -2,6 +2,8 @@
 	$username = $_POST['username'];
 	$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 	
+	echo "My Hashed Password: ".$password."";
+	
 	$host = "localhost";
 	$user = "root";
 	$db_password = "Happy124face1!";
