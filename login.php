@@ -1,3 +1,8 @@
+<?php
+//start session
+session_start();
+?>
+
 <!DOCTYPE HTML>
 
 <html>
@@ -15,7 +20,12 @@
 			<br/>
 			<input type="submit" value="Login"><br>
 			<a href="create_user.php">Create a new account</a>
+			<br>
 		</form>
-			
+		<?php
+			if (isset($_SESSION['username'])) {
+				echo "You have logged in!";
+			}
+		?>
 	</body>
 </html>

@@ -19,14 +19,17 @@ if (isset($_POST['username'])) {
 		die();
 	}
 	
+	//check if username is in database
 	$stmt = $cxn->prepare("SELECT username FROM users WHERE username=(?)");
 	$stmt->bind_param("s", $username);
 	$stmt->execute();
 	$result = $stmt->get_result();
 	
+	//if it is error message
 	if ($result->num_rows > 0) {
 			$username_taken = "Sorry this username has already been taken";
 	}
+	//otherwise add it and the password
 	else {
 			echo "Account Created";
 			$stmt = $cxn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
