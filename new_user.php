@@ -31,7 +31,6 @@ if (isset($_POST['username'])) {
 	}
 	//otherwise add it and the password
 	else {
-			echo "Account Created";
 			$stmt = $cxn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
 			$stmt->bind_param("ss", $username, $password);
 			$stmt->execute();

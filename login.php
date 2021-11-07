@@ -1,6 +1,8 @@
 <?php
 //start session
 session_start();
+
+include('logged_in.php');
 ?>
 
 <!DOCTYPE HTML>
@@ -11,7 +13,7 @@ session_start();
 	</head>
 	
 	<body>
-		<form method="post" action="logged_in.php">
+		<form method="post" action="login.php">
 			Username:
 			<input type="text" name="username" placeholder="Enter Username" required>
 			<br/>
