@@ -15,8 +15,8 @@
 			<br>
 			Re-Enter Password:
 			<input type="password" id="check_password" name="re_enter_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter Password" required>
+			<p id="hidden" style="display: none">   Passwords don't match</p> 
 			<br>
-			<p id="hidden" style="display: none">Passwords don't match</p>
 			<input type="submit" value="Create Account">
 			<br>
 		</form>
@@ -26,25 +26,22 @@
 	
 	function samePasswords() {
 		
-		if (document.getElementById("password").value === document.getElementById("check_password").value) {
-			<?php
-				echo "These passwords are the same";
-			?>
-			document.getElementByID("hidden").style.display("none");
+		var pw = document.getElementById("password").value;
+		var check_pw = document.getElementById("check_password").value;
+		
+		if (pw.localeCompare(check_pw) != 0) {
+			document.getElementById("hidden").style.display = "inline";
+			return false;
 		}
-		else {
-			<?php
-				echo "These passwords are different";
-			?>
-			document.getElementByID("hidden").style.display("inline");
-			return false;	
-		}
-	}
+		document.getElementById("hidden").style.display = "none";
+		return true;	
+		
+	};
 	
 	function validateForm() {
-		samePasswords();
-		return false;
-	}
+		var bool = samePasswords();
+		return bool;
+	};
 	
 	</script>
 </html>
