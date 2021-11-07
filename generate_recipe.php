@@ -112,7 +112,7 @@
 		}
 		
 		$stmt = $cxn->prepare("INSERT INTO Recipe (owner, recipe_name, description, meal_image) VALUES (?, ?, ?, ?)");
-		$stmt->bind_param("ssss",$_SESSION['username'], $recipe_name, $recipe_description,  $$targetfile);
+		$stmt->bind_param("ssss",$_SESSION['username'], $recipe_name, $recipe_description,  $targetfile);
 		$stmt->execute();
 		
 		writeHeader($recipefile, $recipe_name);
