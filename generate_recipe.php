@@ -1,5 +1,7 @@
 
 <?php
+	session_start();
+	
 	function writeHeader($file, $name) {
 		fwrite($file, "<!DOCTYPE html>\n");
 		fwrite($file, "<html lang=\"en\">\n");
@@ -94,6 +96,24 @@
 		else {
 			//File no uploaded
 		}
+		
+		//info for database
+		$host = "localhost";
+		$user = "root";
+		$db_password = "Happy124face1!";
+		$database = "tutorial";
+	
+		//connect to database
+		$cxn = mysqli_connect($host, $user, $db_password, $database);
+		//check if connected, 
+		if (mysqli_connect_errno()) {
+			echo "Failed to connect to database: ".mysqli_connect_errno();
+			die();
+		}
+		
+		$stmt = $cxn->prepare("INSERT INTO Recipe (owner, recipe_name, description, meal_image) VALUES (?, ?, ?, ?)");
+		$stmt->bind_param("ssss",$_SESSION['username'], $recipe_name, $recipe_description,  $$targetfile);
+		$stmt->execute();
 		
 		writeHeader($recipefile, $recipe_name);
 		writeRecipeName($recipefile, $recipe_name);

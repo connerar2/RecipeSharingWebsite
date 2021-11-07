@@ -28,6 +28,9 @@ include('logged_in.php');
 			if (isset($_SESSION['username'])) {
 				echo "You have logged in!";
 			}
+			else {
+				
+			}
 		?>
 	</body>
 </html>
