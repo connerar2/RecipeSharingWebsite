@@ -26,19 +26,17 @@ if (isset($_POST['username'])) {
 	
 	if ($result->num_rows > 0) {
 			$username_taken = "Sorry this username has already been taken";
-			exit();
 	}
 	else {
-			//username is free
+			echo "Account Created";
+			$stmt = $cxn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+			$stmt->bind_param("ss", $username, $password);
+			$stmt->execute();
+	
+			$cxn->close();
+	
+			header("Location: login.php");
+			exit();
 	}
-	
-	$stmt = $cxn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
-	$stmt->bind_param("ss", $username, $password);
-	$stmt->execute();
-	
-	$cxn->close();
-	
-	header("Location: login.php");
-	exit();
 }
 ?>
