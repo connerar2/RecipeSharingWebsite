@@ -9,8 +9,9 @@
 		<form method="post" onsubmit="return validateForm();" action="create_user.php">
 			Enter Username:
 			<input type="text" name="username" placeholder="Enter Username" required>
-			<?php if (isset($username_taken)): 
+			<?php if (isset($username_taken)){ 
 				echo $username_taken;
+			}
 			?>
 			<br>
 			Enter Password:
