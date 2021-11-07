@@ -1,14 +1,17 @@
 <!DOCTYPE HTML>
-
+<?php include('new_user.php') ?>
 <html>
 	<head>
 		<h1>Create Your Account</h1>
 	</head>
 	
 	<body>
-		<form method="post" onsubmit="return validateForm();" action="new_user.php">
+		<form method="post" onsubmit="return validateForm();" action="create_user.php">
 			Enter Username:
 			<input type="text" name="username" placeholder="Enter Username" required>
+			<?php if (isset($username_taken)): 
+				echo $username_taken;
+			?>
 			<br>
 			Enter Password:
 			<input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter Password" required>
