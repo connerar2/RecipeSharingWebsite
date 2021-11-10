@@ -1,0 +1,41 @@
+html {
+    height: 100%;
+	background-image:url(../Images/Project_Index.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	overflow-x: hidden;
+}
+
+body{
+	height: 100%;
+}
+
+
+.login_page {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+#login_form {
+	left: 30%;
+	top: 40%;
+	position: absolute;
+	background-color: white;
+	margin: 15px;
+	padding: 10px;
+	width: 40%;
+	text-align: center;
+	border-width: 2px;
+	border-style: solid;
+}
+
+input {
+	display: inline-block;
+}
+
+#username, #password {
+	width: 40%;
+	padding: 7px;
+	margin: 3px;
+}
