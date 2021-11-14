@@ -38,6 +38,10 @@ img {
 	width: 100%;;
 }
 
+#next {
+	float: right;
+}
+
 #nxt {
 	float: right;
 	position: relative;
