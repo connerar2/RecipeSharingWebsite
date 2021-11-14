@@ -32,7 +32,7 @@
 		
 	
 		if(!isset($_GET['pn'])) {
-			$pn = 2;
+			$pn = 1;
 		}
 		else {
 			$pn = $_GET['pn'];
