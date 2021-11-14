@@ -44,8 +44,6 @@
 		$stmt-> execute();
 		$result = $stmt->get_result();
 		
-		echo "Test";
-		/*
 		while($row = $result->fetch_assoc()) {
 			echo "<div class=\"recipe\">";
 			echo "<h3><a href=\"Recipes/".$row['recipe_name'].".html\">".$row['recipe_name']."</a></h3>";
@@ -56,7 +54,7 @@
 			echo "</div>";
 		}
 		echo "</div>";
-		*/
+
 
 ?>
 
