@@ -31,7 +31,7 @@
 		
 		while($row = $result->fetch_assoc()) {
 			echo "<div class=\"recipe\">";
-			echo "<a href=Recipes/\"".$row['recipe_name'].".html\">".$row['recipe_name']."</a>";
+			echo "<a href=\"Recipes/".$row['recipe_name'].".html\">".$row['recipe_name']."</a>";
 				echo"<h3>".$row['recipe_name']."</h3>";
 				echo"<img class=\"recipeImage\" src=/".$row['meal_image']." alt=\"Image of the recipe\">";
 				echo "<div>";
