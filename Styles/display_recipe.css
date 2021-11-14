@@ -55,7 +55,6 @@ img {
 }
 
 #previous, #next {
-  display: block;
   color: white;
   background-color: cornflowerBlue;
   text-align: center;
