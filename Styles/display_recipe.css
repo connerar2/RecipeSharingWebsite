@@ -44,12 +44,10 @@ img {
 }
 
 #nxt {
-	right: 90%;
 	position: relative;
 }
 
 #prev {
-	float: left;
 	position: relative;
 }
 
