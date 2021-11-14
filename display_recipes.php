@@ -7,7 +7,7 @@
 
 
 	<body>
-		<div class="fiveReipces">
+		<div class="fiveRecipces">
 
 <?php		
 		
