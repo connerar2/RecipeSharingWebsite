@@ -60,7 +60,7 @@
 					echo "<p>".$row['description']."</p>";
 				echo "</div>";
 			echo "</div>";
-		*/
+		}	
 		echo "</div>";
 
 
