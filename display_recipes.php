@@ -37,7 +37,7 @@
 		else {
 			$pn = $_GET['pn'];
 		}
-		*/
+		
 		$page = ($pn - 1) * $results_per_page;
 		
 		$stmt = $cxn->prepare("SELECT * FROM Recipe LIMIT".$page.",".$results_per_page);
@@ -54,6 +54,7 @@
 			echo "</div>";
 		}
 		echo "</div>";
+		*/
 
 ?>
 
