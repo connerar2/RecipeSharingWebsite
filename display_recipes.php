@@ -46,12 +46,12 @@
 		$result = $stmt->get_result();
 		
 		if ($result->num_rows > 0) {
-			echo "Found ".$result->num_rows." rows";
+			//echo "Found ".$result->num_rows." rows";
 		}
 		else {
-			echo "No rows found";
+			//echo "No rows found";
 		}
-		/*
+		
 		while($row = $result->fetch_assoc()) {
 			echo "<div class=\"recipe\">";
 			echo "<h3><a href=\"Recipes/".$row['recipe_name'].".html\">".$row['recipe_name']."</a></h3>";
@@ -61,8 +61,6 @@
 				echo "</div>";
 			echo "</div>";
 		*/
-		
-		echo "Test";
 		echo "</div>";
 
 
