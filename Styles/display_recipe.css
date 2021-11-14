@@ -29,11 +29,11 @@ img {
 	width: 100%;;
 }
 
-.next {
+#next {
 	float: right;
 }
 
-.previous {
+#previous {
 	float: left;
 }
 
