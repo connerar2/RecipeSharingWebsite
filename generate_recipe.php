@@ -57,7 +57,7 @@
 	
 	function addImage($file, $img) {
 		fwrite($file, "<div id=\"image_position\">\n");
-		fwrite($file, "<img src=\"../Images/".str_replace(' ', '_', basename($img))."\" alt=\"image of finished recipe\" id=\"image\">\n"); 
+		fwrite($file, "<img src=\"../Images/".basename($img)."\" alt=\"image of finished recipe\" id=\"image\">\n"); 
 		fwrite($file, "</div>\n");
 	}
 	
@@ -88,7 +88,8 @@
 	
 		$targetdir = "Images/";
 		
-		$targetfile = $targetdir.basename($image);
+		
+		$targetfile = $targetdir.str_replace(' ', '_', basename($image));
 			
 		if (move_uploaded_file($_FILES['meal_image']['tmp_name'], $targetfile)) {
 			//File uploaded
