@@ -34,7 +34,7 @@
 			$pn = 1;
 		}
 		else {
-			$pn = $_GET['pn']
+			$pn = $_GET['pn'];
 		}
 		
 		$page = ($pn - 1) * $results_per_page;
