@@ -23,7 +23,11 @@
 		$recipe = $result->fetch_assoc();
 		
 		if ($result->num_rows > 0) {
-			echo "You got".$result->num_rows."<br>";
+			echo "You have ".$result->num_rows." recipes <br>";
+			
+			while ($row = $recipe) {
+				echo "ID: ".$row['id']." created ".$row['recipe_name']."<br>";
+			}
 		}
 		else {
 			echo "Fetch Failed<br>";
