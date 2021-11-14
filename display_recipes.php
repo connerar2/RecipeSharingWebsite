@@ -26,11 +26,11 @@
 		$stmt-> execute();
 		$rows= $stmt->get_result();
 		
-		/*
 		$results_per_page = 10;
 		
-		$possible_pages = ceil(rows->nums_rows/$results_per_page);
+		$possible_pages = ceil($rows->nums_rows/$results_per_page);
 		
+		/*
 		if(!isset($_GET['pn'])) {
 			$pn = 1;
 		}
