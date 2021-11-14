@@ -7,7 +7,7 @@
 
 
 	<body>
-		<div class="fiveRecipces">
+		<div class="topRecipes">
 
 <?php		
 		$host = "localhost";
