@@ -23,7 +23,7 @@
 		$recipe = $result->fetch_assoc();
 		
 		if ($result->num_rows > 0) {
-			echo "You got".<br>";
+			echo "You got".$result->num_rows."<br>";
 		}
 		else {
 			echo "Fetch Failed<br>";
