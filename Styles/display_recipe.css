@@ -43,10 +43,12 @@ img {
 }
 
 #nxt {
+	position: relative;
 	right: 5%;
 }
 
 #prev {
+	positio: relative;
 	left: 2%;
 }
 
