@@ -1,6 +1,6 @@
 <?php		
 		
-		echo "Testing Display Recipes";
+		echo "Testing Display Recipes<br><br>";
 		
 		$host = "localhost";
 		$user = "root";
@@ -23,7 +23,7 @@
 		$recipe = $result->fetch_assoc();
 		
 		if ($result->num_rows > 0) {
-			echo "Got Results<br>";
+			echo "You got".<br>";
 		}
 		else {
 			echo "Fetch Failed<br>";
