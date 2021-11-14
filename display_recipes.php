@@ -25,7 +25,7 @@
 		if ($result->num_rows > 0) {
 			echo "You have ".$result->num_rows." recipes <br>";
 			
-			while ($row = $recipe) {
+			while ($row = $result->fetch_assoc()) {
 				echo "ID: ".$row['id']." created ".$row['recipe_name']."<br>";
 			}
 		}
