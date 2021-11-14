@@ -10,18 +10,19 @@ p {
 .recipe{
 	margin: .5%;
 	width: 18%;
-	height: 50%
+	height: 50%;
 	position: relative;
 	border: 1px;
 	border-style: solid;
-	display: inline-block;
 }
 
 .fiveRecipes{
 	position: absolute;
+	height: 50%;
+	width: 100%;
 }
 
 .recipeImage{
-	width: 90%;
-	height: 20%;
+	width: 100%;
+	height: 50%;
 }
