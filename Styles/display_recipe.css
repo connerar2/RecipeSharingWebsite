@@ -43,7 +43,11 @@ img {
 }
 
 #nxt {
-	left: 5%;
+	right: 5%;
+}
+
+#prev {
+	left: 2%;
 }
 
 #previous {
