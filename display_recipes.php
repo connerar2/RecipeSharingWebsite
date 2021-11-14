@@ -33,18 +33,19 @@
 	
 		if(!isset($_GET['pn'])) {
 			$pn = 1;
-			echo "Test";
 		}
 		else {
 			$pn = $_GET['pn'];
 		}
-		/*
+		
 		$page = ($pn - 1) * $results_per_page;
 		
 		$stmt = $cxn->prepare("SELECT * FROM Recipe LIMIT".$page.",".$results_per_page);
 		$stmt-> execute();
 		$result = $stmt->get_result();
 		
+		echo "Test";
+		/*
 		while($row = $result->fetch_assoc()) {
 			echo "<div class=\"recipe\">";
 			echo "<h3><a href=\"Recipes/".$row['recipe_name'].".html\">".$row['recipe_name']."</a></h3>";
