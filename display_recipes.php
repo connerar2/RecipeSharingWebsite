@@ -30,14 +30,15 @@
 		
 		$possible_pages = ceil($rows->nums_rows/$results_per_page);
 		
-		/*
+	
 		if(!isset($_GET['pn'])) {
 			$pn = 1;
+			echo "Test";
 		}
 		else {
 			$pn = $_GET['pn'];
 		}
-		
+		/*
 		$page = ($pn - 1) * $results_per_page;
 		
 		$stmt = $cxn->prepare("SELECT * FROM Recipe LIMIT".$page.",".$results_per_page);
