@@ -64,7 +64,7 @@
 		echo "</div>";
 		
 		echo "<div class=\"prev_and_next\">";
-			echo "<a href=\"35.175.153.217/display_recipes.php?pn=".++$pn."\">Next</a>";
+			echo "<a href=\"display_recipes.php?pn=".++$pn."\">Next</a>";
 		echo "</div>";
 
 
