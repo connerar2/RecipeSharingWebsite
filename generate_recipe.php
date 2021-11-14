@@ -57,7 +57,7 @@
 	
 	function addImage($file, $img) {
 		fwrite($file, "<div id=\"image_position\">\n");
-		fwrite($file, "<img src=\"../Images/".basename($img)."\" alt=\"image of finished recipe\" id=\"image\">\n"); 
+		fwrite($file, "<img src=\"../".$img."\" alt=\"image of finished recipe\" id=\"image\">\n"); 
 		fwrite($file, "</div>\n");
 	}
 	
@@ -122,7 +122,7 @@
 		writePrepCookTime($recipefile, $prep_time, $cook_time);
 		writeIngredients($recipefile, $ingredient_list);
 		writeInstructions($recipefile, $instruction_list);
-		addImage($recipefile, $image);
+		addImage($recipefile, $targetfile);
 		writeCloser($recipefile);
 		
 		fclose($recipefile);
