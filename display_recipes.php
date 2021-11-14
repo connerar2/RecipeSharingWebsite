@@ -22,6 +22,7 @@
 			die();
 		}
 		
+		/*
 		$stmt = $cxn->prepare("SELECT * FROM Recipe");
 		$stmt-> execute();
 		$rows= $stmt->get_result();
@@ -30,7 +31,6 @@
 		
 		$possible_pages = ceil(rows->nums_rows/$results_per_page);
 		
-		/*
 		if(!isset($_GET['pn'])) {
 			$pn = 1;
 		}
