@@ -29,6 +29,10 @@ p {
 	width: 100%;
 }
 
+.prev_and_next {
+	position: absolute;
+}
+
 img {
 	height: 150px;
 	width: 100%;;
@@ -36,6 +40,10 @@ img {
 
 #next {
 	float: right;
+}
+
+#nxt {
+	left: 5%;
 }
 
 #previous {

@@ -64,8 +64,13 @@
 		echo "</div>";
 		
 		echo "<div class=\"prev_and_next\">";
-			echo "<a id=\"previous\" href=\"display_recipes.php?pn=".($pn - 1)."\">Previous</a>";
-			echo "<a id=\"next\" href=\"display_recipes.php?pn=".($pn + 1)."\">Next</a> ";
+			echo "<div id=\"nxt\">";
+				echo "<a id=\"previous\" href=\"display_recipes.php?pn=".($pn - 1)."\">Previous</a>";
+			echo "</div>";
+			
+			echo "<div id=\"prev\">";
+				echo "<a id=\"next\" href=\"display_recipes.php?pn=".($pn + 1)."\">Next</a> ";
+			echo "</div>";
 		echo "</div>";
 
 
