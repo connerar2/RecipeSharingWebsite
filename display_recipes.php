@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Page Title</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="Styles/display_recipe.css">
+
+
+	<body>
+		<div class="fiveReipces">
+
 <?php		
 		
 		//echo "Testing Display Recipes<br><br>";
@@ -30,6 +41,7 @@
 				echo "</div>";
 			echo "</div>";
 		}
+		echo "</div>";
 		
 		/*
 		$recipe = $result->fetch_assoc();
@@ -55,3 +67,6 @@
 		*/
 
 ?>
+
+</body>
+</html>
