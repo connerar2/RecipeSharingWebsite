@@ -24,6 +24,7 @@
 		while($row = $result->fetch_assoc()) {
 			echo "<div class=\"recipe\">";
 				echo"<h3>".$row['recipe_name']."</h3>";
+				echo"Images/".$row['meal_image']."";
 				echo"<img class=\"recipeImage\" src=\"Images/".$row['meal_image']." alt=\"Image of the recipe\">";
 				echo "<div>";
 					echo "<p>".$row['description']."</p>";
