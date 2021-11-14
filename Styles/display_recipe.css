@@ -37,3 +37,11 @@ img {
 	float: left;
 }
 
+#previous, #next {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 40px 50px;
+  text-decoration: none;
+}
+
