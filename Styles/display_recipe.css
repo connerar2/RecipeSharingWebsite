@@ -43,14 +43,6 @@ img {
 	float: left;
 }
 
-#nxt {
-	position: relative;
-}
-
-#prev {
-	position: relative;
-}
-
 #previous, #next {
   color: white;
   background-color: cornflowerBlue;
