@@ -7,7 +7,7 @@
 
 
 	<body>
-		<div class="topRecipes">
+		<div class="topRecies">
 
 <?php		
 		$host = "localhost";
@@ -31,7 +31,8 @@
 		
 		while($row = $result->fetch_assoc()) {
 			echo "<div class=\"recipe\">";
-				echo"<a href=\"".$row['recipe_name'].".html>".$row['recipe_name']."</a>";
+			echo $row['recipe_name'].".html";
+				echo"<h3>".$row['recipe_name']."</h3>";
 				echo"<img class=\"recipeImage\" src=/".$row['meal_image']." alt=\"Image of the recipe\">";
 				echo "<div>";
 					echo "<p>".$row['description']."</p>";
