@@ -22,11 +22,11 @@
 			die();
 		}
 		
-		/*
 		$stmt = $cxn->prepare("SELECT * FROM Recipe");
 		$stmt-> execute();
 		$rows= $stmt->get_result();
 		
+		/*
 		$results_per_page = 10;
 		
 		$possible_pages = ceil(rows->nums_rows/$results_per_page);
