@@ -40,12 +40,12 @@
 		
 		$page = ($pn - 1) * $results_per_page;
 		
-		/*
+		
 		$stmt = $cxn->prepare("SELECT * FROM Recipe LIMIT".$page.",".$results_per_page."");
 		$stmt-> execute();
 		$result = $stmt->get_result();
 		
-		
+		/*
 		if ($result->num_rows > 0) {
 			echo "Found ".$result->num_rows." rows";
 		}
