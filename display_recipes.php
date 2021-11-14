@@ -10,9 +10,6 @@
 		<div class="fiveRecipces">
 
 <?php		
-		
-		//echo "Testing Display Recipes<br><br>";
-		
 		$host = "localhost";
 		$user = "root";
 		$db_password = "Happy124face1!";
@@ -35,7 +32,6 @@
 		while($row = $result->fetch_assoc()) {
 			echo "<div class=\"recipe\">";
 				echo"<h3>".$row['recipe_name']."</h3>";
-				echo "".$row['meal_image']."";
 				echo"<img class=\"recipeImage\" src=/".$row['meal_image']." alt=\"Image of the recipe\">";
 				echo "<div>";
 					echo "<p>".$row['description']."</p>";
