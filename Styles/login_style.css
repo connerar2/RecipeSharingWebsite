@@ -18,13 +18,13 @@ body{
 }
 
 #login_form {
-	left: 30%;
-	top: 40%;
+	left: 32%;
+	top: 35%;
 	position: absolute;
-	background-color: white;
+	background-color: oldlace;
 	margin: 15px;
 	padding: 10px;
-	width: 40%;
+	width: 35%;
 	text-align: center;
 	border-width: 2px;
 	border-style: solid;
