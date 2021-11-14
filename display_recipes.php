@@ -65,6 +65,7 @@
 		
 		echo "<div class=\"prev_and_next\">";
 			echo "<a href=\"display_recipes.php?pn=".++$pn."\">Next</a>";
+			echo "<a href=\"display_recipes.php?pn=".--$pn."\">Previous</a>";
 		echo "</div>";
 
 
