@@ -22,29 +22,13 @@
 			die();
 		}
 		
-		$results_per_page = 10;
-		
 		$stmt = $cxn->prepare("SELECT * FROM Recipe");
 		$stmt-> execute();
+		$rows= $stmt->get_result();
 		
-		$result = $stmt->get_result();
+		$results_per_page = 10;
 		
-		while($row = $result->fetch_assoc()) {
-			echo "<div class=\"recipe\">";
-			echo "<h3><a href=\"Recipes/".$row['recipe_name'].".html\">".$row['recipe_name']."</a></h3>";
-				//echo"<h3>".$row['recipe_name']."</h3>";
-				echo"<img class=\"recipeImage\" src=/".$row['meal_image']." alt=\"Image of the recipe\">";
-				echo "<div>";
-					echo "<p>".$row['description']."</p>";
-				echo "</div>";
-			echo "</div>";
-		}
-		echo "</div>";
-		
-		/*
-		$recipe = $result->fetch_assoc();
-		
-		$possible_pages = ceil(result->nums_rows/$results_per_page);
+		$possible_pages = ceil(rows->nums_rows/$results_per_page);
 		
 		if(!isset($_GET['pn'])) {
 			$pn = 1;
@@ -53,16 +37,23 @@
 			$pn = $_GET['pn']
 		}
 		
+		$page = ($pn - 1) * $results_per_page;
 		
-		echo "There are ".$possible_pages." possible pages<br>";
+		$stmt = $cxn->prepare("SELECT * FROM Recipe LIMIT".$page.",".$results_per_page);
+		$stmt-> execute();
 		
-		if ($result->num_rows > 0) {
-			echo "You have ".$result->num_rows." recipes <br>";
+		$result = $stmt->get_result();
+		
+		while($row = $result->fetch_assoc()) {
+			echo "<div class=\"recipe\">";
+			echo "<h3><a href=\"Recipes/".$row['recipe_name'].".html\">".$row['recipe_name']."</a></h3>";
+				echo"<img class=\"recipeImage\" src=/".$row['meal_image']." alt=\"Image of the recipe\">";
+				echo "<div>";
+					echo "<p>".$row['description']."</p>";
+				echo "</div>";
+			echo "</div>";
 		}
-		else {
-			echo "Fetch Failed<br>";
-		}
-		*/
+		echo "</div>";
 
 ?>
 
