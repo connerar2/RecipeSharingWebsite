@@ -67,6 +67,7 @@
 			echo "</div>";
 			
 			echo "<div id=\"nxt\">";
+				echo $possible_pages;
 				if ($pn == $possible_pages) {
 					//No Next Button
 				}
