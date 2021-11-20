@@ -40,8 +40,8 @@
 			$pn = $_GET['pn'];
 		}
 		
-		//if ($pn > ceil($rows->nums_rows / $results_per_page)) {
-			
+		if ($pn > ceil($rows->nums_rows / $results_per_page)) {
+			echo "Num rows: ".$rows->num_rows."<br>";
 			//echo ceil($rows->nums_rows / $results_per_page);
 			//echo "<br>";
 			
@@ -49,8 +49,8 @@
 			//echo "<br>";
 			//echo ceil($rows->nums_rows/$results_per_page);
 			//echo "<h1>This page cannot be found<h1>";
-		//}
-//else {
+		}
+else {
 		
 			$page = ($pn - 1) * $results_per_page;
 			
@@ -89,7 +89,7 @@
 					}
 				echo "</div>";
 			echo "</div>";
-		//}
+		}
 
 
 ?>
