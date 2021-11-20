@@ -37,7 +37,7 @@
 			$pn = $_GET['pn'];
 		}
 		
-		if (pn > ceil($rows->nums_rows/$results_per_page)) {
+		if ($pn > ceil($rows->nums_rows/$results_per_page)) {
 			echo "<h1>This page cannot be found<h1>";
 		}
 		else {
