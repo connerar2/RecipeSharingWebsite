@@ -38,6 +38,9 @@
 		}
 		
 		if ($pn > ceil($rows->nums_rows/$results_per_page)) {
+			echo $pn;
+			echo "<br>";
+			echo ceil($rows->nums_rows/$results_per_page);
 			echo "<h1>This page cannot be found<h1>";
 		}
 		else {
