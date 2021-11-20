@@ -29,6 +29,7 @@
 		$results_per_page = 10;
 		
 		$possible_pages = ceil($rows->nums_rows/$results_per_page);
+		echo $rows->num_rows;
 		echo $possible_pages;
 		
 	
