@@ -45,13 +45,6 @@
 		$stmt-> execute();
 		$result = $stmt->get_result();
 		
-		if ($result->num_rows > 0) {
-			//echo "Found ".$result->num_rows." rows";
-		}
-		else {
-			//echo "No rows found";
-		}
-		
 		while($row = $result->fetch_assoc()) {
 			echo "<div class=\"recipe\">";
 			echo "<h3><a href=\"Recipes/".$row['recipe_name'].".html\">".$row['recipe_name']."</a></h3>";
@@ -65,11 +58,21 @@
 		
 		echo "<div class=\"prev_and_next\">";
 			echo "<div id=\"prev\">";
-				echo "<a id=\"previous\" href=\"display_recipes.php?pn=".($pn - 1)."\">Previous</a>";
+				if ($pn == 1) {
+					//No previous page button
+				}
+				else {
+					echo "<a id=\"previous\" href=\"display_recipes.php?pn=".($pn - 1)."\">Previous</a>";
+				}
 			echo "</div>";
 			
 			echo "<div id=\"nxt\">";
-				echo "<a id=\"next\" href=\"display_recipes.php?pn=".($pn + 1)."\">Next</a> ";
+				if ($pn == $possible_pages) {
+					//No Next Button
+				}
+				else {
+					echo "<a id=\"next\" href=\"display_recipes.php?pn=".($pn + 1)."\">Next</a> ";
+				}
 			echo "</div>";
 		echo "</div>";
 
