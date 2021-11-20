@@ -28,10 +28,11 @@
 		
 		$results_per_page = 10;
 		
+		echo ceil($rows->nums_rows/$results_per_page);
+		
 		$possible_pages = ceil($rows->nums_rows/$results_per_page);
 		
 		echo $possible_pages;
-		echo ceil($rows->nums_rows/$results_per_page);
 		echo "<br>";
 		
 		
