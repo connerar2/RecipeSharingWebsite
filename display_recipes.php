@@ -28,9 +28,10 @@
 		
 		$results_per_page = 10;
 		
-		$possible_pages = ceil($rows->nums_rows/$results_per_page);
-		
 		$num_rows = mysqli_num_rows($rows);
+		
+		$possible_pages = ceil($num_rows / $results_per_page);
+		
 		
 		
 		echo "Num rows: ".$num_rows."<br>";
