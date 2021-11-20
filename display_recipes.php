@@ -33,16 +33,6 @@
 		$possible_pages = ceil($num_rows / $results_per_page);
 		
 		
-		
-		echo "Num rows: ".$num_rows."<br>";
-		echo "Results Per Page: ".$results_per_page."<br>";
-		$num_page = $num_rows / $results_per_page;
-		echo "Num Page: ".$num_page." 11/10 = ";
-		echo 11/10;
-		echo "<br>Ceil Result: ".ceil($rows->nums_rows/$results_per_page)."<br>";
-		echo "Possiable Pages: ".$possible_pages."<br>";
-		
-		
 		$num_rows = 5;
 		echo "Num rows: ".$num_rows."<br>";
 		
@@ -53,7 +43,7 @@
 			$pn = $_GET['pn'];
 		}
 		
-		if ($pn > ceil($rows->nums_rows / $results_per_page)) {
+		if ($pn > $possible_pages) {
 			
 		//	echo "Num rows: ".$rows->num_rows."<br>";
 		//	echo "Should be 10: ".$results_per_page;
@@ -64,7 +54,7 @@
 			//echo $pn;
 			//echo "<br>";
 			//echo ceil($rows->nums_rows/$results_per_page);
-			//echo "<h1>This page cannot be found<h1>";
+			echo "<h1>This page cannot be found<h1>";
 		}
 else {
 		
