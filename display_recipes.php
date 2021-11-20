@@ -32,6 +32,7 @@
 		
 		$num_rows = $rows->nums_rows;
 		
+		
 		echo "Num rows: ".$num_rows."<br>";
 		echo "Results Per Page: ".$results_per_page."<br>";
 		$num_page = $num_rows / $results_per_page;
@@ -39,6 +40,10 @@
 		echo 11/10;
 		echo "<br>Ceil Result: ".ceil($rows->nums_rows/$results_per_page)."<br>";
 		echo "Possiable Pages: ".$possible_pages."<br>";
+		
+		
+		$num_rows = 5;
+		echo "Num rows: ".$num_rows."<br>";
 		
 		if(!isset($_GET['pn'])) {
 			$pn = 1;
