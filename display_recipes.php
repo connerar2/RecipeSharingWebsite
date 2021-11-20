@@ -29,7 +29,8 @@
 		$results_per_page = 10;
 		
 		$possible_pages = ceil($rows->nums_rows/$results_per_page);
-	
+		
+		echo $possible_pages;
 		if(!isset($_GET['pn'])) {
 			$pn = 1;
 		}
@@ -37,7 +38,7 @@
 			$pn = $_GET['pn'];
 		}
 		
-		if ($pn > ceil($rows->nums_rows/$results_per_page)) {
+		if ($pn > ceil($rows->nums_rows / $results_per_page)) {
 			echo $pn;
 			echo "<br>";
 			echo ceil($rows->nums_rows/$results_per_page);
