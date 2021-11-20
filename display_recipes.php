@@ -28,8 +28,8 @@
 		
 		$results_per_page = 10;
 		
-		echo "Num rows: ";
-		echo $rows->nums_rows;
+		echo "Num rows: ".$rows->num_rows."<br>";
+		echo "Should be 10: ".$results_per_page;
 		
 		$possible_pages = ceil($rows->nums_rows/$results_per_page);
 		
