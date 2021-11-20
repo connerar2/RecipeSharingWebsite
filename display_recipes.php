@@ -30,10 +30,9 @@
 		
 		$possible_pages = ceil($rows->nums_rows/$results_per_page);
 		
-		$num_page = $rows->nums_rows / $results_per_page;
-		
 		echo "Num rows: ".$rows->num_rows."<br>";
-		echo "Should be 10: ".$results_per_page."<br>";
+		echo "Results Per Page: ".$results_per_page."<br>";
+		$num_page = $rows->nums_rows / $results_per_page;
 		echo "Num Page: ".$num_page." 11/10 = ";
 		echo 11/10;
 		echo "<br>Ceil Result: ".ceil($rows->nums_rows/$results_per_page)."<br>";
