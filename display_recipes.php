@@ -24,11 +24,13 @@
 		
 		$stmt = $cxn->prepare("SELECT * FROM Recipe");
 		$stmt-> execute();
-		$rows= $stmt->get_result();
+		$rows = $stmt->get_result();
 		
 		$results_per_page = 10;
 		
+		echo "Num rows: ";
 		echo $rows->nums_rows;
+		
 		echo "<br>";
 		echo ceil($rows->nums_rows/$results_per_page);
 		
@@ -45,7 +47,7 @@
 			$pn = $_GET['pn'];
 		}
 		
-		if ($pn > ceil($rows->nums_rows / $results_per_page)) {
+		//if ($pn > ceil($rows->nums_rows / $results_per_page)) {
 			
 			//echo ceil($rows->nums_rows / $results_per_page);
 			//echo "<br>";
@@ -53,9 +55,9 @@
 			//echo $pn;
 			//echo "<br>";
 			//echo ceil($rows->nums_rows/$results_per_page);
-			echo "<h1>This page cannot be found<h1>";
-		}
-else {
+			//echo "<h1>This page cannot be found<h1>";
+		//}
+//else {
 		
 			$page = ($pn - 1) * $results_per_page;
 			
@@ -94,7 +96,7 @@ else {
 					}
 				echo "</div>";
 			echo "</div>";
-		}
+		//}
 
 
 ?>
