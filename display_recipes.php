@@ -53,9 +53,9 @@
 			//echo $pn;
 			//echo "<br>";
 			//echo ceil($rows->nums_rows/$results_per_page);
-			//echo "<h1>This page cannot be found<h1>";
+			echo "<h1>This page cannot be found<h1>";
 		}
-		else {
+else {
 		
 			$page = ($pn - 1) * $results_per_page;
 			
