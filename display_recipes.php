@@ -29,9 +29,6 @@
 		$results_per_page = 10;
 		
 		$possible_pages = ceil($rows->nums_rows/$results_per_page);
-		echo ceil ($rows->num_rows / $results_per_page);
-		echo $possible_pages;
-		
 	
 		if(!isset($_GET['pn'])) {
 			$pn = 1;
@@ -69,7 +66,7 @@
 			echo "</div>";
 			
 			echo "<div id=\"nxt\">";
-				if ($pn == $possible_pages) {
+				if ($pn == $rows->num_rows / $results_per_page) {
 					//No Next Button
 				}
 				else {
