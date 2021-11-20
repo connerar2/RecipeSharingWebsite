@@ -39,7 +39,7 @@
 			$pn = $_GET['pn'];
 		}
 		
-		if ($pn > $possible_pages) {
+		if ($pn > $possible_pages || $pn < 1) {
 			
 			echo "<h1>This page cannot be found<h1>";
 		}
