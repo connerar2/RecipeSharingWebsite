@@ -32,10 +32,6 @@
 		
 		$possible_pages = ceil($num_rows / $results_per_page);
 		
-		
-		$num_rows = 5;
-		echo "Num rows: ".$num_rows."<br>";
-		
 		if(!isset($_GET['pn'])) {
 			$pn = 1;
 		}
@@ -45,15 +41,6 @@
 		
 		if ($pn > $possible_pages) {
 			
-		//	echo "Num rows: ".$rows->num_rows."<br>";
-		//	echo "Should be 10: ".$results_per_page;
-			
-			//echo ceil($rows->nums_rows / $results_per_page);
-			//echo "<br>";
-			
-			//echo $pn;
-			//echo "<br>";
-			//echo ceil($rows->nums_rows/$results_per_page);
 			echo "<h1>This page cannot be found<h1>";
 		}
 else {
