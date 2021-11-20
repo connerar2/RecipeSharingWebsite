@@ -33,6 +33,9 @@
 		
 		$possible_pages = ceil($rows->nums_rows/$results_per_page);
 		
+		$num_page = $rows->nums_rows / $results_per_page;
+		
+		echo "Num Page: ".$num_page."<br>";
 		echo "Ceil Result: ".ceil($rows->nums_rows/$results_per_page)."<br>";
 		echo "Possiable Pages: ".$possible_pages."<br>";
 		
