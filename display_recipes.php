@@ -37,43 +37,49 @@
 			$pn = $_GET['pn'];
 		}
 		
-		$page = ($pn - 1) * $results_per_page;
+		if (pn > ceil($rows->nums_rows/$results_per_page)) {
+			echo "<h1>This page cannot be found<h1>";
+		}
+		else {
 		
-		
-		$stmt = $cxn->prepare("SELECT * FROM Recipe LIMIT ".$page.",".$results_per_page."");
-		$stmt-> execute();
-		$result = $stmt->get_result();
-		
-		while($row = $result->fetch_assoc()) {
-			echo "<div class=\"recipe\">";
-			echo "<h3><a href=\"Recipes/".$row['recipe_name'].".html\">".$row['recipe_name']."</a></h3>";
-				echo"<img class=\"recipeImage\" src=/".$row['meal_image']." alt=\"Image of the recipe\">";
-				echo "<div>";
-					echo "<p>".$row['description']."</p>";
+			$page = ($pn - 1) * $results_per_page;
+			
+			
+			$stmt = $cxn->prepare("SELECT * FROM Recipe LIMIT ".$page.",".$results_per_page."");
+			$stmt-> execute();
+			$result = $stmt->get_result();
+			
+			while($row = $result->fetch_assoc()) {
+				echo "<div class=\"recipe\">";
+				echo "<h3><a href=\"Recipes/".$row['recipe_name'].".html\">".$row['recipe_name']."</a></h3>";
+					echo"<img class=\"recipeImage\" src=/".$row['meal_image']." alt=\"Image of the recipe\">";
+					echo "<div>";
+						echo "<p>".$row['description']."</p>";
+					echo "</div>";
 				echo "</div>";
-			echo "</div>";
-		}	
-		echo "</div>";
-		
-		echo "<div class=\"prev_and_next\">";
-			echo "<div id=\"prev\">";
-				if ($pn == 1) {
-					//No previous page button
-				}
-				else {
-					echo "<a id=\"previous\" href=\"display_recipes.php?pn=".($pn - 1)."\">Previous</a>";
-				}
+			}	
 			echo "</div>";
 			
-			echo "<div id=\"nxt\">";
-				if ($pn == ceil($rows->num_rows / $results_per_page)) {
-					//No Next Button
-				}
-				else {
-					echo "<a id=\"next\" href=\"display_recipes.php?pn=".($pn + 1)."\">Next</a> ";
-				}
+			echo "<div class=\"prev_and_next\">";
+				echo "<div id=\"prev\">";
+					if ($pn == 1) {
+						//No previous page button
+					}
+					else {
+						echo "<a id=\"previous\" href=\"display_recipes.php?pn=".($pn - 1)."\">Previous</a>";
+					}
+				echo "</div>";
+				
+				echo "<div id=\"nxt\">";
+					if ($pn == ceil($rows->num_rows / $results_per_page)) {
+						//No Next Button
+					}
+					else {
+						echo "<a id=\"next\" href=\"display_recipes.php?pn=".($pn + 1)."\">Next</a> ";
+					}
+				echo "</div>";
 			echo "</div>";
-		echo "</div>";
+		}
 
 
 ?>
