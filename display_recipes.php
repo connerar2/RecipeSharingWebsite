@@ -31,14 +31,7 @@
 		echo "Num rows: ";
 		echo $rows->nums_rows;
 		
-		echo "<br>";
-		echo ceil($rows->nums_rows/$results_per_page);
-		
 		$possible_pages = ceil($rows->nums_rows/$results_per_page);
-		
-		echo $possible_pages;
-		echo "<br>";
-		
 		
 		if(!isset($_GET['pn'])) {
 			$pn = 1;
