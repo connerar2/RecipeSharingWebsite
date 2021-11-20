@@ -33,6 +33,7 @@
 		
 		$possible_pages = ceil($rows->nums_rows/$results_per_page);
 		
+		echo "Ceil Result: ".ceil($rows->nums_rows/$results_per_page)."<br>";
 		echo "Possiable Pages: ".$possible_pages."<br>";
 		
 		if(!isset($_GET['pn'])) {
