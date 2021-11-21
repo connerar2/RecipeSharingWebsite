@@ -69,7 +69,9 @@
 function showPage($pn, $results_per_page, $query) {
 			$page = ($pn - 1) * $results_per_page;
 			
-			$stmt = $cxn->prepare($query." LIMIT ".$page.",".$results_per_page."");
+			$query .= " LIMIT ".$page.",".$results_per_page."";
+			echo $query."<br>";
+			$stmt = $cxn->prepare($query);
 			$stmt-> execute();
 			$result = $stmt->get_result();
 			
