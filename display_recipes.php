@@ -1,3 +1,6 @@
+<?php
+	
+?>
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
@@ -6,7 +9,7 @@
 <link rel="stylesheet" href="Styles/display_recipe.css">
 
 	<head>
-		<form id="filter" method="post" action="display_recipes.php">
+		<form id="filter" method="get" action="display_recipes.php">
 			<input type="text" name="creator">
 			<input type="submit" name="creator_search" value="Search">
 		</form>
@@ -56,7 +59,7 @@ else {
 		
 			$page = ($pn - 1) * $results_per_page;
 			
-			if (isset($_POST['creator'])) {
+			if (isset($_GET['creator'])) {
 				$query .= " WHERE owner = '".$_POST['creator']."'";
 			}
 			
