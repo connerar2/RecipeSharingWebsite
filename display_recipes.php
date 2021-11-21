@@ -91,13 +91,18 @@
 
 function showPage($pn, $results_per_page, $query) {
 			
-			//echo "Here<br>";
-			
+			echo "Start<br>";
+		
 			$page = ($pn - 1) * $results_per_page;
 			
 			$query .= " LIMIT ".$page.",".$results_per_page."";
-			echo $query."<br>";
+			
+			echo "My query: ".$query."<br>";
+			
 			$stmt = $cxn->prepare($query);
+			
+			echo "Query Prepared<br>";
+			
 			$stmt-> execute();
 			echo "Stmt Executed<br>";
 			$result = $stmt->get_result();
