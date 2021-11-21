@@ -61,6 +61,7 @@ else {
 			
 			if (isset($_GET['creator'])) {
 				$query .= " WHERE owner = '".$_POST['creator']."'";
+				echo $query."<br>";
 			}
 			
 			$stmt = $cxn->prepare($query." LIMIT ".$page.",".$results_per_page."");
