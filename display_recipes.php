@@ -100,6 +100,7 @@ function showPage($pn, $results_per_page, $query, $cxn) {
 			$stmt-> execute();
 			$result = $stmt->get_result();
 			
+			echo "Rows: ".mysqli_num_rows($result)."<br>";
 			
 			while($row = $result->fetch_assoc()) {
 				echo "<div class=\"recipe\">";
