@@ -91,7 +91,7 @@
 
 function showPage($pn, $results_per_page, $query) {
 			
-			echo "Here<br>";
+			//echo "Here<br>";
 			
 			$page = ($pn - 1) * $results_per_page;
 			
@@ -99,6 +99,7 @@ function showPage($pn, $results_per_page, $query) {
 			echo $query."<br>";
 			$stmt = $cxn->prepare($query);
 			$stmt-> execute();
+			echo "Stmt Executed<br>";
 			$result = $stmt->get_result();
 			
 			
