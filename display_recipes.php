@@ -55,7 +55,7 @@
 		}
 		
 		//maximum results on a page
-		$results_per_page = 10;
+		$results_per_page = 3;
 		
 		//query
 		$stmt = $cxn->prepare($query);
