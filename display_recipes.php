@@ -90,6 +90,9 @@
 		
 
 function showPage($pn, $results_per_page, $query) {
+			
+			echo "Here<br>";
+			
 			$page = ($pn - 1) * $results_per_page;
 			
 			$query .= " LIMIT ".$page.",".$results_per_page."";
@@ -98,7 +101,6 @@ function showPage($pn, $results_per_page, $query) {
 			$stmt-> execute();
 			$result = $stmt->get_result();
 			
-			echo "Here<br>";
 			
 			while($row = $result->fetch_assoc()) {
 				echo "<div class=\"recipe\">";
