@@ -57,6 +57,7 @@
 		}
 		else {
 			if (isset($_GET['creator'])) {
+				echo "Here<br>";
 				$query .= " WHERE owner = '".$_GET['creator']."'";
 				echo $query."<br>";
 				showPage($pn, $results_per_page, $query);
