@@ -94,8 +94,9 @@
 			
 			echo "<div class=\"prev_and_next\">";
 				echo "<div id=\"prev\">";
-				echo "echoing previous and next buttons here";
+				echo "echoing previous and next buttons here<br>";
 					if ($pn == 1) {
+						"echo no previous button pn = ".$pn."<br>";
 						//No previous page button
 					}
 					else {
