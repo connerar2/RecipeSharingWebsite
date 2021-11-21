@@ -63,7 +63,7 @@
 				showPage($pn, $results_per_page, $query);
 			}
 			else {
-				echo "No filter";
+				//echo "No filter";
 				showPage($pn, $results_per_page, $query);
 			}
 			
@@ -97,6 +97,8 @@ function showPage($pn, $results_per_page, $query) {
 			$stmt = $cxn->prepare($query);
 			$stmt-> execute();
 			$result = $stmt->get_result();
+			
+			echo "Here<br>";
 			
 			while($row = $result->fetch_assoc()) {
 				echo "<div class=\"recipe\">";
