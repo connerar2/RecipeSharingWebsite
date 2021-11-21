@@ -60,7 +60,7 @@ else {
 			$page = ($pn - 1) * $results_per_page;
 			
 			if (isset($_GET['creator'])) {
-				$query .= " WHERE owner = '".$_POST['creator']."'";
+				$query .= " WHERE owner = '".$_GET['creator']."'";
 				echo $query."<br>";
 			}
 			
