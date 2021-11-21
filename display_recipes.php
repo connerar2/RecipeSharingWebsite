@@ -1,5 +1,5 @@
 <?php
-	
+	session_start
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="Styles/display_recipe.css">
 
 	<head>
-		<form id="filter" method="get" action="display_recipes.php">
+		<form id="filter" method="get" action="">
 			<input type="text" name="creator">
 			<input type="submit" name="creator_search" value="Search">
 		</form>
