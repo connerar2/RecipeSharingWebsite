@@ -64,27 +64,6 @@
 			else {
 				showPage($pn, $results_per_page, $query);
 			}
-		}
-
-function showPage($pn, $results_per_page, $query) {
-			$page = ($pn - 1) * $results_per_page;
-			
-			$query .= " LIMIT ".$page.",".$results_per_page."";
-			echo $query."<br>";
-			$stmt = $cxn->prepare($query);
-			$stmt-> execute();
-			$result = $stmt->get_result();
-			
-			while($row = $result->fetch_assoc()) {
-				echo "<div class=\"recipe\">";
-				echo "<h3><a href=\"Recipes/".$row['recipe_name'].".html\">".$row['recipe_name']."</a></h3>";
-					echo"<img class=\"recipeImage\" src=/".$row['meal_image']." alt=\"Image of the recipe\">";
-					echo "<div>";
-						echo "<p>".$row['description']."</p>";
-					echo "</div>";
-				echo "</div>";
-			}	
-			echo "</div>";
 			
 			echo "<div class=\"prev_and_next\">";
 				echo "<div id=\"prev\">";
@@ -104,6 +83,28 @@ function showPage($pn, $results_per_page, $query) {
 						echo "<a id=\"next\" href=\"display_recipes.php?pn=".($pn + 1)."\">Next</a> ";
 					}
 				echo "</div>";
+			echo "</div>";
+		}
+		
+
+function showPage($pn, $results_per_page, $query) {
+			$page = ($pn - 1) * $results_per_page;
+			
+			$query .= " LIMIT ".$page.",".$results_per_page."";
+			echo $query."<br>";
+			$stmt = $cxn->prepare($query);
+			$stmt-> execute();
+			$result = $stmt->get_result();
+			
+			while($row = $result->fetch_assoc()) {
+				echo "<div class=\"recipe\">";
+				echo "<h3><a href=\"Recipes/".$row['recipe_name'].".html\">".$row['recipe_name']."</a></h3>";
+					echo"<img class=\"recipeImage\" src=/".$row['meal_image']." alt=\"Image of the recipe\">";
+					echo "<div>";
+						echo "<p>".$row['description']."</p>";
+					echo "</div>";
+				echo "</div>";
+			}	
 			echo "</div>";
 		}
 
