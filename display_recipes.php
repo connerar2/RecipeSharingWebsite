@@ -5,8 +5,15 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="Styles/display_recipe.css">
 
-
+	<head>
+		<form id="filter" method="post" action="">
+			<input type="text" name="creator">
+			<input type="submit" name="creator_search" value="Search">
+		</form>
+	</head>
+	
 	<body>
+		
 		<div class="topRecipes">
 
 <?php		
@@ -22,7 +29,13 @@
 			die();
 		}
 		
-		$stmt = $cxn->prepare("SELECT * FROM Recipe");
+		$query = "SELECT * FROM Recipe";
+		
+		if (isset($_POST['creator'])) {
+			$query =+ " WHERE owner = '".$_POST['creator']."'";
+		}
+		
+		$stmt = $cxn->prepare($query);
 		$stmt-> execute();
 		$rows = $stmt->get_result();
 		
@@ -86,6 +99,8 @@ else {
 
 
 ?>
+
+
 
 </body>
 </html>
