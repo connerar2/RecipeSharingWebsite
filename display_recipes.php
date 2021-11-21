@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="Styles/display_recipe.css">
 
 	<head>
-		<form id="filter" method="post" action="">
+		<form id="filter" method="post" action="display_recipe.php">
 			<input type="text" name="creator">
 			<input type="submit" name="creator_search" value="Search">
 		</form>
