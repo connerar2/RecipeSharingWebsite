@@ -60,11 +60,11 @@
 				echo "Here<br>";
 				$query .= " WHERE owner = '".$_GET['creator']."'";
 				echo $query."<br>";
-				showPage($pn, $results_per_page, $query);
+				showPage($pn, $results_per_page, $query, $cxn);
 			}
 			else {
 				//echo "No filter";
-				showPage($pn, $results_per_page, $query);
+				showPage($pn, $results_per_page, $query, $cxn);
 			}
 			
 			echo "<div class=\"prev_and_next\">";
@@ -89,7 +89,7 @@
 		}
 		
 
-function showPage($pn, $results_per_page, $query) {
+function showPage($pn, $results_per_page, $query, $cxn) {
 			
 			echo "Start<br>";
 		
