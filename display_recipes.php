@@ -59,8 +59,6 @@
 		
 		$page = ($pn - 1) * $results_per_page;
 		
-		$query .= " LIMIT ".$page.",".$results_per_page."";
-		
 		//query
 		$stmt = $cxn->prepare($query);
 		$stmt-> execute();
@@ -69,7 +67,7 @@
 		//number of rows found
 		$num_rows = mysqli_num_rows($rows);
 		
-		echo $query;
+		//$query .= " LIMIT ".$page.",".$results_per_page."";
 		
 		//number of pages possible
 		$possible_pages = ceil($num_rows / $results_per_page);
