@@ -105,6 +105,7 @@
 				echo "</div>";
 				
 				echo "<div id=\"nxt\">";
+				echo ceil($rows->num_rows / $results_per_page);
 					if ($pn == ceil($rows->num_rows / $results_per_page)) {
 						//No Next Button
 					}
