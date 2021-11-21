@@ -1,5 +1,5 @@
 <?php
-	session_start
+	session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,8 +56,10 @@
 			echo "<h1>This page cannot be found<h1>";
 		}
 		else {
-			if (isset($_GET['creator'])) {
-				$query .= " WHERE owner = '".$_GET['creator']."'";
+			if (isset($_GET['creator']) || isset($_SESSION["creator"])) {
+				$SESSION["creator"] = $_SESSION["creator"];
+				
+				$query .= " WHERE owner = '".$_SESSION['creator']."'";
 				showPage($pn, $results_per_page, $query, $cxn);
 			}
 			else {
