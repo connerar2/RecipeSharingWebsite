@@ -62,6 +62,7 @@
 				showPage($pn, $results_per_page, $query);
 			}
 			else {
+				echo "No filter";
 				showPage($pn, $results_per_page, $query);
 			}
 			
