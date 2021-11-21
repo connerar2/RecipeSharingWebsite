@@ -31,11 +31,6 @@
 		
 		$query = "SELECT * FROM Recipe";
 		
-		if (isset($_POST['creator'])) {
-			$query .= " WHERE owner = '".$_POST['creator']."'";
-			echo $query."<br>";
-		}
-		
 		$stmt = $cxn->prepare($query);
 		$stmt-> execute();
 		$rows = $stmt->get_result();
@@ -61,8 +56,12 @@ else {
 		
 			$page = ($pn - 1) * $results_per_page;
 			
+			if (isset($_POST['creator'])) {
+				$query .= " WHERE owner = '".$_POST['creator']."'";
+				echo $query."<br>";
+			}
 			
-			$stmt = $cxn->prepare("SELECT * FROM Recipe LIMIT ".$page.",".$results_per_page."");
+			$stmt = $cxn->prepare($query." LIMIT ".$page.",".$results_per_page."");
 			$stmt-> execute();
 			$result = $stmt->get_result();
 			
