@@ -55,14 +55,19 @@
 			
 			echo "<h1>This page cannot be found<h1>";
 		}
-else {
-		
-			$page = ($pn - 1) * $results_per_page;
-			
+		else {
 			if (isset($_GET['creator'])) {
 				$query .= " WHERE owner = '".$_GET['creator']."'";
 				echo $query."<br>";
+				showPage($pn, $results_per_page, $query);
 			}
+			else {
+				showPage($pn, $results_per_page, $query);
+			}
+		}
+
+function showPage($pn, $results_per_page, $query) {
+			$page = ($pn - 1) * $results_per_page;
 			
 			$stmt = $cxn->prepare($query." LIMIT ".$page.",".$results_per_page."");
 			$stmt-> execute();
@@ -99,7 +104,6 @@ else {
 				echo "</div>";
 			echo "</div>";
 		}
-
 
 ?>
 
