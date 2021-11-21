@@ -69,6 +69,8 @@
 		
 		$query .= " LIMIT ".$page.",".$results_per_page."";
 		
+		echo $query;
+		
 		//number of pages possible
 		$possible_pages = ceil($num_rows / $results_per_page);
 		
