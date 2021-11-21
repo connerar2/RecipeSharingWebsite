@@ -57,6 +57,10 @@
 		//maximum results on a page
 		$results_per_page = 3;
 		
+		$page = ($pn - 1) * $results_per_page;
+		
+		$query .= " LIMIT ".$page.",".$results_per_page."";
+		
 		//query
 		$stmt = $cxn->prepare($query);
 		$stmt-> execute();
@@ -64,10 +68,6 @@
 		
 		//number of rows found
 		$num_rows = mysqli_num_rows($rows);
-		
-		$page = ($pn - 1) * $results_per_page;
-		
-		$query .= " LIMIT ".$page.",".$results_per_page."";
 		
 		echo $query;
 		
