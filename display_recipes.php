@@ -1,6 +1,4 @@
-<?php
-	session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
@@ -20,6 +18,8 @@
 		<div class="topRecipes">
 
 <?php		
+		
+		//access database
 		$host = "localhost";
 		$user = "root";
 		$db_password = "Happy124face1!";
@@ -27,23 +27,13 @@
 		
 		$cxn = mysqli_connect($host, $user, $db_password, $database);
 		
+		//check if connected
 		if (mysqli_connect_errno()) {
 			echo "Failed to connect to database: ".mysqli_connect_errno();
 			die();
 		}
 		
-		$query = "SELECT * FROM Recipe";
-		
-		$stmt = $cxn->prepare($query);
-		$stmt-> execute();
-		$rows = $stmt->get_result();
-		
-		$results_per_page = 10;
-		
-		$num_rows = mysqli_num_rows($rows);
-		
-		$possible_pages = ceil($num_rows / $results_per_page);
-		
+		//check page
 		if(!isset($_GET['pn'])) {
 			$pn = 1;
 		}
@@ -51,21 +41,54 @@
 			$pn = $_GET['pn'];
 		}
 		
+		//basic query
+		$query = "SELECT * FROM Recipe";
+		
+		//edit query by filters
+		if (isset($_GET['creator'])) {
+			$query .= " WHERE owner = '".$_GET['creator']."'";
+			//showPage($pn, $results_per_page, $query, $cxn);
+		}
+		else {
+			//echo "No filter";
+			//showPage($pn, $results_per_page, $query, $cxn);
+		}
+		
+		//maximum results on a page
+		$results_per_page = 10;
+		
+		//query
+		$stmt = $cxn->prepare($query);
+		$stmt-> execute();
+		$rows = $stmt->get_result();
+		
+		//number of rows found
+		$num_rows = mysqli_num_rows($rows);
+		
+		$page = ($pn - 1) * $results_per_page;
+		
+		$query .= " LIMIT ".$page.",".$results_per_page."";
+		
+		//number of pages possible
+		$possible_pages = ceil($num_rows / $results_per_page);
+		
 		if ($pn > $possible_pages || $pn < 1) {
 			
 			echo "<h1>This page cannot be found<h1>";
 		}
 		else {
-			if (isset($_GET['creator']) || isset($_SESSION["creator"])) {
-				$SESSION["creator"] = $_SESSION["creator"];
-				
-				$query .= " WHERE owner = '".$_SESSION['creator']."'";
-				showPage($pn, $results_per_page, $query, $cxn);
-			}
-			else {
-				//echo "No filter";
-				showPage($pn, $results_per_page, $query, $cxn);
-			}
+			
+			while($row = $rows->fetch_assoc()) {
+				echo "<div class=\"recipe\">";
+				echo "<h3><a href=\"Recipes/".$row['recipe_name'].".html\">".$row['recipe_name']."</a></h3>";
+					echo"<img class=\"recipeImage\" src=/".$row['meal_image']." alt=\"Image of the recipe\">";
+					echo "<div>";
+						echo "<p>".$row['description']."</p>";
+					echo "</div>";
+				echo "</div>";
+			}	
+			echo "</div>";
+			
 			
 			echo "<div class=\"prev_and_next\">";
 				echo "<div id=\"prev\">";
@@ -88,21 +111,13 @@
 			echo "</div>";
 		}
 		
-
+/*
 function showPage($pn, $results_per_page, $query, $cxn) {
 		
-			$page = ($pn - 1) * $results_per_page;
 			
-			$query .= " LIMIT ".$page.",".$results_per_page."";
-			
-			
-			$stmt = $cxn->prepare($query);
-			
-			
-			$stmt-> execute();
-			$result = $stmt->get_result();
-			
-			echo "Rows: ".mysqli_num_rows($result)."<br>";
+			//$stmt = $cxn->prepare($query);
+			//$stmt-> execute();
+			//$result = $stmt->get_result();
 			
 			while($row = $result->fetch_assoc()) {
 				echo "<div class=\"recipe\">";
@@ -115,7 +130,7 @@ function showPage($pn, $results_per_page, $query, $cxn) {
 			}	
 			echo "</div>";
 		}
-
+*/
 ?>
 
 
