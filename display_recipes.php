@@ -33,6 +33,7 @@
 		
 		if (isset($_POST['creator'])) {
 			$query =+ " WHERE owner = '".$_POST['creator']."'";
+			echo $query."<br>";
 		}
 		
 		$stmt = $cxn->prepare($query);
