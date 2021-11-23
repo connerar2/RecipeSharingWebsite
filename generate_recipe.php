@@ -130,7 +130,7 @@
 		
 		
 		while ($row = $result->fetch_assoc()) {
-			echo $row['id']."<br>";
+			echo "ID: ".$row['id']."<br>";
 		}
 		
 		foreach ($ingredient_list as $ingredient) {
