@@ -124,12 +124,6 @@
 		$stmt->execute();
 		$result = $stmt->get_result();
 		
-		echo "Rows: ".mysqli_num_rows($result)."<br>";
-		$n_query = "select id from Recipe where owner='".$_SESSION['username']."' and recipe_name='".$recipe_name."'<br>";
-		echo $n_query;
-		
-		
-		
 		while ($row = $result->fetch_assoc()) {
 			$id = $row['id'];
 		}
@@ -142,9 +136,8 @@
 			$stmt = $cxn->prepare("Insert INTO Ingredients (ingredient) value (?)");
 			$stmt-> bind_param("s", strtolower($ingre[1]));
 			$stmt->execute();
-				
-			echo strtolower($ingre[1])."<br>";
 			
+			//Add ingredient recipe id to junction table
 			$stmt = $cxn->prepare("insert into recipe_ingredient (recipe_id, ingredient) values (?, ?)");
 			$stmt->bind_param("is", $id, strtolower($ingre[1]));
 			$stmt->execute();
@@ -163,8 +156,8 @@
 		
 		fclose($recipefile);
 		
-		//header("Location: Recipes/".$recipe_name.".html");
-		//exit();
+		header("Location: Recipes/".$recipe_name.".html");
+		exit();
 	}
 
 ?>
