@@ -124,18 +124,20 @@
 		$stmt-> bind_param("ss", $_SESSION['username'], $recipe_name);
 		$stmt->execute();
 		$result = $stmt->get_result();
+		$id = $result->fetch_row()[0];
 		
 		foreach ($ingredient_list as $ingredient) {
 			$possible_units = '/ (tsp|tbsp|oz|lb|cup|pinch|small|medium|large|gallon|quart|pint) /';
 			$ingre = preg_split ($possible_units, $ingredient);
+			$ingre = strtolower($ingre[1]);
 			
 			//Add ingredient to database
 			$stmt = $cxn->prepare("Insert INTO Ingredients (ingredient) value (?)");
-			$stmt-> bind_param("s", strtolower($ingre[1]));
+			$stmt-> bind_param("s", strtolower($ingre);
 			$stmt->execute();
 					
 			$stmt = $cxn->prepare("insert into recipe_ingredient (recipe_id, ingredient) values (?, ?)");
-			$stmt->bind_param("is", $result->fetch_row()[0], strtolower($ingre[1]));
+			$stmt->bind_param("is", $id, strtolower($ingre);
 			$stmt->execute();
 			
 		}
