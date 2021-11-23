@@ -118,14 +118,15 @@
 		$stmt->execute();
 		
 		//get the inserted recipes ID value
-		
 		$query = "select id from Recipe where owner='(?)' and recipe_name='(?)'";
 		$stmt = $cxn->prepare($query);
 		$stmt-> bind_param("ss", $_SESSION['username'], $recipe_name);
 		$stmt->execute();
 		$result = $stmt->get_result();
 		
-		//$id = $result->fetch_row()['id'] ?? false;
+		echo "Rows: ".mysqli_num_rows($result)."<br>";
+		$n_query = "select id from Recipe where owner='".$SESSION['username']."' and recipe_name='".$recipe_name."'<br>";
+		echo $n_query;
 		
 		
 		
@@ -142,7 +143,6 @@
 			$stmt-> bind_param("s", strtolower($ingre[1]));
 			$stmt->execute();
 				
-			echo $id."<br>";
 			echo strtolower($ingre[1])."<br>";
 			
 			$stmt = $cxn->prepare("insert into recipe_ingredient (recipe_id, ingredient) values (?, ?)");
