@@ -125,7 +125,7 @@
 		$result = $stmt->get_result();
 		
 		echo "Rows: ".mysqli_num_rows($result)."<br>";
-		$n_query = "select id from Recipe where owner='".$SESSION['username']."' and recipe_name='".$recipe_name."'<br>";
+		$n_query = "select id from Recipe where owner='".$_SESSION['username']."' and recipe_name='".$recipe_name."'<br>";
 		echo $n_query;
 		
 		
