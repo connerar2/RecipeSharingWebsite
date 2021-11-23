@@ -133,8 +133,8 @@
 			//Check if ingredient is already in the database
 			$query = "SELECT ingredient FROM Ingredients WHERE ingredient='(?)'";
 			$stmt = $cxn->prepare($query);
-			$stmt->bind_param("s", strtolower($ingre[1]));
 			/*
+			$stmt->bind_param("s", strtolower($ingre[1]));
 			$stmt->execute();
 			$result = $stmt->get_result();
 			
