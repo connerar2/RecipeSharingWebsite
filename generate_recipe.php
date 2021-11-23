@@ -131,16 +131,14 @@
 			
 			
 			//Check if ingredient is already in the database
-			$query = "SELECT ingredient FROM Ingredients WHERE ingredient='(?)'";
-			$stmt = $cxn->prepare($query);
-			$stmt->bind_param("s", $ingre[1]);
+			//$query = "SELECT ingredient FROM Ingredients WHERE ingredient='(?)'";
+			//$stmt = $cxn->prepare($query);
+			//$stmt->bind_param("s", $ingre[1]);
 			
-			$stmt->execute();
-			$result = $stmt->get_result();
+			//$stmt->execute();
+			//$result = $stmt->get_result();
 			
 			
-			//If it's not
-			if (mysqli_num_rows($result) == 0) {
 				//Add ingredient to database
 				$stmt = $cxn->prepare("Insert INTO Ingredients (ingredient) value (?)");
 				$stmt-> bind_param("s", strtolower($ingre[1]));
@@ -157,8 +155,6 @@
 				$stmt->bind_param("ii", $recipe_id, $ingredient_id);
 				$stmt->execute();
 				*/
-			}
-			
 		}
 		
 		
