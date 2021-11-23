@@ -135,7 +135,9 @@
 			$stmt = $cxn->prepare("Insert INTO Ingredients (ingredient) value (?)");
 			$stmt-> bind_param("s", strtolower($ingre[1]));
 			$stmt->execute();
-					
+				
+			echo $id;
+			
 			$stmt = $cxn->prepare("insert into recipe_ingredient (recipe_id, ingredient) values (?, ?)");
 			$stmt->bind_param("is", $id, strtolower($ingre[1]));
 			$stmt->execute();
@@ -154,8 +156,8 @@
 		
 		fclose($recipefile);
 		
-		header("Location: Recipes/".$recipe_name.".html");
-		exit();
+		//header("Location: Recipes/".$recipe_name.".html");
+		//exit();
 	}
 
 ?>
