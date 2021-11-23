@@ -136,7 +136,7 @@
 			$stmt-> bind_param("s", strtolower($ingre[1]));
 			$stmt->execute();
 					
-			$stmt = $cxn->prepare("insert into recipe_ingredient (recipe_id, ingredient) values (?, '?')");
+			$stmt = $cxn->prepare("insert into recipe_ingredient (recipe_id, ingredient) values (?, ?)");
 			$stmt->bind_param("is", $id, strtolower($ingre[1]));
 			$stmt->execute();
 			
