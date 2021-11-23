@@ -125,7 +125,7 @@
 		$stmt->execute();
 		$result = $stmt->get_result();
 		
-		$id = $result->fetch_row()[0] ?? false;
+		$id = $result->fetch_row()['id'] ?? false;
 		
 		foreach ($ingredient_list as $ingredient) {
 			$possible_units = '/ (tsp|tbsp|oz|lb|cup|pinch|small|medium|large|gallon|quart|pint) /';
