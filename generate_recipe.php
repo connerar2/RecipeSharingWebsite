@@ -124,7 +124,7 @@
 		$stmt->execute();
 		$stmt->bind_result($recipe_id);
 		
-		/*
+		
 		foreach ($ingredient_list as $ingredient) {
 			$possible_units = '/ (tsp|tbsp|oz|lb|cup|pinch|small|medium|large|gallon|quart|pint) /';
 			$ingre = preg_split ($possible_units, $ingredient);
@@ -136,6 +136,7 @@
 			$stmt->execute();
 			$result = $stmt->get_result();
 			
+			/*
 			//If it's not
 			if (mysqli_num_rows($result) == 0) {
 				//Add ingredient to database
@@ -153,8 +154,9 @@
 				$stmt->bind_param("ii", $recipe_id, $ingredient_id);
 				$stmt->execute();
 			}
+			/*
 		}
-		*/
+		
 		
 		writeHeader($recipefile, $recipe_name);
 		writeRecipeName($recipefile, $recipe_name);
