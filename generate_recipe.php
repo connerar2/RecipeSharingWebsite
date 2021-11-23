@@ -129,7 +129,7 @@
 			$possible_units = '/ (tsp|tbsp|oz|lb|cup|pinch|small|medium|large|gallon|quart|pint) /';
 			$ingre = preg_split ($possible_units, $ingredient);
 			
-			/*
+			
 			
 			//Check if ingredient is already in the database
 			$query = "SELECT ingredient FROM Ingredients WHERE ingredient='(?)'";
@@ -138,7 +138,7 @@
 			$stmt->execute();
 			$result = $stmt->get_result();
 			
-			
+			/*
 			//If it's not
 			if (mysqli_num_rows($result) == 0) {
 				//Add ingredient to database
@@ -156,7 +156,7 @@
 				$stmt->bind_param("ii", $recipe_id, $ingredient_id);
 				$stmt->execute();
 			}
-			/*
+			*/
 		}
 		
 		
