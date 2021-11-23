@@ -118,7 +118,7 @@
 		$stmt->execute();
 		
 		//get the inserted recipes ID value
-		$query = "select id from Recipe where owner='(?)' and recipe_name='(?)'";
+		$query = "select id from Recipe where owner=(?) and recipe_name=(?)";
 		$stmt = $cxn->prepare($query);
 		$stmt-> bind_param("ss", $_SESSION['username'], $recipe_name);
 		$stmt->execute();
