@@ -112,17 +112,46 @@
 			die();
 		}
 		
+		//Add recipe info to database
 		$stmt = $cxn->prepare("INSERT INTO Recipe (owner, recipe_name, description, meal_image) VALUES (?, ?, ?, ?)");
 		$stmt->bind_param("ssss",$_SESSION['username'], $recipe_name, $recipe_description,  $targetfile);
 		$stmt->execute();
+		
+		//get the inserted recipes ID value
+		$query = "select id from Recipe where owner='(?)' and recipe_name='(?)'";
+		$stmt = $cxn->prepare($query);
+		$stmt-> bind_param("ss", $_SESSION['username'], $recipe_name);
+		$stmt->execute();
+		$stmt->bind_result($recipe_id);
 		
 		foreach ($ingredient_list as $ingredient) {
 			$possible_units = '/ (tsp|tbsp|oz|lb|cup|pinch|small|medium|large|gallon|quart|pint) /';
 			$ingre = preg_split ($possible_units, $ingredient);
 			
-			$stmt = $cxn->prepare("Insert INTO Ingredients (ingredient) value (?)");
-			$stmt-> bind_param("s", $ingre[1]);
+			//Check if ingredient is already in the database
+			$query = "SELECT ingredient FROM Ingredients WHERE ingredient='(?)'";
+			$stmt = $cxn->prepare($query);
+			$stmt-> bind_param("s", strtolower($ingre[1]));
 			$stmt->execute();
+			$result = $stmt->get_result();
+			
+			//If it's not
+			if (mysqli_num_rows($result) == 0) {
+				//Add ingredient to database
+				$stmt = $cxn->prepare("Insert INTO Ingredients (ingredient) value (?)");
+				$stmt-> bind_param("s", strtolower($ingre[1]));
+				$stmt->execute();
+				
+				//Get ingredient id
+				$stmt = $cxn->prepare("select ingredient_id from Ingredients where ingredient='(?)'");
+				$stmt-> bind_param("s", strtolower($ingre[1]));
+				$stmt->execute();
+				$stmt->bind_result($ingredient_id);
+				
+				$stmt = $cxn->prepare("insert into recipe_ingredient (recipe_id, ingredient_id) values (?, ?)");
+				$stmt->bind_param("ii", $recipe_id, $ingredient_id);
+				$stmt->execute();
+			}
 		}
 		
 		writeHeader($recipefile, $recipe_name);
