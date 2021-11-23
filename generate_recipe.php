@@ -127,9 +127,9 @@
 		
 		//$id = $result->fetch_row()['id'] ?? false;
 		
-		$row = result->fetch_assoc();
 		
-		while ($row) {
+		
+		while ($row = $result->fetch_assoc()) {
 			echo $row['id']."<br>";
 		}
 		
