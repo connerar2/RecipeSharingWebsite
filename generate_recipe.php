@@ -125,7 +125,13 @@
 		$stmt->execute();
 		$result = $stmt->get_result();
 		
-		$id = $result->fetch_row()['id'] ?? false;
+		//$id = $result->fetch_row()['id'] ?? false;
+		
+		$row = result->fetch_assoc();
+		
+		while ($row) {
+			echo $row['id']."<br>";
+		}
 		
 		foreach ($ingredient_list as $ingredient) {
 			$possible_units = '/ (tsp|tbsp|oz|lb|cup|pinch|small|medium|large|gallon|quart|pint) /';
@@ -140,8 +146,8 @@
 			echo strtolower($ingre[1])."<br>";
 			
 			$stmt = $cxn->prepare("insert into recipe_ingredient (recipe_id, ingredient) values (?, ?)");
-			$stmt->bind_param("is", $id, strtolower($ingre[1]));
-			$stmt->execute();
+			//$stmt->bind_param("is", $id, strtolower($ingre[1]));
+			//$stmt->execute();
 			
 		}
 		
