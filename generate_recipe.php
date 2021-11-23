@@ -122,10 +122,10 @@
 		$query = "select id from Recipe where owner='(?)' and recipe_name='(?)'";
 		$stmt = $cxn->prepare($query);
 		$stmt-> bind_param("ss", $_SESSION['username'], $recipe_name);
-		/*
 		$stmt->execute();
-		$stmt->bind_result($recipe_id);
-		*/
+		
+		//$stmt->bind_result($recipe_id);
+		
 		
 		foreach ($ingredient_list as $ingredient) {
 			$possible_units = '/ (tsp|tbsp|oz|lb|cup|pinch|small|medium|large|gallon|quart|pint) /';
@@ -133,7 +133,7 @@
 			
 			//Add ingredient to database
 			$stmt = $cxn->prepare("Insert INTO Ingredients (ingredient) value (?)");
-			$stmt-> bind_param("s", $ingre[1]);
+			$stmt-> bind_param("s", strtolower($ingre[1]));
 			$stmt->execute();
 				
 				
