@@ -138,7 +138,7 @@
 			$stmt->execute();
 			$result = $stmt->get_result();
 			
-			/*
+			
 			//If it's not
 			if (mysqli_num_rows($result) == 0) {
 				//Add ingredient to database
@@ -146,6 +146,7 @@
 				$stmt-> bind_param("s", strtolower($ingre[1]));
 				$stmt->execute();
 				
+				/*
 				//Get ingredient id
 				$stmt = $cxn->prepare("select ingredient_id from Ingredients where ingredient='(?)'");
 				$stmt-> bind_param("s", strtolower($ingre[1]));
@@ -155,8 +156,9 @@
 				$stmt = $cxn->prepare("insert into recipe_ingredient (recipe_id, ingredient_id) values (?, ?)");
 				$stmt->bind_param("ii", $recipe_id, $ingredient_id);
 				$stmt->execute();
+				*/
 			}
-			*/
+			
 		}
 		
 		
