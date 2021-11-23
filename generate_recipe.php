@@ -123,7 +123,8 @@
 		$stmt = $cxn->prepare($query);
 		$stmt-> bind_param("ss", $_SESSION['username'], $recipe_name);
 		$stmt->execute();
-		$result = $stmt->get_result();
+		$stmt->bind_result($id);
+		//$result = $stmt->get_result();
 		
 		foreach ($ingredient_list as $ingredient) {
 			$possible_units = '/ (tsp|tbsp|oz|lb|cup|pinch|small|medium|large|gallon|quart|pint) /';
@@ -133,15 +134,11 @@
 			$stmt = $cxn->prepare("Insert INTO Ingredients (ingredient) value (?)");
 			$stmt-> bind_param("s", strtolower($ingre[1]));
 			$stmt->execute();
-				
-				
-			//Get ingredient id
-				
-			/*
-			$stmt = $cxn->prepare("insert into recipe_ingredient (recipe_id, ingredient_id) values (?, ?)");
-			$stmt->bind_param("ii", $recipe_id, $ingredient_id);
+					
+			$stmt = $cxn->prepare("insert into recipe_ingredient (recipe_id, ingredient) values (?, ?)");
+			$stmt->bind_param("is", $result, strtolower($ingre[1]));
 			$stmt->execute();
-			*/
+			
 		}
 		
 		
