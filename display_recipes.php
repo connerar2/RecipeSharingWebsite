@@ -19,7 +19,7 @@
 
 <?php		
 		
-		//access database
+		//access database info
 		$host = "localhost";
 		$user = "root";
 		$db_password = "Happy124face1!";
@@ -47,11 +47,9 @@
 		//edit query by filters
 		if (isset($_GET['creator'])) {
 			$query .= " WHERE owner = '".$_GET['creator']."'";
-			//showPage($pn, $results_per_page, $query, $cxn);
 		}
 		else {
-			//echo "No filter";
-			//showPage($pn, $results_per_page, $query, $cxn);
+			//no filter
 		}
 		
 		//maximum results on a page
@@ -67,7 +65,12 @@
 		//number of rows found
 		$num_rows = mysqli_num_rows($rows);
 		
-		//$query .= " LIMIT ".$page.",".$results_per_page."";
+		$query .= " LIMIT ".$page.",".$results_per_page."";
+		
+		$stmt = $cxn->prepare($query);
+		$stmt-> execute();
+		$result = $stmt->get_result();
+		
 		
 		//number of pages possible
 		$possible_pages = ceil($num_rows / $results_per_page);
@@ -78,7 +81,7 @@
 		}
 		else {
 			
-			while($row = $rows->fetch_assoc()) {
+			while($row = $result->fetch_assoc()) {
 				echo "<div class=\"recipe\">";
 				echo "<h3><a href=\"Recipes/".$row['recipe_name'].".html\">".$row['recipe_name']."</a></h3>";
 					echo"<img class=\"recipeImage\" src=/".$row['meal_image']." alt=\"Image of the recipe\">";
@@ -92,7 +95,7 @@
 			
 			echo "<div class=\"prev_and_next\">";
 				echo "<div id=\"prev\">";
-				echo "echoing previous and next buttons here<br>";
+
 					if ($pn == 1) {
 						"echo no previous button pn = ".$pn."<br>";
 						//No previous page button
@@ -103,7 +106,6 @@
 				echo "</div>";
 				
 				echo "<div id=\"nxt\">";
-				echo ceil($rows->num_rows / $results_per_page);
 					if ($pn == ceil($rows->num_rows / $results_per_page)) {
 						//No Next Button
 					}
