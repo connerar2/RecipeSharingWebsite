@@ -116,6 +116,15 @@
 		$stmt->bind_param("ssss",$_SESSION['username'], $recipe_name, $recipe_description,  $targetfile);
 		$stmt->execute();
 		
+		foreach ($ingredient_list as $ingredient) {
+			$possible_units = '/ (tsp | tbsp | oz | lb | cup | pinch | small | medium | large | gallon | quart | pint) /';
+			$ingre = preg_split ($possible_units, $ingredient);
+			
+			$stmt = $cxn->prepare("Insert INTO Ingredients (ingredient) value (?)");
+			$stmt-> bind_param("s", $ingre);
+			$stmt->execute();
+		}
+		
 		writeHeader($recipefile, $recipe_name);
 		writeRecipeName($recipefile, $recipe_name);
 		writeRecipeDescription($recipefile, $recipe_description);
