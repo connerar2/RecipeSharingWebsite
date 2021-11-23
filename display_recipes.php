@@ -101,7 +101,15 @@
 						//No previous page button
 					}
 					else {
-						echo "<a id=\"previous\" href=\"display_recipes.php?pn=".($pn - 1)."\">Previous</a>";
+						$display_previous = "<a id=\"previous\" href=\"display_recipes.php?pn=".($pn - 1);
+						
+						if (isset($_GET['creator'])) {
+							$display_previous .= "&creator=".$_GET['creator'];
+						}
+						
+						$display_previous .= "\">Previous</a>";
+						//echo "<a id=\"previous\" href=\"display_recipes.php?pn=".($pn - 1)."\">Previous</a>";
+						echo $display_previous;
 					}
 				echo "</div>";
 				
