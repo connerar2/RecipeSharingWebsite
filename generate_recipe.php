@@ -124,6 +124,7 @@
 		$stmt->execute();
 		$stmt->bind_result($recipe_id);
 		
+		/*
 		foreach ($ingredient_list as $ingredient) {
 			$possible_units = '/ (tsp|tbsp|oz|lb|cup|pinch|small|medium|large|gallon|quart|pint) /';
 			$ingre = preg_split ($possible_units, $ingredient);
@@ -153,6 +154,7 @@
 				$stmt->execute();
 			}
 		}
+		*/
 		
 		writeHeader($recipefile, $recipe_name);
 		writeRecipeName($recipefile, $recipe_name);
