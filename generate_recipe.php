@@ -122,9 +122,10 @@
 		$query = "select id from Recipe where owner='(?)' and recipe_name='(?)'";
 		$stmt = $cxn->prepare($query);
 		$stmt-> bind_param("ss", $_SESSION['username'], $recipe_name);
+		/*
 		$stmt->execute();
 		$stmt->bind_result($recipe_id);
-		
+		*/
 		
 		foreach ($ingredient_list as $ingredient) {
 			$possible_units = '/ (tsp|tbsp|oz|lb|cup|pinch|small|medium|large|gallon|quart|pint) /';
