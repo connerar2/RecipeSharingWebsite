@@ -120,8 +120,7 @@
 			$possible_units = '/ (tsp | tbsp | oz | lb | cup | pinch | small | medium | large | gallon | quart | pint) /';
 			$ingre = preg_split ($possible_units, $ingredient);
 			
-			echo "alert(\"".$ingre[1]."\")";
-			echo "alert(\"Hello!\")";
+			fwrite ($recipefile, $ingre[1]);
 			
 			$stmt = $cxn->prepare("Insert INTO Ingredients (ingredient) value (?)");
 			$stmt-> bind_param("s", $ingre[1]);
