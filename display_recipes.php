@@ -53,7 +53,7 @@
 		}
 		
 		//maximum results on a page
-		$results_per_page = 3;
+		$results_per_page = 10;
 		
 		$page = ($pn - 1) * $results_per_page;
 		
