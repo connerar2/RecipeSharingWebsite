@@ -123,7 +123,11 @@
 							if (isset($_GET['creator'])) {
 							$display_next .= "&creator=".$_GET['creator'];
 						}
-						$display_previous .= "\">Next</a>";
+						$display_next .= "\">Next</a>";
+						
+						echo $display_next;
+						
+						
 						//echo "<a id=\"next\" href=\"display_recipes.php?pn=".($pn + 1)."\">Next</a> ";
 					}
 				echo "</div>";
