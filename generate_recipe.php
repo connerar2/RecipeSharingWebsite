@@ -121,7 +121,7 @@
 			$ingre = preg_split ($possible_units, $ingredient);
 			
 			$stmt = $cxn->prepare("Insert INTO Ingredients (ingredient) value (?)");
-			$stmt-> bind_param("s", $ingre);
+			$stmt-> bind_param("s", $ingre[1]);
 			$stmt->execute();
 		}
 		

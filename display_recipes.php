@@ -108,7 +108,6 @@
 						}
 						
 						$display_previous .= "\">Previous</a>";
-						//echo "<a id=\"previous\" href=\"display_recipes.php?pn=".($pn - 1)."\">Previous</a>";
 						echo $display_previous;
 					}
 				echo "</div>";
@@ -127,8 +126,6 @@
 						
 						echo $display_next;
 						
-						
-						//echo "<a id=\"next\" href=\"display_recipes.php?pn=".($pn + 1)."\">Next</a> ";
 					}
 				echo "</div>";
 			echo "</div>";
