@@ -63,13 +63,11 @@
 			
 			
 			if (isset($_GET['ingredient']) && $_GET['ingredient'] != "") {
-				$query .= " and id in (";
+				$query .= " and id in (?)";
 				while ($row = $filtered_by_ingredients->fetch_assoc()) {
-					$query .= $row['recipe_id'].",";
+					$id_list .= $row['recipe_id'].",";
 				}
-				$query = substr($query, 0, -1);
-				
-				echo $query.")<br>";
+				$id_list = substr($id_list, 0, -1);
 			}
 			
 		}
@@ -86,7 +84,7 @@
 		echo "Preparing Query <br>";
 		//query
 		$stmt = $cxn->prepare($query);
-		$stmt->bind_param("s", $_GET['creator']);
+		$stmt->bind_param("ss", $_GET['creator'], $id_list);
 		echo "About to execute<br>";
 		$stmt-> execute();
 		echo "Attempting to get results<br>";
@@ -103,7 +101,7 @@
 		echo $query."<br>";
 		
 		$stmt = $cxn->prepare($query);
-		$stmt->bind_param("s", $_GET['creator']);
+		$stmt->bind_param("ss", $_GET['creator'], $id_list);
 		$stmt-> execute();
 		$result = $stmt->get_result();
 		
