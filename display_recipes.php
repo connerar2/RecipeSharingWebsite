@@ -42,14 +42,14 @@
 			$pn = $_GET['pn'];
 		}
 		
-		/*
+		
 		if (isset($_GET['ingredient'])) {
 			$query = "select recipe_id from recipe_ingredient where ingredient=(?)";
 			$stmt = $cxn->prepare($query);
 			$stmt-> execute();
 			$filtered_by_ingredients = stmt->get_result();
 		}
-		*/
+		
 		
 		
 		//basic query
