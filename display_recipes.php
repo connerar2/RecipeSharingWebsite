@@ -42,6 +42,7 @@
 			$pn = $_GET['pn'];
 		}
 		
+		
 		if (isset($_GET['ingredient'])) {
 			$query = "select recipe_id from recipe_ingredient where ingredient=(?)";
 			$stmt = $cxn->prepare($query);
@@ -49,12 +50,15 @@
 			$filtered_by_ingredients = stmt->get_result();
 		}
 		
+		
 		//basic query
 		$query = "SELECT * FROM Recipe";
+		
 		
 		//edit query by filters
 		if (isset($_GET['creator'])) {
 			$query .= " WHERE owner = '".$_GET['creator']."'";
+			
 			
 			if (isset($_GET['ingredient'])) {
 				$query .= " and id in (";
@@ -64,6 +68,7 @@
 				substr($query, 0, -1);
 				
 				echo $query."<br>";
+			}
 			
 		}
 		else {
