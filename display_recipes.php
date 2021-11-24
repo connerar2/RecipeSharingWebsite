@@ -9,7 +9,8 @@
 	<head>
 		<form id="filter" method="get" action="">
 			<input type="text" name="creator">
-			<input type="submit" name="creator_search" value="Search">
+			<input type="text" name="ingredient">
+			<input type="submit" name="filter" value="Search">
 		</form>
 	</head>
 	
@@ -41,12 +42,29 @@
 			$pn = $_GET['pn'];
 		}
 		
+		if (isset($_GET['ingredient'])) {
+			$query = "select recipe_id from recipe_ingredient where ingredient=(?)";
+			$stmt = $cxn->prepare($query);
+			$stmt-> execute();
+			$filtered_by_ingredients = stmt->get_result();
+		}
+		
 		//basic query
 		$query = "SELECT * FROM Recipe";
 		
 		//edit query by filters
 		if (isset($_GET['creator'])) {
 			$query .= " WHERE owner = '".$_GET['creator']."'";
+			
+			if (isset($_GET['ingredient'])) {
+				$query .= " and id in (";
+				while ($row = $filtered_by_ingredients->fetch_assoc()) {
+					$query .= $row['id'].",";
+				}
+				substr($query, 0, -1);
+				
+				echo $query."<br>";
+			
 		}
 		else {
 			//no filter
