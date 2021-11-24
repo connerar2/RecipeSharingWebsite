@@ -85,7 +85,7 @@
 		
 		//query
 		$stmt = $cxn->prepare($query);
-		$stmt->bind_param("si", $_GET['creator']);
+		$stmt->bind_param("s", $_GET['creator']);
 		//$stmt->bind_param("si", $_GET['creator'], $id_list);
 		$stmt-> execute();
 		$rows = $stmt->get_result();
@@ -95,11 +95,11 @@
 		
 		$query .= " LIMIT ".$page.",".$results_per_page."";
 		
-		echo $id_list."<br>";
-		echo $query."<br>";
+		//echo $id_list."<br>";
+		//echo $query."<br>";
 		
 		$stmt = $cxn->prepare($query);
-		$stmt->bind_param("si", $_GET['creator']);
+		$stmt->bind_param("s", $_GET['creator']);
 		//$stmt->bind_param("si", $_GET['creator'], $id_list);
 		$stmt-> execute();
 		$result = $stmt->get_result();
