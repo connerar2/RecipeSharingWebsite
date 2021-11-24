@@ -46,6 +46,7 @@
 		if (isset($_GET['ingredient'])) {
 			$query = "select recipe_id from recipe_ingredient where ingredient=(?)";
 			$stmt = $cxn->prepare($query);
+			$stmt->bind_param("s", $_GET['ingredient']);
 			$stmt-> execute();
 			$filtered_by_ingredients = stmt->get_result();
 		}
