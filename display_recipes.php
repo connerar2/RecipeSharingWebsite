@@ -59,7 +59,7 @@
 		
 		//edit query by filters
 		if (isset($_GET['creator'])) {
-			$query .= " WHERE owner = (?)";
+			$query .= " WHERE owner=(?)";
 			
 			
 			if (isset($_GET['ingredient']) && $_GET['ingredient'] != "") {
@@ -99,7 +99,7 @@
 		echo "Right before limiting query<br>";
 		$query .= " LIMIT ".$page.",".$results_per_page."";
 		
-		echo $query.")<br>";
+		echo $query."<br>";
 		
 		$stmt = $cxn->prepare($query);
 		$stmt-> execute();
