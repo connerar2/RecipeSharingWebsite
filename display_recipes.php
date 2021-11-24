@@ -81,31 +81,24 @@
 		
 		$page = ($pn - 1) * $results_per_page;
 		
-		echo "Preparing Query <br>";
 		//query
 		$stmt = $cxn->prepare($query);
 		$stmt->bind_param("ss", $_GET['creator'], $id_list);
-		echo "About to execute<br>";
 		$stmt-> execute();
-		echo "Attempting to get results<br>";
 		$rows = $stmt->get_result();
 		
 		//number of rows found
-		echo "getting number of rows <br>";
 		$num_rows = mysqli_num_rows($rows);
-		echo "Rows: ".$num_rows."<br>";
 		
-		echo "Right before limiting query<br>";
 		$query .= " LIMIT ".$page.",".$results_per_page."";
 		
+		echo $id_list."<br>";
 		echo $query."<br>";
 		
 		$stmt = $cxn->prepare($query);
 		$stmt->bind_param("ss", $_GET['creator'], $id_list);
 		$stmt-> execute();
 		$result = $stmt->get_result();
-		
-		echo "Got past here";
 		
 		
 		//number of pages possible
