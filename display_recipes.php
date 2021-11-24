@@ -63,7 +63,7 @@
 			
 			
 			if (isset($_GET['ingredient']) && $_GET['ingredient'] != "") {
-				$query .= " and id in (?)";
+				$query .= " and id in ((?))";
 				while ($row = $filtered_by_ingredients->fetch_assoc()) {
 					$id_list .= $row['recipe_id'].",";
 				}
