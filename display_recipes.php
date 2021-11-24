@@ -103,6 +103,7 @@
 		echo $query."<br>";
 		
 		$stmt = $cxn->prepare($query);
+		$stmt->bind_param("s", $_GET['creator']);
 		$stmt-> execute();
 		$result = $stmt->get_result();
 		
