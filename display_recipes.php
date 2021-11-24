@@ -8,8 +8,8 @@
 
 	<head>
 		<form id="filter" method="get" action="">
-			<input type="text" name="creator" value="Search Creator">
-			<input type="text" name="ingredient" value="Search Ingredient">
+			<input type="text" name="creator" placeholder="Search Creator">
+			<input type="text" name="ingredient" placeholder="Search Ingredient">
 			<input type="submit" name="filter" value="Search">
 		</form>
 	</head>
