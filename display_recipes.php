@@ -77,10 +77,12 @@
 		}
 		
 		//maximum results on a page
+		
 		$results_per_page = 3;
 		
 		$page = ($pn - 1) * $results_per_page;
 		
+		echo "Preparing Query <br>";
 		//query
 		$stmt = $cxn->prepare($query);
 		$stmt-> execute();
