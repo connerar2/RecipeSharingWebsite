@@ -65,11 +65,11 @@
 			if (isset($_GET['ingredient'])) {
 				$query .= " and id in (";
 				while ($row = $filtered_by_ingredients->fetch_assoc()) {
-					$query .= $row['id'].",";
+					$query .= $row['recipe_id'].",";
 				}
 				substr($query, 0, -1);
 				
-				echo $query."<br>";
+				echo $query.")<br>";
 			}
 			
 			
