@@ -70,9 +70,7 @@
 				$query = substr($query, 0, -1);
 				
 				echo $query.")<br>";
-			}
-			
-			
+			}	
 		}
 		else {
 			//no filter
@@ -92,6 +90,8 @@
 		$num_rows = mysqli_num_rows($rows);
 		
 		$query .= " LIMIT ".$page.",".$results_per_page."";
+		
+		echo $query.")<br>";
 		
 		$stmt = $cxn->prepare($query);
 		$stmt-> execute();
