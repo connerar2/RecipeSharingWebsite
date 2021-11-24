@@ -59,7 +59,7 @@
 		
 		//edit query by filters
 		if (isset($_GET['creator'])) {
-			$query .= " WHERE owner = '".$_GET['creator']."'";
+			$query .= " WHERE owner = (?)";
 			
 			
 			if (isset($_GET['ingredient']) && $_GET['ingredient'] != "") {
@@ -86,6 +86,7 @@
 		echo "Preparing Query <br>";
 		//query
 		$stmt = $cxn->prepare($query);
+		$stmti>bind_param("s", $_GET['creator']);
 		echo "About to execute<br>";
 		$stmt-> execute();
 		echo "Attempting to get results<br>";
