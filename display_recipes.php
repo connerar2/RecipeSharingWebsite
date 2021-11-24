@@ -86,7 +86,7 @@
 		echo "Preparing Query <br>";
 		//query
 		$stmt = $cxn->prepare($query);
-		$stmti>bind_param("s", $_GET['creator']);
+		$stmt->bind_param("s", $_GET['creator']);
 		echo "About to execute<br>";
 		$stmt-> execute();
 		echo "Attempting to get results<br>";
