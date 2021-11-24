@@ -67,7 +67,7 @@
 				while ($row = $filtered_by_ingredients->fetch_assoc()) {
 					$query .= $row['recipe_id'].",";
 				}
-				substr($query, 0, -1);
+				substr($query, 0, -2);
 				
 				echo $query.")<br>";
 			}
