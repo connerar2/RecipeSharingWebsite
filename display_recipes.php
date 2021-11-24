@@ -83,7 +83,7 @@
 		
 		//query
 		$stmt = $cxn->prepare($query);
-		$stmt->bind_param("ss", $_GET['creator'], $id_list);
+		$stmt->bind_param("si", $_GET['creator'], $id_list);
 		$stmt-> execute();
 		$rows = $stmt->get_result();
 		
@@ -96,7 +96,7 @@
 		echo $query."<br>";
 		
 		$stmt = $cxn->prepare($query);
-		$stmt->bind_param("ss", $_GET['creator'], $id_list);
+		$stmt->bind_param("si", $_GET['creator'], $id_list);
 		$stmt-> execute();
 		$result = $stmt->get_result();
 		
