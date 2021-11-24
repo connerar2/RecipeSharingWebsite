@@ -48,7 +48,7 @@
 			$stmt = $cxn->prepare($query);
 			$stmt->bind_param("s", $_GET['ingredient']);
 			$stmt-> execute();
-			$filtered_by_ingredients = stmt->get_result();
+			$filtered_by_ingredients = $stmt->get_result();
 		}
 		
 		
@@ -61,7 +61,7 @@
 		if (isset($_GET['creator'])) {
 			$query .= " WHERE owner = '".$_GET['creator']."'";
 			
-			/*
+			
 			if (isset($_GET['ingredient'])) {
 				$query .= " and id in (";
 				while ($row = $filtered_by_ingredients->fetch_assoc()) {
@@ -71,7 +71,7 @@
 				
 				echo $query."<br>";
 			}
-			*/
+			
 			
 		}
 		else {
