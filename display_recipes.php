@@ -95,6 +95,7 @@
 		//number of rows found
 		echo "getting number of rows <br>";
 		$num_rows = mysqli_num_rows($rows);
+		echo "Rows: ".$num_rows."<br>";
 		
 		echo "Right before limiting query<br>";
 		$query .= " LIMIT ".$page.",".$results_per_page."";
