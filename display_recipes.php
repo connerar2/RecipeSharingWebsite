@@ -8,8 +8,8 @@
 
 	<head>
 		<form id="filter" method="get" action="">
-			<input type="text" name="creator">
-			<input type="text" name="ingredient">
+			<input type="text" name="creator" value="Search Creator">
+			<input type="text" name="ingredient" value="Search Ingredient">
 			<input type="submit" name="filter" value="Search">
 		</form>
 	</head>
@@ -78,7 +78,7 @@
 		}
 		
 		//maximum results on a page
-		$results_per_page = 10;
+		$results_per_page = 3;
 		
 		$page = ($pn - 1) * $results_per_page;
 		
