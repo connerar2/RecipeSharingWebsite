@@ -106,6 +106,8 @@
 		$stmt-> execute();
 		$result = $stmt->get_result();
 		
+		echo "Got past here";
+		
 		
 		//number of pages possible
 		$possible_pages = ceil($num_rows / $results_per_page);
@@ -115,7 +117,6 @@
 			echo "<h1>This page cannot be found<h1>";
 		}
 		else {
-			
 			while($row = $result->fetch_assoc()) {
 				echo "<div class=\"recipe\">";
 				echo "<h3><a href=\"Recipes/".$row['recipe_name'].".html\">".$row['recipe_name']."</a></h3>";
