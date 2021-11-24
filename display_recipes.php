@@ -61,7 +61,7 @@
 		if (isset($_GET['creator'])) {
 			$query .= " WHERE owner = '".$_GET['creator']."'";
 			
-			/*
+			
 			if (isset($_GET['ingredient'])) {
 				$query .= " and id in (";
 				while ($row = $filtered_by_ingredients->fetch_assoc()) {
@@ -71,7 +71,7 @@
 				
 				echo $query.")<br>";
 			}
-			*/
+			
 		}
 		else {
 			//no filter
@@ -86,10 +86,13 @@
 		echo "Preparing Query <br>";
 		//query
 		$stmt = $cxn->prepare($query);
+		echo "About to execute<br>";
 		$stmt-> execute();
+		echo "Attempting to get results<br>";
 		$rows = $stmt->get_result();
 		
 		//number of rows found
+		echo "getting number of rows <br>";
 		$num_rows = mysqli_num_rows($rows);
 		
 		echo "Right before limiting query<br>";
