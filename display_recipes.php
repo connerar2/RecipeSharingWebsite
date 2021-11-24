@@ -61,7 +61,7 @@
 		if (isset($_GET['creator'])) {
 			$query .= " WHERE owner = '".$_GET['creator']."'";
 			
-			
+			/*
 			if (isset($_GET['ingredient'])) {
 				$query .= " and id in (";
 				while ($row = $filtered_by_ingredients->fetch_assoc()) {
@@ -70,7 +70,8 @@
 				$query = substr($query, 0, -1);
 				
 				echo $query.")<br>";
-			}	
+			}
+			*/
 		}
 		else {
 			//no filter
