@@ -45,3 +45,28 @@ img {
   text-decoration: none;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: cornflowerBlue;
+}
+
+li {
+  float: left;
+  font-size: 30px;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 40px 50px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: black;
+}
+

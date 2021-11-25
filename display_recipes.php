@@ -7,6 +7,13 @@
 <link rel="stylesheet" href="Styles/display_recipe.css">
 
 	<head>
+		<ul>
+			<li><a href="index.html"><strong>Home</strong></a></li>
+			<li><a href="login.php"><strong>Login</strong></a></li>
+			<li><a href="add_recipe.html"><strong>Add Recipe</strong></a></li>
+			<li><a href="display_recipes.php"><strong>View Recipe</strong></a></li>
+		</ul>
+		
 		<form id="filter" method="get" action="">
 			<input type="text" name="creator" placeholder="Search Creator">
 			<input type="text" name="ingredient" placeholder="Search Ingredient">
