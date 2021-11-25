@@ -69,7 +69,7 @@
 				echo "Creator not set Ingredient is<br>";
 				$query .= " inner join recipe_ingredient on Recipe.id = recipe_ingredient.recipe_id 
 				inner join Ingredients on Ingredients.ingredient = recipe_ingredient.ingredient
-				where ingredient_recipe.ingredient = (?)";
+				where recipe_ingredient.ingredient = (?)";
 				
 				$stmt = $cxn->prepare($query);
 				echo "query prepared<br>";
