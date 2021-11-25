@@ -79,7 +79,7 @@
 			else {
 				echo "Both creator and ingredient set";
 				
-				$query .=  "inner join recipe_ingredient on Recipe.id = recipe_ingredient.recipe_id 
+				$query .=  " inner join recipe_ingredient on Recipe.id = recipe_ingredient.recipe_id 
 				inner join Ingredients on Ingredients.ingredient = recipe_ingredient.ingredient 
 				where Recipe.owner = (?) and recipe_ingredient.ingredient = (?)";
 				
