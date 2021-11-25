@@ -2,7 +2,6 @@
 <?php include('new_user.php') ?>
 <html>
 	<head>
-		<h1>Create Your Account</h1>
 		<link href='Styles/create_user_style.css' rel='stylesheet'>
 	</head>
 	
@@ -10,6 +9,7 @@
 		<div class="create_user_page">
 			<div id="create_user_form">
 				<form method="post" onsubmit="return validateForm();" action="create_user.php">
+					<h1>Create Your Account</h1>
 					Enter Username:
 					<input type="text" id="u_name" name="username" placeholder="Enter Username" required>
 					<?php if (isset($username_taken)){ 
