@@ -66,7 +66,6 @@
 			}
 			
 			else if ($_GET['creator'] == "" && $_GET['ingredient'] != "") {
-				echo "Creator not set Ingredient is<br>";
 				$query .= " inner join recipe_ingredient on Recipe.id = recipe_ingredient.recipe_id 
 				inner join Ingredients on Ingredients.ingredient = recipe_ingredient.ingredient
 				where recipe_ingredient.ingredient = (?)";
@@ -77,33 +76,23 @@
 			}
 			
 			else {
-				echo "Both creator and ingredient set";
-				
 				$query .=  " inner join recipe_ingredient on Recipe.id = recipe_ingredient.recipe_id 
 				inner join Ingredients on Ingredients.ingredient = recipe_ingredient.ingredient 
 				where Recipe.owner = (?) and recipe_ingredient.ingredient = (?)";
 				
-				echo $query."<br>";
 				$stmt = $cxn->prepare($query);
-				echo "query prepared<br>";
 				$stmt->bind_param("ss",$_GET['creator'], $_GET['ingredient']);
-				echo "parameters bound<br>";
 			}
 			
 		}
-		
-		echo $query."<br>";
 		$stmt-> execute();
 		$rows = $stmt->get_result();
 		
-		echo "Query results retreived<br>";
 		$num_rows = mysqli_num_rows($rows);
-		
-		echo "Number of rows is: ".$num_rows."<br>";
 		
 		//maximum results on a page
 		
-		$results_per_page = 1;
+		$results_per_page = 10;
 		
 		$page = ($pn - 1) * $results_per_page;
 		
