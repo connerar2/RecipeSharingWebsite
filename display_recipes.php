@@ -129,6 +129,9 @@
 		else if ($_GET['creator'] == "" && $_GET['ingredient'] != "") {
 			$stmt->bind_param("s", $_GET['ingredient']);
 		}
+		else {
+			$stmt->bind_param("ss",$_GET['creator'], $_GET['ingredient']);
+		}
 		$stmt-> execute();
 		$result = $stmt->get_result();
 		
