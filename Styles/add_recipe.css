@@ -34,13 +34,13 @@ body {
 #prep_cook {
 		position: relative;
 		left: 17%;
-		top: 20%;
+		top: 30%;
 }
 
 #ingre {
 	position: absolute;
 	left: 17%;
-	top: 30%;
+	top: 40%;
 }	
 
 #ingredient_amount{
