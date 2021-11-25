@@ -66,6 +66,7 @@
 			}
 			
 			else if ($_GET['creator'] == "" && $_GET['ingredient'] != "") {
+				echo "Creator not set Ingredient is";
 				$query .= " inner join recipe_ingredient on Recipe.id = recipe_ingredient.recipe_id 
 				where ingredient_recipe.ingredient = (?)";
 				
