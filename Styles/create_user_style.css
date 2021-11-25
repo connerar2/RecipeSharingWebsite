@@ -31,7 +31,7 @@ body{
 }
 
 input {
-	display: inline-block;
+	display: block;
 }
 
 #u_name, #password, #check_password {
