@@ -72,6 +72,7 @@
 				
 				$stmt = $cxn->prepare($query);
 				echo "query prepared<br>";
+				echo $query."<br>";
 				$stmt->bind_param("s", $_GET['ingredient']);
 				echo "parameter bound<br>";
 			}
