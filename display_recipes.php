@@ -92,7 +92,7 @@
 		
 		//maximum results on a page
 		
-		$results_per_page = 10;
+		$results_per_page = 3;
 		
 		$page = ($pn - 1) * $results_per_page;
 		
