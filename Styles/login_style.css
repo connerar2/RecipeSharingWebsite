@@ -40,26 +40,27 @@ input {
 	margin: 3px;
 }
 
-#login {
- 	height: 200px;
-	width: 300px;
-	background-color: green;
-	font-size: 60px;
-	color: white;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: cornflowerBlue;
 }
 
-#view_recipes {
- 	height: 200px;
-	width: 300px;
-	background-color: green;
-	font-size: 60px;
-	color: white;
+li {
+  float: left;
+  font-size: 30px;
 }
 
-#add_recipe {
- 	height: 200px;
-	width: 300px;
-	background-color: green;
-	font-size: 60px;
-	color: white;
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 40px 50px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: black;
 }
