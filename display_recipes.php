@@ -51,23 +51,39 @@
 			$filtered_by_ingredients = $stmt->get_result();
 		}
 		
-		
+		$query = "SELECT * FROM Recipe";
 		
 		//basic query
 		if ($_GET['creator'] == "" && $_GET['ingredient'] == "") {
-			$query = "SELECT * FROM Recipe";
-			
 			$stmt = $cxn->prepare($query);
 		}
 		else {
-			$query = "select * 
-			from Recipe 
-			inner join recipe_ingredient on Recipe.id = recipe_ingredient.recipe_id 
-			inner join Ingredients on Ingredients.ingredient = recipe_ingredient.ingredient 
-			where ";
+			if ($_GET['creator'] != "" && $_GET['ingredient'] == "") {
+				$query .= " where Recipe.owner = (?)";
+				
+				$stmt = $cxn->prepare($query);
+				$stmt->bind_param("s", $_GET['creator']);
+			}
 			
+			else if ($_GET['creator'] == "" && $_GET['ingredient'] != "") {
+				$query .= " where ingredient_recipe.ingredient = (?)";
+				
+				$stmt = $cxn->prepare($query);
+				$stmt->bind_param("s", $_GET['ingredient']);
+			}
+			
+			else {
+				$query .=  "inner join recipe_ingredient on Recipe.id = recipe_ingredient.recipe_id 
+				inner join Ingredients on Ingredients.ingredient = recipe_ingredient.ingredient 
+				where Recipe.owner = (?) and recipe_ingredient.ingredient = (?)";
+				
+				$stmt = $cxn->prepare($query);
+				$stmt->bind_param("ss",$_GET['creator'], $_GET['ingredient']);
+			}
+			
+			/*
 			if ($_GET['creator'] != "") {
-				$query .= "Recipe.owner = (?)";
+				$query .= " where Recipe.owner = (?)";
 				
 				if ($_GET['ingredient'] != "") {
 					$query .= " and recipe_ingredient.ingredient = (?)";
@@ -80,6 +96,7 @@
 					$stmt->bind_param("s", $_GET['creator']);
 				}
 			}
+			*/
 			
 		}
 		
