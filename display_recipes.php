@@ -92,7 +92,7 @@
 		if (isset($_GET['creator'])) {
 			$query .= " WHERE owner=(?)";
 			
-			/*
+			
 			if (isset($_GET['ingredient']) && $_GET['ingredient'] != "") {
 				$query .= " and id in ((?))";
 				$id_list = array();
@@ -101,7 +101,7 @@
 				}
 				$id_list = substr($id_list, 0, -1);
 			}
-			*/
+			
 			
 		}
 		else {
