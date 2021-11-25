@@ -11,7 +11,7 @@
 			<li><a href="index.html"><strong>Home</strong></a></li>
 			<li><a href="login.php"><strong>Login</strong></a></li>
 			<li><a href="add_recipe.html"><strong>Add Recipe</strong></a></li>
-			<li><a href="display_recipes.php"><strong>View Recipe</strong></a></li>
+			<li><a href="display_recipes.php"><strong>View Recipes</strong></a></li>
 		</ul>
 		
 		<form id="filter" method="get" action="">

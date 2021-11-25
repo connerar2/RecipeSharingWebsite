@@ -16,7 +16,7 @@ include('logged_in.php');
 			<li><a href="index.html"><strong>Home</strong></a></li>
 			<li><a href="login.php"><strong>Login</strong></a></li>
 			<li><a href="add_recipe.html"><strong>Add Recipe</strong></a></li>
-			<li><a href="display_recipes.php"><strong>View Recipe</strong></a></li>
+			<li><a href="display_recipes.php"><strong>View Recipes</strong></a></li>
 		</ul>
 	</head>
 	
@@ -24,6 +24,7 @@ include('logged_in.php');
 		<div class="login_page">
 			<div id="login_form">
 				<form method="post" action="login.php">
+					<h1>Login<h1>
 					Username:
 					<input type="text" id="username" name="username" placeholder="Enter Username" required>
 					<br/>
