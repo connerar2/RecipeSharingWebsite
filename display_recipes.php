@@ -77,30 +77,18 @@
 			}
 			
 			else {
+				echo "Both creator and ingredient set";
+				
 				$query .=  "inner join recipe_ingredient on Recipe.id = recipe_ingredient.recipe_id 
 				inner join Ingredients on Ingredients.ingredient = recipe_ingredient.ingredient 
 				where Recipe.owner = (?) and recipe_ingredient.ingredient = (?)";
 				
+				echo $query."<br>";
 				$stmt = $cxn->prepare($query);
+				echo "query prepared<br>";
 				$stmt->bind_param("ss",$_GET['creator'], $_GET['ingredient']);
+				echo "parameters bound<br>";
 			}
-			
-			/*
-			if ($_GET['creator'] != "") {
-				$query .= " where Recipe.owner = (?)";
-				
-				if ($_GET['ingredient'] != "") {
-					$query .= " and recipe_ingredient.ingredient = (?)";
-					
-					$stmt = $cxn->prepare($query);
-					$stmt->bind_param("ss", $_GET['creator'], $_GET['ingredient']);
-				}
-				else {
-					$stmt = $cxn->prepare($query);
-					$stmt->bind_param("s", $_GET['creator']);
-				}
-			}
-			*/
 			
 		}
 		
