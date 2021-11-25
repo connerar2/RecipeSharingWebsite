@@ -173,6 +173,7 @@
 						
 							if (isset($_GET['creator'])) {
 							$display_next .= "&creator=".$_GET['creator'];
+							$display_next .= "&ingredient=".$_GET['ingredient'];
 						}
 						$display_next .= "\">Next</a>";
 						
