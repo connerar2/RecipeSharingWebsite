@@ -72,10 +72,8 @@
 				where recipe_ingredient.ingredient = (?)";
 				
 				$stmt = $cxn->prepare($query);
-				echo "query prepared<br>";
-				echo $query."<br>";
 				$stmt->bind_param("s", $_GET['ingredient']);
-				echo "parameter bound<br>";
+				
 			}
 			
 			else {
@@ -106,9 +104,11 @@
 			
 		}
 		
-		echo $query;
+		echo $query."<br>";
 		$stmt-> execute();
 		$rows = $stmt->get_result();
+		
+		echo "Query results retreived";
 		
 		
 		//edit query by filters
