@@ -83,6 +83,7 @@
 			
 		}
 		
+		echo $query;
 		$stmt-> execute();
 		$rows = $stmt->get_result();
 		
