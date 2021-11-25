@@ -22,25 +22,25 @@ body {
 	position: absolute;
 	font-size: 26px;
 	left: 17%;
-	top: 4%;
+	top: 3%;
 }
 
 #meal_description {
 		position: absolute;
 		left: 17%;
-		top: 20%;
+		top: 10%;
 }
 
 #prep_cook {
 		position: relative;
 		left: 17%;
-		top: 38%;
+		top: 18%;
 }
 
 #ingre {
 	position: absolute;
 	left: 17%;
-	top: 45%;
+	top: 23%;
 }	
 
 #ingredient_amount{
