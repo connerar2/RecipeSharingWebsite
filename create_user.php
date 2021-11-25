@@ -11,7 +11,7 @@
 			<div id="create_user_form">
 				<form method="post" onsubmit="return validateForm();" action="create_user.php">
 					Enter Username:
-					<input type="text" name="username" placeholder="Enter Username" required>
+					<input type="text" id="u_name" name="username" placeholder="Enter Username" required>
 					<?php if (isset($username_taken)){ 
 						echo $username_taken;
 					}

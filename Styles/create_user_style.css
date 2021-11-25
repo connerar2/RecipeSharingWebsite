@@ -34,7 +34,7 @@ input {
 	display: inline-block;
 }
 
-#username, #password, #check_password {
+#u_name, #password, #check_password {
 	width: 40%;
 	padding: 7px;
 	margin: 3px;
