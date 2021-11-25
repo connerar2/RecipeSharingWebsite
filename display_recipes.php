@@ -156,6 +156,7 @@
 						
 						if (isset($_GET['creator'])) {
 							$display_previous .= "&creator=".$_GET['creator'];
+							$display_previous .= "&ingredient=".$_GET['ingredient'];
 						}
 						
 						$display_previous .= "\">Previous</a>";
