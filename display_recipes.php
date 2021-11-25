@@ -66,12 +66,14 @@
 			}
 			
 			else if ($_GET['creator'] == "" && $_GET['ingredient'] != "") {
-				echo "Creator not set Ingredient is";
+				echo "Creator not set Ingredient is<br>";
 				$query .= " inner join recipe_ingredient on Recipe.id = recipe_ingredient.recipe_id 
 				where ingredient_recipe.ingredient = (?)";
 				
 				$stmt = $cxn->prepare($query);
+				echo "query prepared<br>";
 				$stmt->bind_param("s", $_GET['ingredient']);
+				echo "parameter bound<br>";
 			}
 			
 			else {
