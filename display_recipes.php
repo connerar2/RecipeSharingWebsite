@@ -109,6 +109,9 @@
 		$rows = $stmt->get_result();
 		
 		echo "Query results retreived";
+		$num_rows = mysqli_num_rows($rows);
+		
+		echo "Number of rows is: ".$num_rows."<br>";
 		
 		
 		//edit query by filters
@@ -148,9 +151,6 @@
 		*/
 		
 		//number of rows found
-		$num_rows = mysqli_num_rows($rows);
-		
-		echo "Number of rows is: ".$num_rows."<br>";
 		
 		$query .= " LIMIT ".$page.",".$results_per_page."";
 		
