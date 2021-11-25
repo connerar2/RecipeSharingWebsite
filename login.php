@@ -32,7 +32,7 @@ include('logged_in.php');
 					<input type="password" id="password" name="password" placeholder="Enter Password" required>
 					<br/>
 					<input type="submit" value="Login"><br>
-					<a href="create_user.php">Create a new account</a>
+					<a href="create_user.php">Create an Account</a>
 					<br>
 				</form>
 				<?php
