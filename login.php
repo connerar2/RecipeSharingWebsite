@@ -12,6 +12,11 @@ include('logged_in.php');
 	<head>
 		<link href='Styles/login_style.css' rel='stylesheet'>
 		
+		  <ul>
+			<li><a href="login.php"><strong>Login</strong></a></li>
+			<li><a href="add_recipe.html"><strong>Add Recipe</strong></a></li>
+			<li><a href="display_recipes.php"><strong>View Recipe</strong></a></li>
+		</ul>
 	</head>
 	
 	<body>
