@@ -14,7 +14,6 @@ body {
 #name_invalid {
 	font-size: 12px;
 	color: red;
-	/*display: none;*/
 }
 
 
@@ -22,7 +21,7 @@ body {
 	position: absolute;
 	font-size: 26px;
 	left: 17%;
-	top: 3%;
+	top: 2%;
 }
 
 #meal_description {
