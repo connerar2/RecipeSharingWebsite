@@ -66,7 +66,8 @@
 			}
 			
 			else if ($_GET['creator'] == "" && $_GET['ingredient'] != "") {
-				$query .= " where ingredient_recipe.ingredient = (?)";
+				$query .= " inner join recipe_ingredient on Recipe.id = recipe_ingredient.recipe_id 
+				where ingredient_recipe.ingredient = (?)";
 				
 				$stmt = $cxn->prepare($query);
 				$stmt->bind_param("s", $_GET['ingredient']);
