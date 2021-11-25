@@ -108,33 +108,10 @@
 		$stmt-> execute();
 		$rows = $stmt->get_result();
 		
-		echo "Query results retreived";
+		echo "Query results retreived<br>";
 		$num_rows = mysqli_num_rows($rows);
 		
 		echo "Number of rows is: ".$num_rows."<br>";
-		
-		
-		//edit query by filters
-		/*
-		if (isset($_GET['creator'])) {
-			$query .= " WHERE owner=(?)";
-			
-			
-			if (isset($_GET['ingredient']) && $_GET['ingredient'] != "") {
-				$query .= " and id in ((?))";
-				$id_list = array();
-				while ($row = $filtered_by_ingredients->fetch_assoc()) {
-					$id_list .= $row['recipe_id'].",";
-				}
-				$id_list = substr($id_list, 0, -1);
-			}
-			
-			
-		}
-		else {
-			//no filter
-		}
-		*/
 		
 		//maximum results on a page
 		
@@ -142,21 +119,16 @@
 		
 		$page = ($pn - 1) * $results_per_page;
 		
-		//query
-		/*
-		$stmt = $cxn->prepare($query);
-		$stmt->bind_param("s", $_GET['creator']);
-		$stmt-> execute();
-		$rows = $stmt->get_result();
-		*/
-		
-		//number of rows found
-		
 		$query .= " LIMIT ".$page.",".$results_per_page."";
 		
 		$stmt = $cxn->prepare($query);
-		$stmt->bind_param("s", $_GET['creator']);
-		//$stmt->bind_param("si", $_GET['creator'], $id_list);
+		
+		if ($_GET['creator'] != "" && $_GET['ingredient'] == "") {
+			$stmt->bind_param("s", $_GET['creator']);
+		}
+		else if ($_GET['creator'] == "" && $_GET['ingredient'] != "") {
+			$stmt->bind_param("s", $_GET['ingredient']);
+		}
 		$stmt-> execute();
 		$result = $stmt->get_result();
 		
