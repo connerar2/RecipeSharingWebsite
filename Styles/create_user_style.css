@@ -30,7 +30,7 @@ body{
 	border-style: solid;
 }
 
-input p {
+input label {
 	display: inline-block;
 }
 

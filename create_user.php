@@ -10,17 +10,17 @@
 			<div id="create_user_form">
 				<form method="post" onsubmit="return validateForm();" action="create_user.php">
 					<h1>Create Your Account</h1>
-					<p>Enter Username:</p>
+					<label for="u_name">Enter Username:</label>
 					<input type="text" id="u_name" name="username" placeholder="Enter Username" required>
 					<?php if (isset($username_taken)){ 
 						echo $username_taken;
 					}
 					?>
 					<br>
-					<p>Enter Password:</p>
+					<label for="password">Enter Password:</label>
 					<input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter Password" required>
 					<br>
-					<p>Re-Enter Password:</p>
+					<label for="re_enter_password">Re-Enter Password:</label>
 					<input type="password" id="check_password" name="re_enter_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter Password" required>
 					<p id="hidden" style="display: none">   Passwords don't match</p> 
 					<br>
