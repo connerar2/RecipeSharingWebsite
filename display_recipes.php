@@ -150,10 +150,9 @@
 		//number of rows found
 		$num_rows = mysqli_num_rows($rows);
 		
-		$query .= " LIMIT ".$page.",".$results_per_page."";
+		echo "Number of rows is: ".$num_rows."<br>";
 		
-		//echo $id_list."<br>";
-		//echo $query."<br>";
+		$query .= " LIMIT ".$page.",".$results_per_page."";
 		
 		$stmt = $cxn->prepare($query);
 		$stmt->bind_param("s", $_GET['creator']);
