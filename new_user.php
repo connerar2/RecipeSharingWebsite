@@ -27,7 +27,7 @@ if (isset($_POST['username'])) {
 	
 	//if it is error message
 	if ($result->num_rows > 0) {
-			$username_taken = "Sorry this username has already been taken";
+			$username_taken = "Sorry that username has already been taken";
 	}
 	//otherwise add it and the password
 	else {
