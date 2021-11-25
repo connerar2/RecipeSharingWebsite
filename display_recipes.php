@@ -54,10 +54,41 @@
 		
 		
 		//basic query
-		$query = "SELECT * FROM Recipe";
+		if ($_GET['creator'] == "" && $_GET['ingredient'] == "") {
+			$query = "SELECT * FROM Recipe";
+			
+			$stmt = $cxn->prepare($query);
+		}
+		else {
+			$query = "select * 
+			from Recipe 
+			inner join recipe_ingredient on Recipe.id = recipe_ingredient.recipe_id 
+			inner join Ingredients on Ingredients.ingredient = recipe_ingredient.ingredient 
+			where ";
+			
+			if ($_GET['creator'] != "") {
+				$query .= "Recipe.owner = (?)";
+				
+				if ($_GET['ingredient'] != "") {
+					$query .= " and recipe_ingredient.ingredient = (?)";
+					
+					$stmt = $cxn->prepare($query);
+					$stmt->bind_param("ss", $_GET['creator'], $_GET['ingredient']);
+				}
+				else {
+					$stmt = $cxn->prepare($query);
+					$stmt->bind_param("s", $_GET['creator']);
+				}
+			}
+			
+		}
+		
+		$stmt-> execute();
+		$rows = $stmt->get_result();
 		
 		
 		//edit query by filters
+		/*
 		if (isset($_GET['creator'])) {
 			$query .= " WHERE owner=(?)";
 			
@@ -76,6 +107,7 @@
 		else {
 			//no filter
 		}
+		*/
 		
 		//maximum results on a page
 		
@@ -84,11 +116,12 @@
 		$page = ($pn - 1) * $results_per_page;
 		
 		//query
+		/*
 		$stmt = $cxn->prepare($query);
 		$stmt->bind_param("s", $_GET['creator']);
-		//$stmt->bind_param("si", $_GET['creator'], $id_list);
 		$stmt-> execute();
 		$rows = $stmt->get_result();
+		*/
 		
 		//number of rows found
 		$num_rows = mysqli_num_rows($rows);
