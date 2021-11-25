@@ -40,8 +40,14 @@ body {
 #ingre {
 	position: absolute;
 	left: 17%;
-	top: 40%;
+	top: 35%;
 }	
+
+#upload {
+	position: absolute;
+	left: 37%;
+	top: 5%;
+}
 
 #ingredient_amount{
 		width: 50px;
@@ -72,12 +78,6 @@ input::-webkit-inner-spin-button {
 
 #ingredient{
 	width: 100px;
-}
-
-#upload {
-	position: absolute;
-	left: 37%;
-	top: 10%;
 }
 
 ul {
