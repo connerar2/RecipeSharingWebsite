@@ -46,7 +46,7 @@ include('logged_in.php');
 					}
 					else {
 						echo "<script>\n";
-						echo "if (document.getElementById(\"login_message\").innerHTML = \"\"  || document.getElementById(\"login_message\").innerHTML = \"You have logged in!\") {\n";
+						echo "if (document.getElementById(\"login_message\").innerHTML == \"\"  || document.getElementById(\"login_message\").innerHTML == \"You have logged in!\") {\n";
 						echo "document.getElementById(\"login_message\").innerHTML = \" \"\n";
 						echo "}\n";
 						echo "else {\n";
