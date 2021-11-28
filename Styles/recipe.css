@@ -59,13 +59,13 @@ body {
 }
 
 #image {
-	height: 200px;
-	width: 200px;
+	height: 250px;
+	width: 250px;
 }
 
 #image_position {
 	position: absolute;
-	left: 32%;
+	left: 36%;
 	top:5%;
 }
 
