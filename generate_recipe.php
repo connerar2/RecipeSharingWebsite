@@ -14,10 +14,10 @@
 	
 	function writeNavBar($file) {
 		fwrite($file, "<ul id=\"navbar\">\n");
-		fwrite($file, "<li class=\"nav\"><a href=\"index.html\"><strong>Home</strong></a></li>\n");
-		fwrite($file, "<li class=\"nav\"><a href=\"login.php\"><strong>Login</strong></a></li>\n");
-		fwrite($file, "<li class=\"nav\"><a href=\"add_recipe.html\"><strong>Add Recipe</strong></a></li>\n");
-		fwrite($file, "<li class=\"nav\"><a href=\"display_recipes.php\"><strong>View Recipes</strong></a></li>\n");
+		fwrite($file, "<li class=\"nav\"><a href=\"../index.html\"><strong>Home</strong></a></li>\n");
+		fwrite($file, "<li class=\"nav\"><a href=\"../login.php\"><strong>Login</strong></a></li>\n");
+		fwrite($file, "<li class=\"nav\"><a href=\"../add_recipe.html\"><strong>Add Recipe</strong></a></li>\n");
+		fwrite($file, "<li class=\"nav\"><a href=\"../display_recipes.php\"><strong>View Recipes</strong></a></li>\n");
 		fwrite($file, "</ul>\n");
 		fwrite($file, "</head>\n");
 		fwrite($file, "<body>\n");
