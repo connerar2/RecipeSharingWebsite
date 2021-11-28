@@ -86,6 +86,7 @@
 		
 		$recipe_file_name = uniqid();
 		
+		//Testing
 	    $recipefile = fopen('Recipes/'.$_SESSION['username'].''.$recipe_file_name.'.html', "w");
 	
 		$targetdir = "Images/";
