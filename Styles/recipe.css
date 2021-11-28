@@ -20,9 +20,12 @@ body {
 
 #description_position {
 	position: absolute;
+	height: 15%;
+	width: 20%;
 	left: 16%;
 	top: 8%;
-	width: 15%;
+	overflow-y: auto;
+	
 }
 
 #time_position {
