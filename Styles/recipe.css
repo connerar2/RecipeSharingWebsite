@@ -21,11 +21,11 @@ body {
 #description_position {
 	position: absolute;
 	height: 15%;
-	width: 15%;
+	width: 18%;
 	left: 16%;
 	top: 8%;
 	overflow-y: auto;
-	overflow-y: hidden;
+	overflow-x: hidden;
 	
 }
 
