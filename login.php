@@ -40,6 +40,7 @@ include('logged_in.php');
 					if (isset($_SESSION['username'])) {
 						echo "<script>";
 						echo "document.getElementById(\"message\").innerHTML = \"You have logged in!\"";
+						//Test
 						//echo "document.getElementById(\"error\").removeAttribute(\"hidden\")";
 						echo "</script>";
 					}
