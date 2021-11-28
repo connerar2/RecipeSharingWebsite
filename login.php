@@ -33,7 +33,6 @@ include('logged_in.php');
 					<br/>
 					<input type="submit" value="Login"><br>
 					<p id="error"></p>
-					<br>
 					<a href="create_user.php">Create an Account</a>
 					<br>
 				</form>
