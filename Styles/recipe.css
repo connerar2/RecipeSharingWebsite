@@ -25,6 +25,7 @@ body {
 	left: 16%;
 	top: 8%;
 	overflow-y: auto;
+	overflow-y: hidden;
 	
 }
 
