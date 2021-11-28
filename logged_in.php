@@ -30,6 +30,9 @@
 		if(password_verify($password, $user['password'])) {
 			$_SESSION["username"]= $username;
 		}	
+		else {
+			$_SESSION['error'] = "Wrong username or password";
+		}
 		
 		$cxn->close();
 	}

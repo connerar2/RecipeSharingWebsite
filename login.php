@@ -36,7 +36,11 @@ include('logged_in.php');
 					<a href="create_user.php">Create an Account</a>
 					<br>
 				</form>
-				<?php
+			</div>
+		</div>
+	</body>
+	
+	<?php
 					if (isset($_SESSION['username'])) {
 						echo "<script\n>";
 						echo "document.getElementById(\"login_message\").innerHTML = \"You have logged in!\"\n";
@@ -48,8 +52,5 @@ include('logged_in.php');
 						echo "</script>\n";
 					}
 				?>
-			</div>
-		</div>
-	</body>
 
 </html>
