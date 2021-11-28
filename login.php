@@ -36,6 +36,17 @@ include('logged_in.php');
 					<a href="create_user.php">Create an Account</a>
 					<br>
 				</form>
+				<?php
+					if (isset($_SESSION['username'])) {
+						echo "<script\n>";
+						echo "document.getElementById(\"login_message\").innerHTML = \"You have logged in!\"\n";
+						echo "</script>\n";
+					}
+					if (isset($_SESSION['error'])) {
+						echo "<script>\n";
+						echo "document.getElementById(\"login_message\").innerHTML = \"Wrong username or password\"\n";
+						echo "</script>\n";
+				?>
 			</div>
 		</div>
 	</body>
