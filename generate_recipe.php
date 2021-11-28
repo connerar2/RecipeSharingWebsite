@@ -5,22 +5,22 @@
 	function writeHeader($file, $name) {
 		fwrite($file, "<!DOCTYPE html>\n");
 		fwrite($file, "<html lang=\"en\">\n");
+		fwrite("<head>\n");
 		fwrite($file, "<meta charset=\"UTF-8\">\n");
 		fwrite($file, "<title>".$name."</title>\n");
 		fwrite($file, "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n");
-		fwrite($file, "<link rel=\"stylesheet\" href=\"../Styles/recipe.css\">\n"); //TODO Add css file
-		fwrite($file, "<body>\n");	
+		fwrite($file, "<link rel=\"stylesheet\" href=\"../Styles/recipe.css\">\n");	
 	}
 	
 	function writeNavBar($file) {
-		fwrite("<head>\n");
-		fwrite("<ul id=\"navbar\">\n");
-		fwrite("<li class=\"nav\"><a href=\"index.html\"><strong>Home</strong></a></li>\n");
-		fwrite("<li class=\"nav\"><a href=\"login.php\"><strong>Login</strong></a></li>\n");
-		fwrite("<li class=\"nav\"><a href=\"add_recipe.html\"><strong>Add Recipe</strong></a></li>\n");
-		fwrite("<li class=\"nav\"><a href=\"display_recipes.php\"><strong>View Recipes</strong></a></li>\n");
-		fwrite("</ul>\n");
-		fwrite("</head>");
+		fwrite($file, "<ul id=\"navbar\">\n");
+		fwrite($file, "<li class=\"nav\"><a href=\"index.html\"><strong>Home</strong></a></li>\n");
+		fwrite($file, "<li class=\"nav\"><a href=\"login.php\"><strong>Login</strong></a></li>\n");
+		fwrite($file, "<li class=\"nav\"><a href=\"add_recipe.html\"><strong>Add Recipe</strong></a></li>\n");
+		fwrite($file, "<li class=\"nav\"><a href=\"display_recipes.php\"><strong>View Recipes</strong></a></li>\n");
+		fwrite($file, "</ul>\n");
+		fwrite($file, "</head>\n");
+		fwrite($file, "<body>\n");
 
 	}
 	
