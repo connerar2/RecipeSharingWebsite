@@ -21,21 +21,21 @@ body {
 #description_position {
 	position: absolute;
 	left: 16%;
-	top: 12%;
+	top: 8%;
 	width: 15%;
 }
 
 #time_position {
 	position: absolute;
 	left: 16%;
-	top: 30%;
+	top: 25%;
 }
 
 #ingredient_position {
 	position: absolute;
 	font-style: italic;
 	left: 16%;
-	top: 35%;
+	top: 30%;
 }
 
 #instruction_list {
@@ -49,7 +49,7 @@ body {
 	position: absolute;
 	height: 80%;
 	left: 52%;
-	top: 15%;
+	top: 2%;
 	width: 32%;
 	font-size: 18px;
 }
@@ -62,7 +62,7 @@ body {
 #image_position {
 	position: absolute;
 	left: 32%;
-	top:20%;
+	top:2%;
 }
 
 #navbar {
