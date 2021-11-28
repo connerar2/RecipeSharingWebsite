@@ -45,7 +45,7 @@ include('logged_in.php');
 					}
 					else {
 						echo "<script>";
-						echo "document.getElementById(\"error\").innerHTML = \"Sorry you entered the wrong username or password\"";
+						echo "document.getElementById(\"error\").innerHTML = \"Wrong username or password\"";
 						echo "</script>";
 					}
 				?>
