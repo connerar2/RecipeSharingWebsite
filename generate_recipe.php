@@ -84,7 +84,9 @@
 		
 		$image = $_FILES['meal_image']['name'];
 		
-	    $recipefile = fopen('Recipes/'.$recipe_name.'.html', "w");
+		$recipe_file_name = uniqid();
+		
+	    $recipefile = fopen('Recipes/'.$recipe_file_name.'.html', "w");
 	
 		$targetdir = "Images/";
 		
