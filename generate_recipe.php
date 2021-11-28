@@ -84,7 +84,7 @@
 		
 		$image = $_FILES['meal_image']['name'];
 		
-		$recipe_file_name = 'Recipes/'.$_SESSION['username'].''.$recipe_file_name.'.html';
+		$recipe_file_name = 'Recipes/'.$_SESSION['username'].''.uniqid().'.html';
 		
 		//Testing
 	    $recipefile = fopen($recipe_file_name, "w");
