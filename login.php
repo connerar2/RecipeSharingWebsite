@@ -39,7 +39,6 @@ include('logged_in.php');
 			</div>
 		</div>
 	</body>
-	
 	<?php
 					if (isset($_SESSION['username'])) {
 						echo "<script\n>";

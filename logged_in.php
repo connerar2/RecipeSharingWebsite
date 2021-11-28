@@ -29,9 +29,11 @@
 		
 		if(password_verify($password, $user['password'])) {
 			$_SESSION["username"]= $username;
+			header("Location: login.php");
 		}	
 		else {
 			$_SESSION['error'] = "Wrong username or password";
+			header("Location: login.php");
 		}
 		
 		$cxn->close();
