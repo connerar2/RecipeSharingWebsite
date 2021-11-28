@@ -32,28 +32,27 @@ include('logged_in.php');
 					<input type="password" id="password" name="password" placeholder="Enter Password" required>
 					<br/>
 					<input type="submit" value="Login"><br>
-					<p id="login_fail"></p>
 					<p id="login_message"></p>
 					<a href="create_user.php">Create an Account</a>
 					<br>
 				</form>
 				<?php
-					if (isset($_SESSION['username'])) {
-						echo "<script\n>";
-						echo "document.getElementById(\"login_message\").innerHTML = \"You have logged in!\"\n";
-						echo "document.getElementById(\"login_fail\").innerHTML = \"\"\n";
-						echo "</script>\n";
-					}
-					else {
-						echo "<script>\n";
-						echo "if (document.getElementById(\"login_message\").innerHTML = \"\") {\n";
-						echo "document.getElementById(\"login_message\").innerHTML = \" \"\n";
-						echo "}\n";
-						echo "else {\n";
-						echo "document.getElementById(\"login_fail\").innerHTML = \"Wrong username or password\"\n";
-						echo "}\n";
-						echo "</script>\n";
-					}
+					//if (isset($_SESSION['username'])) {
+						//echo "<script\n>";
+						//echo "document.getElementById(\"login_message\").innerHTML = \"You have logged in!\"\n";
+						//echo "document.getElementById(\"login_fail\").innerHTML = \"\"\n";
+						//echo "</script>\n";
+					//}
+					//else {
+						//echo "<script>\n";
+						//echo "if (document.getElementById(\"login_message\").innerHTML = \"\") {\n";
+						//echo "document.getElementById(\"login_message\").innerHTML = \" \"\n";
+						//echo "}\n";
+						//echo "else {\n";
+						//echo "document.getElementById(\"login_fail\").innerHTML = \"Wrong username or password\"\n";
+						//echo "}\n";
+						//echo "</script>\n";
+					//}
 				?>
 			</div>
 		</div>
