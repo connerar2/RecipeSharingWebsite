@@ -130,7 +130,7 @@
 		else {
 			while($row = $result->fetch_assoc()) {
 				echo "<div class=\"recipe\">";
-				echo "<h3><a href=\"Recipes/".$row['recipe_name'].".html\">".$row['recipe_name']."</a></h3>";
+				echo "<h3><a href=\"".$row['filename']."\">".$row['recipe_name']."</a></h3>";
 					echo "By ".$row['owner'];
 					echo"<img class=\"recipeImage\" src=/".$row['meal_image']." alt=\"Image of the recipe\">";
 					echo "<div>";
