@@ -116,8 +116,8 @@
 		}
 		
 		//Add recipe info to database
-		$stmt = $cxn->prepare("INSERT INTO Recipe (owner, recipe_name, description, meal_image) VALUES (?, ?, ?, ?)");
-		$stmt->bind_param("ssss",$_SESSION['username'], $recipe_name, $recipe_description,  $targetfile);
+		$stmt = $cxn->prepare("INSERT INTO Recipe (owner, recipe_name, description, meal_image, filename) VALUES (?, ?, ?, ?, ?)");
+		$stmt->bind_param("sssss",$_SESSION['username'], $recipe_name, $recipe_description,  $targetfile, $recipe_file_name);
 		$stmt->execute();
 		
 		//get the inserted recipes ID value
