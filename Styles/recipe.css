@@ -15,20 +15,20 @@ body {
 #name_position {
 	position: absolute;
 	left: 16%;
-	top: 12%
+	top: 2%
 }
 
 #description_position {
 	position: absolute;
 	left: 16%;
-	top: 18%;
+	top: 12%;
 	width: 15%;
 }
 
 #time_position {
 	position: absolute;
 	left: 16%;
-	top: 32%;
+	top: 30%;
 }
 
 #ingredient_position {
