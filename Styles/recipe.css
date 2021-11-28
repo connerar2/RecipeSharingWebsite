@@ -55,14 +55,14 @@ body {
 }
 
 #image {
-	height: 300px;
-	width: 300px;
+	height: 250px;
+	width: 250px;
 }
 
 #image_position {
 	position: absolute;
 	left: 32%;
-	top:2%;
+	top:5%;
 }
 
 #navbar {
