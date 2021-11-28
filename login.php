@@ -40,12 +40,12 @@ include('logged_in.php');
 				<?php
 					if (isset($_SESSION['username'])) {
 						echo "<script>";
-						echo "document.getElementById(\"error\").innterHTML = \"You have logged in!\"";
+						echo "document.getElementById(\"error\").innerHTML = \"You have logged in!\"";
 						echo "</script>";
 					}
 					else {
 						echo "<script>";
-						echo "document.getElementById(\"error\").innterHTML = \"Sorry you entered the wrong username or password\"";
+						echo "document.getElementById(\"error\").innerHTML = \"Sorry you entered the wrong username or password\"";
 						echo "</script>";
 					}
 				?>
