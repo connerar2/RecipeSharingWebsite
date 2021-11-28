@@ -64,3 +64,28 @@ body {
 	left: 32%;
 	top:20%;
 }
+
+#navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: cornflowerBlue;
+}
+
+.nav{
+  float: left;
+  font-size: 30px;
+}
+
+.nav a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 40px 50px;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  background-color: black;
+}

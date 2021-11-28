@@ -12,6 +12,18 @@
 		fwrite($file, "<body>\n");	
 	}
 	
+	function writeNavBar($file) {
+		fwrite("<head>\n");
+		fwrite("<ul id=\"navbar\">\n");
+		fwrite("<li class=\"nav\"><a href=\"index.html\"><strong>Home</strong></a></li>\n");
+		fwrite("<li class=\"nav\"><a href=\"login.php\"><strong>Login</strong></a></li>\n");
+		fwrite("<li class=\"nav\"><a href=\"add_recipe.html\"><strong>Add Recipe</strong></a></li>\n");
+		fwrite("<li class=\"nav\"><a href=\"display_recipes.php\"><strong>View Recipes</strong></a></li>\n");
+		fwrite("</ul>\n");
+		fwrite("</head>");
+
+	}
+	
 	function writeRecipeName($file, $name) {
 		fwrite($file, "\t<div class=\"name\">\n");
 		fwrite($file, "\t\t<div id=\"name_position\">\n");
@@ -149,6 +161,7 @@
 		
 		
 		writeHeader($recipefile, $recipe_name);
+		writeNavBar($recipefile);
 		writeRecipeName($recipefile, $recipe_name);
 		writeRecipeDescription($recipefile, $recipe_description);
 		writePrepCookTime($recipefile, $prep_time, $cook_time);
