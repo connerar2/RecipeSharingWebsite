@@ -84,10 +84,10 @@
 		
 		$image = $_FILES['meal_image']['name'];
 		
-		$recipe_file_name = uniqid();
+		$recipe_file_name = 'Recipes/'.$_SESSION['username'].''.$recipe_file_name.'.html';
 		
 		//Testing
-	    $recipefile = fopen('Recipes/'.$_SESSION['username'].''.$recipe_file_name.'.html', "w");
+	    $recipefile = fopen($recipe_file_name, "w");
 	
 		$targetdir = "Images/";
 		
@@ -159,7 +159,7 @@
 		
 		fclose($recipefile);
 		
-		header("Location: Recipes/".$recipe_name.".html");
+		header("Location: ".$recipe_file_name);
 		exit();
 	}
 
