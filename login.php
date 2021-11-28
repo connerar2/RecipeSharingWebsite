@@ -32,20 +32,21 @@ include('logged_in.php');
 					<input type="password" id="password" name="password" placeholder="Enter Password" required>
 					<br/>
 					<input type="submit" value="Login"><br>
-					<p id="error"></p>
 					<a href="create_user.php">Create an Account</a>
 					<br>
 				</form>
 				<?php
 					if (isset($_SESSION['username'])) {
-						echo "<script>";
-						echo "document.getElementById(\"error\").innerHTML = \"You have logged in!\"";
-						echo "</script>";
+						echo "You have logged in!";
+						//echo "<script>";
+						//echo "document.getElementById(\"error\").innerHTML = \"You have logged in!\"";
+						//echo "</script>";
 					}
 					else {
-						echo "<script>";
-						echo "document.getElementById(\"error\").innerHTML = \"Wrong username or password\"";
-						echo "</script>";
+						echo "Wrong username or password";
+						//echo "<script>";
+						//echo "document.getElementById(\"error\").innerHTML = \"Wrong username or password\"";
+						//echo "</script>";
 					}
 				?>
 			</div>
