@@ -29,10 +29,10 @@
 		
 		if(password_verify($password, $user['password'])) {
 			$_SESSION["username"]= $username;
-			echo "You have logged in!";
+			echo "document.getElementById(\"login_message\").innerHTML = \"You have logged in!\"\n";
 		}	
 		else {
-			echo "Wrong username or password!";
+			echo "document.getElementById(\"login_message\").innerHTML = \"Wrong username or password\"\n";
 		}
 		
 		$cxn->close();
