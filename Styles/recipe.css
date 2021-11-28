@@ -21,7 +21,7 @@ body {
 #description_position {
 	position: absolute;
 	height: 15%;
-	width: 18%;
+	width: 16%;
 	left: 16%;
 	top: 8%;
 	overflow-y: auto;
@@ -65,7 +65,7 @@ body {
 
 #image_position {
 	position: absolute;
-	left: 36%;
+	left: 33%;
 	top:5%;
 }
 
