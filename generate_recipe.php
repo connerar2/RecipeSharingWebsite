@@ -96,7 +96,9 @@
 		
 		$image = $_FILES['meal_image']['name'];
 		
-		$recipe_file_name = 'Recipes/'.$_SESSION['username'].''.uniqid().'.html';
+		$unique_id = uniqid();
+		
+		$recipe_file_name = 'Recipes/'.$_SESSION['username'].''.$unique_id.'.html';
 		
 		//Testing
 	    $recipefile = fopen($recipe_file_name, "w");
@@ -104,7 +106,7 @@
 		$targetdir = "Images/";
 		
 		
-		$targetfile = $targetdir.str_replace(' ', '_', basename($image));
+		$targetfile = $targetdir.str_replace(' ', '_', $unique_id.basename($image));
 			
 		if (move_uploaded_file($_FILES['meal_image']['tmp_name'], $targetfile)) {
 			//File uploaded
