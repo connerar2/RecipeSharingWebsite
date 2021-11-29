@@ -7,6 +7,11 @@ p {
 	word-wrap: break-word;
 }
 
+.description {
+	height: 10%;
+	overflow-y: auto;
+}
+
 .recipe{
 	margin: .5%;
 	width: 18.5%;

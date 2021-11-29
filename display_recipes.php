@@ -133,8 +133,8 @@
 				echo "<h3><a href=\"".$row['filename']."\">".$row['recipe_name']."</a></h3>";
 					echo "By ".$row['owner'];
 					echo"<img class=\"recipeImage\" src=/".$row['meal_image']." alt=\"Image of the recipe\">";
-					echo "<div>";
-						echo "<p id=\"description\">".$row['description']."</p>";
+					echo "<div class=\"description\">";
+						echo "<p>".$row['description']."</p>";
 					echo "</div>";
 				echo "</div>";
 			}	
