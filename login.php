@@ -30,6 +30,7 @@ include('logged_in.php');
 					<br/>
 					Password:
 					<input type="password" id="password" name="password" placeholder="Enter Password" required>
+					<p>Passwords require 1 uppercase, lowercase, number, and special character.  It must be 8 characters long</p>
 					<br/>
 					<input type="submit" value="Login"><br>
 					<p id="login_message"></p>
