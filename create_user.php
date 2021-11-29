@@ -23,6 +23,7 @@
 					<label for="re_enter_password">Re-Enter Password:</label>
 					<input type="password" id="check_password" name="re_enter_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter Password" required>
 					<p id="hidden" style="display: none">   Passwords don't match</p> 
+					<p>Passwords require 1 uppercase, lowercase, number, special character, and must be 8 characters long</p>
 					<br>
 					<input type="submit" value="Create Account">
 					<br>
