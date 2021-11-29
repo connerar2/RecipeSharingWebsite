@@ -134,7 +134,7 @@
 					echo "By ".$row['owner'];
 					echo"<img class=\"recipeImage\" src=/".$row['meal_image']." alt=\"Image of the recipe\">";
 					echo "<div>";
-						echo "<p>".$row['description']."</p>";
+						echo "<p id=\"description\">".$row['description']."</p>";
 					echo "</div>";
 				echo "</div>";
 			}	
