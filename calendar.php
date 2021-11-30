@@ -29,7 +29,7 @@
 		<script>
 		
 			<?php
-			//echo "addRecipe(".$_POST['r_day'].",".$_POST['r_link']."); ";
+			echo "addRecipe(".$_POST['r_day'].",".$_POST['r_link']."); ";
 				if (isset($_POST['r_day']) && isset($_POST['r_link'])) {
 					//echo "HELLO";
 					echo "addRecipe(".$_POST['r_day'].",".$_POST['r_link'].");";
@@ -44,9 +44,9 @@
 				
 				var possibleDays = document.getElementsByClassName("day");
 				
-				//<?php
-					//echo "reached the function";
-				//?>
+				<?php
+					echo "reached the function";
+				?>
 				
 				document.getElementById("monthName").innerHTML = "Changed Here";
 				
