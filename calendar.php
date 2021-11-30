@@ -48,6 +48,11 @@
 		</script>
 		
 		<?php
+			if (isset($_POST['recipe_day'])) && isset($_POST['recipe_link'])) {
+				echo "<script>";
+				echo "addRecipe()";
+				echo "</script>";
+			}
 		?>
 		
 		<table>
