@@ -29,8 +29,18 @@
 		<script>
 			function addRecipe() {
 			
-				let day = parseInt(document.getElementById("recipe_day").value);
-				let link = document.getElementById("recipe_link").value;
+			//	let day = parseInt(document.getElementById("recipe_day").value);
+			//	let link = document.getElementById("recipe_link").value;
+				
+				document.getElementById("day_info").submit();
+				
+				<?php
+			
+					if (isset($_POST['recipe_day']) && isset($_POST['recipe_link'])) {
+						echo "Info Posted";
+					}
+					
+				?>
 				
 				var possibleDays = document.getElementsByClassName("day");
 				
@@ -43,19 +53,7 @@
 							possibleDays[i].innerHTML += " <a href=\"" + link + "\">Name</a>";
 						}
 					}
-				}
-				
-				
-				document.getElementById("day_info").submit();
-				
-				<?php
-			
-					if (isset($_POST['recipe_name']) && isset($_POST['recipe_link'])) {
-						echo "Info Posted";
-					}
-					
-				?>
-				
+				}	
 			}
 		</script>
 	
