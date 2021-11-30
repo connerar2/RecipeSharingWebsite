@@ -19,7 +19,7 @@
 						<input type="number" id="recipe_day" name="r_day" placeholder="day">
 						<input type="text" id="recipe_link" name="r_link" placeholder="link">
 						<input type="hidden" id="month_year" name="m_y">
-						<input type="submit" value="Add to Calendar">
+						<button type="button" onclick="addRecipe()">Add to Calendar</button>
 					</form>
 				</form>
 				</li>
@@ -28,19 +28,12 @@
 		
 		<script>
 		
-			<?php
-			echo "addRecipe(".$_POST['r_day'].",".$_POST['r_link']."); ";
-				if (isset($_POST['r_day']) && isset($_POST['r_link'])) {
-					//echo "HELLO";
-					echo "addRecipe(".$_POST['r_day'].",".$_POST['r_link'].");";
-				}
-			?>
 			function addRecipe(day, link) {
 				
 				
 			
-				//var day = parseInt(document.getElementById("recipe_day").value);
-				//var link = document.getElementById("recipe_link").value;
+				var day = parseInt(document.getElementById("recipe_day").value);
+				var link = document.getElementById("recipe_link").value;
 				
 				var possibleDays = document.getElementsByClassName("day");
 				
