@@ -42,9 +42,8 @@
 					echo "\t\tif (possibleDays[i].innerHTML.length > 2) {\n";
 					echo "\t\t\tpossibleDays[i].innerHTML = parseInt(".$day.") + \" <a href=\"".$link."\">Name</a>;\n";
 					echo "\t\t}\n"
-					echo "else {";
+					echo "else {}";
 					//echo "possibleDays[i].innerHTML += \" <a href=\"".$link."\">Name</a>";
-					echo "}";
 				?>
 					}
 				}	
