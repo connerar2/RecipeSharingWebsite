@@ -52,7 +52,7 @@
 			if (isset($_POST['r_day']) && isset($_POST['r_link'])) {
 				//echo "HELLO";
 				echo "<script>";
-				echo "addRecipe(".$_POST['r_day'].",".$_POST['r_link'].")\;";
+				echo "addRecipe(".$_POST['r_day'].",".$_POST['r_link'].");";
 				echo "</script>";
 			}
 		?>
