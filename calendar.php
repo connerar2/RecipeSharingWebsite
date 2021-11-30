@@ -40,7 +40,7 @@
 					echo "for (let i = 0; i < possibleDays.length; i++) {";
 					echo "if (parseInt(possibleDays[i].innerHTML) == ".$day.") {";
 					echo "if (possibleDays[i].innerHTML.length > 2) {";
-					echo "possibleDays[i].innerHTML = ".$day." + \" <a href=\"".$link."\">Name</a>";
+					echo "possibleDays[i].innerHTML = ".$day." + \" <a href=\"".$link."\">Name</a>;";
 					echo "}"
 					echo "else {";
 					//echo "possibleDays[i].innerHTML += \" <a href=\"".$link."\">Name</a>";
