@@ -36,7 +36,7 @@
 				
 				<?php
 			
-					echo "Here ".$_POST['recipe_day'];
+					echo $_POST['recipe_day'];
 					
 				?>
 				
