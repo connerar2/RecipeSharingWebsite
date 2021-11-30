@@ -36,9 +36,7 @@
 				
 				<?php
 			
-					if (isset($_POST['recipe_day']) && isset($_POST['recipe_link'])) {
-						echo "Info Posted";
-					}
+					echo "Here ".$_POST['recipe_day'];
 					
 				?>
 				
