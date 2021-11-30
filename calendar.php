@@ -35,7 +35,7 @@
 				var possibleDays = document.getElementsByClassName("day");
 				
 				for (let i = 0; i < possibleDays.length; i++) {
-					if (parseInt(possibleDays[i].innerHTML) == day) {
+					if (parseInt(possibleDays[i].innerHTML) == parseInt(day)) {
 						if (possibleDays[i].innerHTML.length > 2) {
 							possibleDays[i].innerHTML = day + " <a href=\"" + link + "\">Name</a>";
 						}
