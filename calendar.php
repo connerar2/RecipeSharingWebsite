@@ -15,11 +15,11 @@
 				<li><h1 id="monthName">Month</h1></li>
 				<li><button type="button" id="next_month">Next</button></li>
 				<li>
-					<form>
-					<input type="number" id="recipe_day" placeholder="day">
-					<input type="text" id="recipe_link" placeholder="link">
-					<input type="hidden" id="month_year">
-					<input type="submit" value="Add to Calendar">
+					<form method="post">
+						<input type="number" id="recipe_day" placeholder="day">
+						<input type="text" id="recipe_link" placeholder="link">
+						<input type="hidden" id="month_year">
+						<input type="submit" value="Add to Calendar">
 					</form>
 				</form>
 				</li>
@@ -46,7 +46,10 @@
 				}
 			}
 		</script>
-	
+		
+		<?php
+		?>
+		
 		<table>
 			<tr>
 				<th>Sunday</th>
