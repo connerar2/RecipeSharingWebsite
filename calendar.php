@@ -15,36 +15,24 @@
 				<li><h1 id="monthName">Month</h1></li>
 				<li><button type="button" id="next_month">Next</button></li>
 				<li>
-					<form method="post">
-						<input type="number" id="recipe_day" name="r_day" placeholder="day">
-						<input type="text" id="recipe_link" name="r_link" placeholder="link">
-						<input type="hidden" id="month_year" name="m_y">
-						<button type="button" onclick="addRecipe()">Add to Calendar</button>
-					</form>
+					<input type="number" id="recipe_day" placeholder="day">
+					<input type="text" id="recipe_link" placeholder="link">
+					<button type="button" onclick="addRecipe()">Add to Calendar</button>
 				</form>
 				</li>
 			</ul>
 		</div>
 		
 		<script>
-		
-			function addRecipe(day, link) {
-				
-				
+			function addRecipe() {
 			
 				var day = parseInt(document.getElementById("recipe_day").value);
 				var link = document.getElementById("recipe_link").value;
 				
 				var possibleDays = document.getElementsByClassName("day");
 				
-				<?php
-					echo "reached the function";
-				?>
-				
-				document.getElementById("monthName").innerHTML = "Changed Here";
-				
 				for (let i = 0; i < possibleDays.length; i++) {
-					if (parseInt(possibleDays[i].innerHTML) == parseInt(day)) {
+					if (parseInt(possibleDays[i].innerHTML) == day) {
 						if (possibleDays[i].innerHTML.length > 2) {
 							possibleDays[i].innerHTML = day + " <a href=\"" + link + "\">Name</a>";
 						}
@@ -55,7 +43,7 @@
 				}
 			}
 		</script>
-		
+	
 		<table>
 			<tr>
 				<th>Sunday</th>
@@ -139,7 +127,6 @@
 				const monthNames = ["January", "February", "March", "April", "May", "June",
 			"July", "August", "September", "October", "November", "December"];
 				document.getElementById("monthName").innerHTML = monthNames[month] + " " + year;
-				document.getElementById("month_year").value = monthNames[month] + " " + year;
 		}
 		
 		function writeCalendarDays() {
