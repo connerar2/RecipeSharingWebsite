@@ -27,10 +27,10 @@
 		</div>
 		
 		<script>
-			function addRecipe() {
+			function addRecipe(day, link) {
 			
-				var day = parseInt(document.getElementById("recipe_day").value);
-				var link = document.getElementById("recipe_link").value;
+				//var day = parseInt(document.getElementById("recipe_day").value);
+				//var link = document.getElementById("recipe_link").value;
 				
 				var possibleDays = document.getElementsByClassName("day");
 				
@@ -50,7 +50,8 @@
 		<?php
 			if (isset($_POST['recipe_day']) && isset($_POST['recipe_link'])) {
 				echo "<script>";
-				echo "addRecipe()";
+				echo "HELLO";
+				echo "addRecipe(".$_POST['recipe_day'].",".$_POST['recipe_link'].")";
 				echo "</script>";
 			}
 		?>
