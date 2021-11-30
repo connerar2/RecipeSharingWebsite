@@ -29,8 +29,8 @@
 		<script>
 			function addRecipe() {
 			
-			//	let day = parseInt(document.getElementById("recipe_day").value);
-			//	let link = document.getElementById("recipe_link").value;
+				let day = parseInt(document.getElementById("recipe_day").value);
+				let link = document.getElementById("recipe_link").value;
 				
 				document.getElementById("day_info").submit();
 				
