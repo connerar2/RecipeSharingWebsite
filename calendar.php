@@ -36,12 +36,12 @@
 					$day = $_POST['recipe_day'];
 					$link = $_POST['recipe_link'];
 					
-					echo "var possibleDays = document.getElementsByClassName(\"day\");";
-					echo "for (let i = 0; i < possibleDays.length; i++) {";
-					echo "if (parseInt(possibleDays[i].innerHTML) == ".$day.") {";
-					echo "if (possibleDays[i].innerHTML.length > 2) {";
-					echo "possibleDays[i].innerHTML = ".$day." + \" <a href=\"".$link."\">Name</a>;";
-					echo "}"
+					echo "var possibleDays = document.getElementsByClassName(\"day\");\n";
+					echo "for (let i = 0; i < possibleDays.length; i++) {\n";
+					echo "if (parseInt(possibleDays[i].innerHTML) == ".$day.") {\n";
+					echo "if (possibleDays[i].innerHTML.length > 2) {\n";
+					echo "possibleDays[i].innerHTML = ".$day." + \" <a href=\"".$link."\">Name</a>;\n";
+					echo "}\n"
 					//echo "else {";
 					//echo "possibleDays[i].innerHTML += \" <a href=\"".$link."\">Name</a>";
 					//echo "}";
