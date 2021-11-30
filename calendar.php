@@ -15,7 +15,7 @@
 				<li><h1 id="monthName">Month</h1></li>
 				<li><button type="button" id="next_month">Next</button></li>
 				<li>
-					<form id="day_info" method="post" action="">
+					<form id="day_info" method="post" action="calendar.php">
 						<input type="number" id="recipe_day" name="recipe_day" placeholder="day">
 						<input type="text" id="recipe_link" name="recipe_link" placeholder="link">
 						<input type="hidden" id="month_year" name="month_year">
