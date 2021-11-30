@@ -34,13 +34,13 @@
 				
 				document.getElementById("day_info").submit();
 				
-				//<?php
+				<?php
 			
-					//if (isset($_POST['recipe_day']) && isset($_POST['recipe_link'])) {
-						//echo "Info Posted";
-				//	}
+					if (isset($_POST['recipe_day']) && isset($_POST['recipe_link'])) {
+						echo "Info Posted";
+					}
 					
-				//?>
+				?>
 				
 				var possibleDays = document.getElementsByClassName("day");
 				
