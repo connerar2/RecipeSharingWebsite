@@ -34,6 +34,8 @@
 				
 				var possibleDays = document.getElementsByClassName("day");
 				
+				document.getElementById("monthName").innerHTML = "Changed Here";
+				
 				for (let i = 0; i < possibleDays.length; i++) {
 					if (parseInt(possibleDays[i].innerHTML) == parseInt(day)) {
 						if (possibleDays[i].innerHTML.length > 2) {
