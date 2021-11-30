@@ -15,9 +15,12 @@
 				<li><h1 id="monthName">Month</h1></li>
 				<li><button type="button" id="next_month">Next</button></li>
 				<li>
-					<input type="number" id="recipe_day" placeholder="day">
-					<input type="text" id="recipe_link" placeholder="link">
-					<button type="button" onclick="addRecipe()">Add to Calendar</button>
+					<form id="day_info" method="post" action="">
+						<input type="number" id="recipe_day" placeholder="day">
+						<input type="text" id="recipe_link" placeholder="link">
+						<input type="hidden" id="month_year" name="month_year">
+						<button type="button" onclick="addRecipe()">Add to Calendar</button>
+					</form>
 				</form>
 				</li>
 			</ul>
@@ -127,6 +130,8 @@
 				const monthNames = ["January", "February", "March", "April", "May", "June",
 			"July", "August", "September", "October", "November", "December"];
 				document.getElementById("monthName").innerHTML = monthNames[month] + " " + year;
+				document.getElementById("month_year").innerHTML = monthNames[month] + " " + year;
+
 		}
 		
 		function writeCalendarDays() {
