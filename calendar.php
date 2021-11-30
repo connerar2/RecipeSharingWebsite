@@ -28,28 +28,27 @@
 		
 		<script>
 			function addRecipe() {
-			
-				let day = parseInt(document.getElementById("recipe_day").value);
-				let link = document.getElementById("recipe_link").value;
 				
 				document.getElementById("day_info").submit();
 				
 				<?php
 			
-					echo "HERE";
+					$day = $_POST['recipe_day'];
+					$link = $_POST['recipe_link'];
+					
+					echo "var possibleDays = document.getElementsByClassName(\"day\");";
+					echo "for (let i = 0; i < possibleDays.length; i++) {";
+					echo "if (parseInt(possibleDays[i].innerHTML) == ".$day.") {";
+					echo "if (possibleDays[i].innerHTML.length > 2) {";
+					echo "possibleDays[i].innerHTML = ".$day." + \" <a href=\"".$link."\">Name</a>";
+					echo "}"
+					echo "else {
+							possibleDays[i].innerHTML += \" <a href=\"".$link."\">Name</a>\";
+						}";
 					
 				?>
-				
-				var possibleDays = document.getElementsByClassName("day");
-				
-				for (let i = 0; i < possibleDays.length; i++) {
-					if (parseInt(possibleDays[i].innerHTML) == day) {
-						if (possibleDays[i].innerHTML.length > 2) {
-							possibleDays[i].innerHTML = day + " <a href=\"" + link + "\">Name</a>";
-						}
-						else {
-							possibleDays[i].innerHTML += " <a href=\"" + link + "\">Name</a>";
-						}
+						
+						
 					}
 				}	
 			}
