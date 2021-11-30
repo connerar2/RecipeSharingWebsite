@@ -44,14 +44,8 @@
 					echo "\t\t}\n"
 					echo "else {";
 					//echo "possibleDays[i].innerHTML += \" <a href=\"".$link."\">Name</a>";
-					//echo "}";
-					
-					
+					echo "}";
 				?>
-						
-						//else {
-							//possibleDays[i].innerHTML += " <a href=\"" + link + "\">Name</a>";
-						//}
 					}
 				}	
 			}
