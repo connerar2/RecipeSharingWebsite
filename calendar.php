@@ -38,10 +38,10 @@
 					
 					echo "var possibleDays = document.getElementsByClassName(\"day\");\n";
 					echo "for (let i = 0; i < possibleDays.length; i++) {\n";
-					echo "if (parseInt(possibleDays[i].innerHTML) == ".$day.") {\n";
-					echo "if (possibleDays[i].innerHTML.length > 2) {\n";
-					echo "possibleDays[i].innerHTML = ".$day." + \" <a href=\"".$link."\">Name</a>;\n";
-					echo "}\n"
+					echo "\tif (parseInt(possibleDays[i].innerHTML) == ".$day.") {\n";
+					echo "\t\tif (possibleDays[i].innerHTML.length > 2) {\n";
+					echo "\t\t\tpossibleDays[i].innerHTML = ".$day." + \" <a href=\"".$link."\">Name</a>;\n";
+					echo "\t\t}\n"
 					//echo "else {";
 					//echo "possibleDays[i].innerHTML += \" <a href=\"".$link."\">Name</a>";
 					//echo "}";
