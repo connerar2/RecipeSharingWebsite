@@ -18,7 +18,7 @@
 					<form method="post">
 						<input type="number" id="recipe_day" name="r_day" placeholder="day">
 						<input type="text" id="recipe_link" name="r_link" placeholder="link">
-						<input type="hidden" id="month_year">
+						<input type="hidden" id="month_year" name="m_y">
 						<input type="submit" value="Add to Calendar">
 					</form>
 				</form>
@@ -48,6 +48,7 @@
 		</script>
 		
 		<?php
+		echo "Hello";
 			if (isset($_POST['r_day']) && isset($_POST['r_link'])) {
 				echo "HELLO";
 				echo "<script>";
