@@ -16,8 +16,8 @@
 				<li><button type="button" id="next_month">Next</button></li>
 				<li>
 					<form method="post">
-						<input type="number" id="recipe_day" placeholder="day">
-						<input type="text" id="recipe_link" placeholder="link">
+						<input type="number" id="recipe_day" name="r_day" placeholder="day">
+						<input type="text" id="recipe_link" name="r_link" placeholder="link">
 						<input type="hidden" id="month_year">
 						<input type="submit" value="Add to Calendar">
 					</form>
@@ -48,10 +48,10 @@
 		</script>
 		
 		<?php
-			if (isset($_POST['recipe_day']) && isset($_POST['recipe_link'])) {
+			if (isset($_POST['r_day']) && isset($_POST['r_link'])) {
 				echo "<script>";
 				echo "HELLO";
-				echo "addRecipe(".$_POST['recipe_day'].",".$_POST['recipe_link'].")";
+				echo "addRecipe(".$_POST['r_day'].",".$_POST['r_link'].")";
 				echo "</script>";
 			}
 		?>
