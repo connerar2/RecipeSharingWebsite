@@ -44,9 +44,9 @@
 				
 				var possibleDays = document.getElementsByClassName("day");
 				
-				<?php
-					echo "reached the function";
-				?>
+				//<?php
+					//echo "reached the function";
+				//?>
 				
 				document.getElementById("monthName").innerHTML = "Changed Here";
 				
