@@ -48,7 +48,7 @@
 		</script>
 		
 		<?php
-		echo "addRecipe(".$_POST['r_day'].",".$_POST['r_link'].")\;";
+		echo "addRecipe(".$_POST['r_day'].",".$_POST['r_link'].");";
 			if (isset($_POST['r_day']) && isset($_POST['r_link'])) {
 				//echo "HELLO";
 				echo "<script>";
