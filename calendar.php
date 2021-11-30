@@ -45,6 +45,7 @@
 					}
 				}
 				
+				/*
 				document.getElementById("day_info").submit();
 				
 				<?php
@@ -56,6 +57,7 @@
 						echo "Not Posted";
 					}
 				?>
+				*/
 			}
 		</script>
 	
