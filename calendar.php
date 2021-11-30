@@ -48,8 +48,12 @@
 				document.getElementById("day_info").submit();
 				
 				<?php
+			
 					if (isset($_POST['recipe_name']) && isset($_POST['recipe_link'])) {
 						echo "Info Posted";
+					}
+					else {
+						echo "Not Posted";
 					}
 				?>
 			}
