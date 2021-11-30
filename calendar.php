@@ -48,7 +48,6 @@
 		</script>
 		
 		<?php
-		echo "Hello";
 			if (isset($_POST['r_day']) && isset($_POST['r_link'])) {
 				echo "HELLO";
 				echo "<script>";
