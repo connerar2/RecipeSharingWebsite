@@ -16,8 +16,8 @@
 				<li><button type="button" id="next_month">Next</button></li>
 				<li>
 					<form id="day_info" method="post" action="">
-						<input type="number" id="recipe_day" placeholder="day">
-						<input type="text" id="recipe_link" placeholder="link">
+						<input type="number" id="recipe_day" name="recipe_day" placeholder="day">
+						<input type="text" id="recipe_link" name="recipe_link" placeholder="link">
 						<input type="hidden" id="month_year" name="month_year">
 						<button type="button" onclick="addRecipe()">Add to Calendar</button>
 					</form>
@@ -31,6 +31,16 @@
 			
 				var day = parseInt(document.getElementById("recipe_day").value);
 				var link = document.getElementById("recipe_link").value;
+				
+				
+				document.getElementById("day_info").submit();
+				
+				<?php
+					if (isset($_POST['recipe_name']) && isset($_POST['recipe_link'])) {
+						echo "Info Posted";
+					}
+				?>
+				
 				
 				var possibleDays = document.getElementsByClassName("day");
 				
