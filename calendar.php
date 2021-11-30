@@ -42,13 +42,12 @@
 					echo "if (possibleDays[i].innerHTML.length > 2) {";
 					echo "possibleDays[i].innerHTML = ".$day." + \" <a href=\"".$link."\">Name</a>";
 					echo "}"
+					echo "else {";
+					echo "//possibleDays[i].innerHTML += \" <a href=\"".$link."\">Name</a>";
+					echo "}";
 					
 					
 				?>
-						
-						//else {
-							//possibleDays[i].innerHTML += " <a href=\"" + link + "\">Name</a>";
-						//}
 					}
 				}	
 			}
