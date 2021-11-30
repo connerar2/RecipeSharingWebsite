@@ -162,8 +162,13 @@
 					start = true;
 				}
 				else if (start && pos <= daysInMonth[month]) {
-					possibleDays[i].innerHTML = offset++;
-					pos++;
+					if (possibleDays[i].innerHTML.length > 2) {
+						pos++;
+					}
+					else {
+						possibleDays[i].innerHTML = offset++;
+						pos++;
+					}
 				}
 				else {
 					possibleDays[i].innerHTML = "";
