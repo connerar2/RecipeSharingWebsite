@@ -6,7 +6,7 @@ browse other's recipes.  If time permits there will also be a calendar that func
 
 # Links
 - [Repo](https://github.com/connerar/Project <Meal Planning For Everyone Repo)
-- [Live](http://35.175.153.217//> Live View)
+- [Live](http://35.175.153.217 <Live View)
 
 # How to Use
 The web application is being hosted on an AWS server.  There is currently a home page that allows one to login, add recipes, and view recipes.
