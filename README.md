@@ -6,10 +6,16 @@ browse other's recipes.  If time permits there will also be a calendar that func
 
 # Links
 - [Repo](https://github.com/connerar/Project <Meal Planning For Everyone Repo)
-- [Live](<http://54.146.217.8/> Live View)
+- [Live](http://35.175.153.217//> Live View)
 
 # How to Use
-The web application is being hosted on an AWS server.  Currently, on the home page, only the add recipebutton and function is working.  In add recipe, a recipe name can only have letters and spaces and cannot be blank or just spaces.  The meal descritpion currently has no resrictions other than being required.  This is the same with the prep time and cook time.  Ingredients must have both an amount and an ingredient otherwise it will not add.  As for instructions there are no current restrictions.  
+The web application is being hosted on an AWS server.  There is currently a home page that allows one to login, add recipes, and view recipes.
+
+The Login system requires users to make a username and password.  The requirements for passwords are listed on the page.  Passwords are hashed and salted for security purposes.
+
+The Add Recipe system allows users to generate a page for their recipe.  Users enter a name, description, prep time, cook time, ingredient list, instructions and an image.  These will then be used to generate a new page for that recipe.
+
+The View Recipe system allows users to view 10 recipes at a time.  If there are less than 10 recipes on the page, it is the final page and no next arrow will appear.  If users to try get to a page that doesn't exist through the URL they will receive a Page Not Found error.  Users can also filter by a single ingredient and creator.  These filters can be used simultaneously.
 
 
 # Built With
