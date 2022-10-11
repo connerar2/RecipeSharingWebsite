@@ -8,7 +8,7 @@ create table Ingredients (
 );
 
 create table Recipe (
-	id int primary key auto-increment,
+	id int primary key AUTO-INCREMENT,
 	owner text not null,
 	recipe_name text not null,
 	description text not null,

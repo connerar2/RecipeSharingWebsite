@@ -5,7 +5,7 @@
 	function writeHeader($file, $name) {
 		fwrite($file, "<!DOCTYPE html>\n");
 		fwrite($file, "<html lang=\"en\">\n");
-		fwrite("<head>\n");
+		fwrite($file, "<head>\n");
 		fwrite($file, "<meta charset=\"UTF-8\">\n");
 		fwrite($file, "<title>".$name."</title>\n");
 		fwrite($file, "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n");
@@ -118,7 +118,7 @@
 		//info for database
 		$host = "localhost";
 		$user = "root";
-		$db_password = "Happy124face1!";
+		$db_password = "";
 		$database = "tutorial";
 	
 		//connect to database
@@ -149,16 +149,23 @@
 			$possible_units = '/ (tsp|tbsp|oz|lb|cup|pinch|small|medium|large|gallon|quart|pint) /';
 			$ingre = preg_split ($possible_units, $ingredient);
 			
-			//Add ingredient to database
-			$stmt = $cxn->prepare("Insert INTO Ingredients (ingredient) value (?)");
+			$stmt = $cxn->prepare("SELECT (?) from Ingredients");
 			$stmt-> bind_param("s", strtolower($ingre[1]));
 			$stmt->execute();
+			$result = $stmt->get_result();
 			
-			//Add ingredient recipe id to junction table
-			$stmt = $cxn->prepare("insert into recipe_ingredient (recipe_id, ingredient) values (?, ?)");
-			$stmt->bind_param("is", $id, strtolower($ingre[1]));
-			$stmt->execute();
+			if($result->num_rows == 0) {
 			
+				//Add ingredient to database
+				$stmt = $cxn->prepare("Insert INTO Ingredients (ingredient) value (?)");
+				$stmt-> bind_param("s", strtolower($ingre[1]));
+				$stmt->execute();
+				
+				//Add ingredient recipe id to junction table
+				$stmt = $cxn->prepare("insert into recipe_ingredient (recipe_id, ingredient) values (?, ?)");
+				$stmt->bind_param("is", $id, strtolower($ingre[1]));
+				$stmt->execute();
+			}
 		}
 		
 		

@@ -8,7 +8,7 @@ if (isset($_POST['username'])) {
 	//info for database
 	$host = "localhost";
 	$user = "root";
-	$db_password = "Happy124face1!";
+	$db_password = "";
 	$database = "tutorial";
 	
 	//connect to database

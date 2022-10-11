@@ -30,10 +30,11 @@
 		//access database info
 		$host = "localhost";
 		$user = "root";
-		$db_password = "Happy124face1!";
+		$db_password = "";
 		$database = "tutorial";
 		
 		$cxn = mysqli_connect($host, $user, $db_password, $database);
+		//$cxn = mysqli_connect($host, $database);
 		
 		//check if connected
 		if (mysqli_connect_errno()) {
@@ -61,7 +62,8 @@
 		$query = "SELECT * FROM Recipe";
 		
 		//basic query
-		if ($_GET['creator'] == "" && $_GET['ingredient'] == "") {
+		//if ($_GET['creator'] == NULL && $_GET['ingredient'] == NULL) {
+		if (!isset($_GET['creator']) && !isset($_GET['ingredient'])) {
 			$stmt = $cxn->prepare($query);
 		}
 		else {
@@ -107,14 +109,16 @@
 		
 		$stmt = $cxn->prepare($query);
 		
-		if ($_GET['creator'] != "" && $_GET['ingredient'] == "") {
-			$stmt->bind_param("s", $_GET['creator']);
-		}
-		else if ($_GET['creator'] == "" && $_GET['ingredient'] != "") {
-			$stmt->bind_param("s", $_GET['ingredient']);
-		}
-		else {
-			$stmt->bind_param("ss",$_GET['creator'], $_GET['ingredient']);
+		if (isset($_GET['creator']) || isset($_GET['ingredient'])) {
+			if ($_GET['creator'] != "" && $_GET['ingredient'] == "") {
+				$stmt->bind_param("s", $_GET['creator']);
+			}
+			else if ($_GET['creator'] == "" && $_GET['ingredient'] != "") {
+				$stmt->bind_param("s", $_GET['ingredient']);
+			}
+			else {
+				$stmt->bind_param("ss",$_GET['creator'], $_GET['ingredient']);
+			}
 		}
 		$stmt-> execute();
 		$result = $stmt->get_result();
@@ -132,7 +136,7 @@
 				echo "<div class=\"recipe\">";
 				echo "<h3><a href=\"".$row['filename']."\">".$row['recipe_name']."</a></h3>";
 					echo "By ".$row['owner'];
-					echo"<img class=\"recipeImage\" src=/".$row['meal_image']." alt=\"Image of the recipe\">";
+					echo"<img class=\"recipeImage\" src=/Capstone/Project/".$row['meal_image']." alt=\"Image of the recipe\">";
 					echo "<div class=\"description\">";
 						echo "<p>".$row['description']."</p>";
 					echo "</div>";

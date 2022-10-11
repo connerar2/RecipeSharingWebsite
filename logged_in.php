@@ -8,7 +8,7 @@
 		
 		$host = "localhost";
 		$user = "root";
-		$db_password = "Happy124face1!";
+		$db_password = "";
 		$database = "tutorial";
 		
 		$cxn = mysqli_connect($host, $user, $db_password, $database);

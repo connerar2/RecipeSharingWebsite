@@ -1,6 +1,6 @@
 <?php
 //start session
-session_start();
+//session_start();
 
 include('logged_in.php');
 ?>
